@@ -24,11 +24,6 @@ import Option from '../packages/option/index.js';
 import OptionGroup from '../packages/option-group/index.js';
 import Button from '../packages/button/index.js';
 import ButtonGroup from '../packages/button-group/index.js';
-import Table from '../packages/table/index.js';
-import TableColumn from '../packages/table-column/index.js';
-import DatePicker from '../packages/date-picker/index.js';
-import TimeSelect from '../packages/time-select/index.js';
-import TimePicker from '../packages/time-picker/index.js';
 import Popover from '../packages/popover/index.js';
 import Tooltip from '../packages/tooltip/index.js';
 import MessageBox from '../packages/message-box/index.js';
@@ -39,7 +34,6 @@ import FormItem from '../packages/form-item/index.js';
 import Tabs from '../packages/tabs/index.js';
 import TabPane from '../packages/tab-pane/index.js';
 import Tag from '../packages/tag/index.js';
-import Tree from '../packages/tree/index.js';
 import Alert from '../packages/alert/index.js';
 import Notification from '../packages/notification/index.js';
 import Slider from '../packages/slider/index.js';
@@ -54,9 +48,6 @@ import Message from '../packages/message/index.js';
 import Badge from '../packages/badge/index.js';
 import Card from '../packages/card/index.js';
 import Rate from '../packages/rate/index.js';
-import Steps from '../packages/steps/index.js';
-import Step from '../packages/step/index.js';
-import Carousel from '../packages/carousel/index.js';
 import Scrollbar from '../packages/scrollbar/index.js';
 import CarouselItem from '../packages/carousel-item/index.js';
 import Collapse from '../packages/collapse/index.js';
@@ -73,14 +64,10 @@ import Timeline from '../packages/timeline/index.js';
 import TimelineItem from '../packages/timeline-item/index.js';
 import Link from '../packages/link/index.js';
 import Divider from '../packages/divider/index.js';
-import Image from '../packages/image/index.js';
-import Calendar from '../packages/calendar/index.js';
 import Backtop from '../packages/backtop/index.js';
 import InfiniteScroll from '../packages/infinite-scroll/index.js';
 import PageHeader from '../packages/page-header/index.js';
 import CascaderPanel from '../packages/cascader-panel/index.js';
-import Avatar from '../packages/avatar/index.js';
-import Drawer from '../packages/drawer/index.js';
 import Popconfirm from '../packages/popconfirm/index.js';
 import locale from 'element-ui/src/locale';
 import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
@@ -110,11 +97,6 @@ const components = [
   OptionGroup,
   Button,
   ButtonGroup,
-  Table,
-  TableColumn,
-  DatePicker,
-  TimeSelect,
-  TimePicker,
   Popover,
   Tooltip,
   Breadcrumb,
@@ -124,7 +106,6 @@ const components = [
   Tabs,
   TabPane,
   Tag,
-  Tree,
   Alert,
   Slider,
   Icon,
@@ -136,9 +117,6 @@ const components = [
   Badge,
   Card,
   Rate,
-  Steps,
-  Step,
-  Carousel,
   Scrollbar,
   CarouselItem,
   Collapse,
@@ -155,13 +133,9 @@ const components = [
   TimelineItem,
   Link,
   Divider,
-  Image,
-  Calendar,
   Backtop,
   PageHeader,
   CascaderPanel,
-  Avatar,
-  Drawer,
   Popconfirm,
   CollapseTransition
 ];
@@ -228,11 +202,6 @@ export default {
   OptionGroup,
   Button,
   ButtonGroup,
-  Table,
-  TableColumn,
-  DatePicker,
-  TimeSelect,
-  TimePicker,
   Popover,
   Tooltip,
   MessageBox,
@@ -243,7 +212,6 @@ export default {
   Tabs,
   TabPane,
   Tag,
-  Tree,
   Alert,
   Notification,
   Slider,
@@ -257,9 +225,6 @@ export default {
   Badge,
   Card,
   Rate,
-  Steps,
-  Step,
-  Carousel,
   Scrollbar,
   CarouselItem,
   Collapse,
@@ -276,13 +241,9 @@ export default {
   TimelineItem,
   Link,
   Divider,
-  Image,
-  Calendar,
   Backtop,
   InfiniteScroll,
   PageHeader,
   CascaderPanel,
-  Avatar,
-  Drawer,
   Popconfirm
 };
