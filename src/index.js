@@ -71,6 +71,8 @@ import CascaderPanel from '../packages/cascader-panel/index.js';
 import Popconfirm from '../packages/popconfirm/index.js';
 import locale from 'element-ui/src/locale';
 import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
+import Popper from 'element-ui/src/utils/vue-popper';
+import Clickoutside from 'element-ui/src/utils/clickoutside';
 
 const components = [
   Pagination,
@@ -178,6 +180,7 @@ export default {
   install,
   CollapseTransition,
   Loading,
+  utils: { Popper, Clickoutside },
   Pagination,
   Dialog,
   Autocomplete,
