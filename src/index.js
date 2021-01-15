@@ -24,6 +24,9 @@ import Option from '../packages/option/index.js';
 import OptionGroup from '../packages/option-group/index.js';
 import Button from '../packages/button/index.js';
 import ButtonGroup from '../packages/button-group/index.js';
+import DatePicker from '../packages/date-picker/index.js';
+import TimeSelect from '../packages/time-select/index.js';
+import TimePicker from '../packages/time-picker/index.js';
 import Popover from '../packages/popover/index.js';
 import Tooltip from '../packages/tooltip/index.js';
 import MessageBox from '../packages/message-box/index.js';
@@ -99,6 +102,9 @@ const components = [
   OptionGroup,
   Button,
   ButtonGroup,
+  DatePicker,
+  TimeSelect,
+  TimePicker,
   Popover,
   Tooltip,
   Breadcrumb,
@@ -205,6 +211,9 @@ export default {
   OptionGroup,
   Button,
   ButtonGroup,
+  DatePicker,
+  TimeSelect,
+  TimePicker,
   Popover,
   Tooltip,
   MessageBox,
