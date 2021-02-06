@@ -17,7 +17,7 @@ function fileExists(filePath) {
 
 themes.forEach((theme) => {
   var isSCSS = theme !== 'theme-default';
-  var indexContent = '@import "../../variables.scss";\n';
+  var indexContent = '@import "../../element-variables.scss";\n';
   indexContent += isSCSS ? '@import "./base.scss";\n' : '@import "./base.css";\n';
   Components.forEach(function(key) {
     if (['icon', 'option', 'option-group'].indexOf(key) > -1) return;
