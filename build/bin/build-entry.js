@@ -15,6 +15,8 @@ import locale from 'element-ui/src/locale';
 import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
 import Popper from 'element-ui/src/utils/vue-popper';
 import Clickoutside from 'element-ui/src/utils/clickoutside';
+import DateTable from 'element-ui/packages/date-picker/src/basic/date-table';
+import * as DateUtil from 'element-ui/src/utils/date-util';
 
 const components = [
 {{install}},
@@ -60,6 +62,8 @@ export default {
   CollapseTransition,
   Loading,
   utils: { Popper, Clickoutside },
+  DateTable,
+  DateUtil,
 {{list}}
 };
 `;

@@ -47,10 +47,15 @@ import Notification from '../packages/notification/index.js';
 import MessageBox from '../packages/message-box/index.js';
 import Message from '../packages/message/index.js';
 import Upload from '../packages/upload/index.js';
+import DatePicker from '../packages/date-picker/index.js';
+import TimeSelect from '../packages/time-select/index.js';
+import TimePicker from '../packages/time-picker/index.js';
 import locale from 'element-ui/src/locale';
 import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
 import Popper from 'element-ui/src/utils/vue-popper';
 import Clickoutside from 'element-ui/src/utils/clickoutside';
+import DateTable from 'element-ui/packages/date-picker/src/basic/date-table';
+import * as DateUtil from 'element-ui/src/utils/date-util';
 
 const components = [
   Dialog,
@@ -95,6 +100,9 @@ const components = [
   Scrollbar,
   Link,
   Upload,
+  DatePicker,
+  TimeSelect,
+  TimePicker,
   CollapseTransition
 ];
 
@@ -137,6 +145,8 @@ export default {
   CollapseTransition,
   Loading,
   utils: { Popper, Clickoutside },
+  DateTable,
+  DateUtil,
   Dialog,
   Popover,
   Popconfirm,
@@ -182,5 +192,8 @@ export default {
   Notification,
   MessageBox,
   Message,
-  Upload
+  Upload,
+  DatePicker,
+  TimeSelect,
+  TimePicker
 };
