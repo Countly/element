@@ -165,7 +165,8 @@
           'el-tabs': true,
           'el-tabs--card': type === 'card',
           [`el-tabs--${tabPosition}`]: true,
-          'el-tabs--border-card': type === 'border-card'
+          'el-tabs--border-card': type === 'border-card',
+          'el-tabs--button': type === 'button'
         }}>
           { tabPosition !== 'bottom' ? [header, panels] : [panels, header] }
         </div>
