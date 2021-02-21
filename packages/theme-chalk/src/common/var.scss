@@ -34,9 +34,11 @@ $--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /
 /// color|1|Functional Color|1
 $--color-success: #67C23A !default;
 /// color|1|Functional Color|1
-$--color-warning: #E6A23C !default;
+$--color-warning: #E49700 !default;
+$--color-warning-fill: #FCF5E5 !default;
 /// color|1|Functional Color|1
-$--color-danger: #F56C6C !default;
+$--color-danger: #D23F00 !default;
+$--color-danger-fill: #FBECE5 !default;
 /// color|1|Functional Color|1
 $--color-info: #909399 !default;
 

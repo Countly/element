@@ -16,6 +16,7 @@ import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
 import Popper from 'element-ui/src/utils/vue-popper';
 import Clickoutside from 'element-ui/src/utils/clickoutside';
 import DateTable from 'element-ui/packages/date-picker/src/basic/date-table';
+import MonthTable from 'element-ui/packages/date-picker/src/basic/month-table';
 import * as DateUtil from 'element-ui/src/utils/date-util';
 
 const components = [
@@ -63,6 +64,7 @@ export default {
   Loading,
   utils: { Popper, Clickoutside },
   DateTable,
+  MonthTable,
   DateUtil,
 {{list}}
 };

@@ -62,6 +62,29 @@
   @include when(exceed) {
     .el-textarea__inner {
       border-color: $--color-danger;
+      background-color: $--color-danger-fill;
+    }
+
+    .el-input__count {
+      color: $--color-danger;
+    }
+  }
+
+  @include when(warning) {
+    .el-textarea__inner {
+      border-color: $--color-warning;
+      background-color: $--color-warning-fill;
+    }
+
+    .el-input__count {
+      color: $--color-warning;
+    }
+  }
+
+  @include when(error) {
+    .el-textarea__inner {
+      border-color: $--color-danger;
+      background-color: $--color-danger-fill;
     }
 
     .el-input__count {
@@ -206,6 +229,33 @@
   @include when(exceed) {
     .el-input__inner {
       border-color: $--color-danger;
+      background-color: $--color-danger-fill;
+    }
+
+    .el-input__suffix {
+      .el-input__count {
+        color: $--color-danger;
+      }
+    }
+  }
+
+  @include when(warning) {
+    .el-input__inner {
+      border-color: $--color-warning;
+      background-color: $--color-warning-fill;
+    }
+
+    .el-input__suffix {
+      .el-input__count {
+        color: $--color-warning;
+      }
+    }
+  }
+
+  @include when(error) {
+    .el-input__inner {
+      border-color: $--color-danger;
+      background-color: $--color-danger-fill;
     }
 
     .el-input__suffix {
