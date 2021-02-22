@@ -10,6 +10,7 @@
     
   "input": "./packages/input/index.js",
     "input-number": "./packages/input-number/index.js",
+    "pseudo-input": "./packages/pseudo-input/index.js",
 
   "radio": "./packages/radio/index.js",
     "radio-group": "./packages/radio-group/index.js",
