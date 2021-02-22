@@ -10,6 +10,7 @@
     
   "input": "./packages/input/index.js",
     "input-number": "./packages/input-number/index.js",
+    "pseudo-input": "./packages/pseudo-input/index.js",
 
   "radio": "./packages/radio/index.js",
     "radio-group": "./packages/radio-group/index.js",
@@ -62,5 +63,9 @@
   "message-box": "./packages/message-box/index.js",
   "message": "./packages/message/index.js",
   
-  "upload": "./packages/upload/index.js"
+  "upload": "./packages/upload/index.js",
+
+  "date-picker": "./packages/date-picker/index.js",
+  "time-select": "./packages/time-select/index.js",
+  "time-picker": "./packages/time-picker/index.js"
 }

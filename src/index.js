@@ -9,6 +9,7 @@ import DropdownMenu from '../packages/dropdown-menu/index.js';
 import DropdownItem from '../packages/dropdown-item/index.js';
 import Input from '../packages/input/index.js';
 import InputNumber from '../packages/input-number/index.js';
+import PseudoInput from '../packages/pseudo-input/index.js';
 import Radio from '../packages/radio/index.js';
 import RadioGroup from '../packages/radio-group/index.js';
 import RadioButton from '../packages/radio-button/index.js';
@@ -47,10 +48,16 @@ import Notification from '../packages/notification/index.js';
 import MessageBox from '../packages/message-box/index.js';
 import Message from '../packages/message/index.js';
 import Upload from '../packages/upload/index.js';
+import DatePicker from '../packages/date-picker/index.js';
+import TimeSelect from '../packages/time-select/index.js';
+import TimePicker from '../packages/time-picker/index.js';
 import locale from 'element-ui/src/locale';
 import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
 import Popper from 'element-ui/src/utils/vue-popper';
 import Clickoutside from 'element-ui/src/utils/clickoutside';
+import DateTable from 'element-ui/packages/date-picker/src/basic/date-table';
+import MonthTable from 'element-ui/packages/date-picker/src/basic/month-table';
+import * as DateUtil from 'element-ui/src/utils/date-util';
 
 const components = [
   Dialog,
@@ -62,6 +69,7 @@ const components = [
   DropdownItem,
   Input,
   InputNumber,
+  PseudoInput,
   Radio,
   RadioGroup,
   RadioButton,
@@ -95,6 +103,9 @@ const components = [
   Scrollbar,
   Link,
   Upload,
+  DatePicker,
+  TimeSelect,
+  TimePicker,
   CollapseTransition
 ];
 
@@ -137,6 +148,9 @@ export default {
   CollapseTransition,
   Loading,
   utils: { Popper, Clickoutside },
+  DateTable,
+  MonthTable,
+  DateUtil,
   Dialog,
   Popover,
   Popconfirm,
@@ -146,6 +160,7 @@ export default {
   DropdownItem,
   Input,
   InputNumber,
+  PseudoInput,
   Radio,
   RadioGroup,
   RadioButton,
@@ -182,5 +197,8 @@ export default {
   Notification,
   MessageBox,
   Message,
-  Upload
+  Upload,
+  DatePicker,
+  TimeSelect,
+  TimePicker
 };

@@ -146,6 +146,7 @@
     & .el-textarea__inner {
       &, &:focus {
         border-color: $--color-danger;
+        background-color: $--color-danger-fill;
       }
     }
     & .el-input-group__append,
@@ -154,9 +155,9 @@
         border-color: transparent;
       }
     }
-    .el-input__validateIcon {
-      color: $--color-danger;
-    }
+    // .el-input__validateIcon {
+    //   color: $--color-danger;
+    // }
   }
 
   @include m(feedback) {
