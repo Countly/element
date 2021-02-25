@@ -149,6 +149,7 @@
   import { getValueByPath, valueEquals, isIE, isEdge } from 'element-ui/src/utils/util';
   import NavigationMixin from './navigation-mixin';
   import { isKorean } from 'element-ui/src/utils/shared';
+  import uniqueId from 'lodash/uniqueId';
 
   export default {
     mixins: [Emitter, Locale, Focus('reference'), NavigationMixin],
@@ -164,6 +165,9 @@
 
       elFormItem: {
         default: ''
+      },
+      popperHistory: {
+        default: null
       }
     },
 
@@ -306,6 +310,7 @@
     },
 
     data() {
+      var newUniq = uniqueId("popper-el-select-");
       return {
         options: [],
         cachedOptions: [],
@@ -328,7 +333,8 @@
         currentPlaceholder: '',
         menuVisibleOnFocus: false,
         isOnComposition: false,
-        isSilentBlur: false
+        isSilentBlur: false,
+        popperId: newUniq
       };
     },
 

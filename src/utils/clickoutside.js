@@ -10,11 +10,22 @@ let seed = 0;
 !Vue.prototype.$isServer && on(document, 'mousedown', e => (startClick = e));
 
 !Vue.prototype.$isServer && on(document, 'mouseup', e => {
-  nodeList.forEach(node => node[ctx].documentHandler(e, startClick));
+  var clickedHistory = nodeList.reduce((acc, node) => {
+    var group = node[ctx].groupHandler(e, startClick);
+    if (group) {
+      acc = Object.assign({}, acc, group);
+    }
+    return acc;
+  }, {});
+  nodeList.forEach(node => node[ctx].documentHandler(e, startClick, clickedHistory));
 });
 
 function createDocumentHandler(el, binding, vnode) {
-  return function(mouseup = {}, mousedown = {}) {
+  return function(mouseup = {}, mousedown = {}, clickedHistory = {}) {
+
+    if (clickedHistory[vnode.context.popperUid]) {
+      return;
+    }
     if (!vnode ||
       !vnode.context ||
       !mouseup.target ||
@@ -36,6 +47,14 @@ function createDocumentHandler(el, binding, vnode) {
   };
 }
 
+function createGroupHandler(el, binding, vnode) {
+  return function(mouseup = {}, mousedown = {}) {
+    if (el.contains(mouseup.target) || el.contains(mousedown.target) || el === mouseup.target ||
+      (vnode.context.popperElm &&
+      (vnode.context.popperElm.contains(mouseup.target) ||
+      vnode.context.popperElm.contains(mousedown.target)))) return vnode.context.popperHistory;
+  };
+}
 /**
  * v-clickoutside
  * @desc 点击元素外面才会触发的事件
@@ -51,6 +70,7 @@ export default {
     el[ctx] = {
       id,
       documentHandler: createDocumentHandler(el, binding, vnode),
+      groupHandler: createGroupHandler(el, binding, vnode),
       methodName: binding.expression,
       bindingFn: binding.value
     };
@@ -58,6 +78,7 @@ export default {
 
   update(el, binding, vnode) {
     el[ctx].documentHandler = createDocumentHandler(el, binding, vnode);
+    el[ctx].groupHandler = createGroupHandler(el, binding, vnode);
     el[ctx].methodName = binding.expression;
     el[ctx].bindingFn = binding.value;
   },
