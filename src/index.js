@@ -53,10 +53,11 @@ import TimeSelect from '../packages/time-select/index.js';
 import TimePicker from '../packages/time-picker/index.js';
 import locale from 'element-ui/src/locale';
 import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
-import Popper from 'element-ui/src/utils/vue-popper';
 import Clickoutside from 'element-ui/src/utils/clickoutside';
 import DateTable from 'element-ui/packages/date-picker/src/basic/date-table';
 import MonthTable from 'element-ui/packages/date-picker/src/basic/month-table';
+import SelectDropdown from 'element-ui/packages/select/src/select-dropdown';
+import Emitter from 'element-ui/src/mixins/emitter';
 import * as DateUtil from 'element-ui/src/utils/date-util';
 
 const components = [
@@ -147,10 +148,11 @@ export default {
   install,
   CollapseTransition,
   Loading,
-  utils: { Popper, Clickoutside },
+  utils: { Clickoutside, Emitter },
   DateTable,
   MonthTable,
   DateUtil,
+  SelectDropdown,
   Dialog,
   Popover,
   Popconfirm,
