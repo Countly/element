@@ -166,7 +166,7 @@
       elFormItem: {
         default: ''
       },
-      popperHistory: {
+      popperAncestors: {
         default: null
       }
     },
