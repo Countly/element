@@ -35,6 +35,32 @@
     }
   }
 
+  @include when(warning) {
+    .el-input__inner {
+      border-color: $--color-warning;
+      background-color: $--color-warning-fill;
+    }
+
+    .el-input__suffix {
+      .el-input__count {
+        color: $--color-warning;
+      }
+    }
+  }
+
+  @include when(error) {
+    .el-input__inner {
+      border-color: $--color-danger;
+      background-color: $--color-danger-fill;
+    }
+
+    .el-input__suffix {
+      .el-input__count {
+        color: $--color-danger;
+      }
+    }
+  }
+
   .el-input {
     & .el-select__caret {
       color: $--select-input-color;
