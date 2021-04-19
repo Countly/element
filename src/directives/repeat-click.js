@@ -1,4 +1,6 @@
-import { once, on } from 'element-ui/src/utils/dom';
+import { once, on, off } from 'element-ui/src/utils/dom';
+
+const ctx = '@@repeatClickContext';
 
 export default {
   bind(el, binding, vnode) {
@@ -13,12 +15,22 @@ export default {
       interval = null;
     };
 
-    on(el, 'mousedown', (e) => {
+    let bindingFn = (e) => {
       if (e.button !== 0) return;
       startTime = Date.now();
       once(document, 'mouseup', clear);
       clearInterval(interval);
       interval = setInterval(handler, 100);
-    });
+    };
+
+    on(el, 'mousedown', bindingFn);
+    el[ctx] = { bindingFn };
+  },
+  unbind(el) {
+    if (!el[ctx] || !el[ctx].bindingFn) {
+      return;
+    }
+    off(el, 'mousedown', el[ctx].bindingFn);
+    delete el[ctx];
   }
 };
