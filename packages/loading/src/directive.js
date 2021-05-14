@@ -126,6 +126,10 @@ loadingDirective.install = Vue => {
         toggleLoading(el, { value: false, modifiers: binding.modifiers });
       }
       el.instance && el.instance.$destroy();
+      // TODO: Check following lines (added to fix a memleak)
+      el.instance = {};
+      delete el.mask;
+      delete el.maskStyle;
     }
   });
 };
