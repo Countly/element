@@ -339,6 +339,9 @@ export default {
     },
     elFormItem: {
       default: ''
+    },
+    popperAncestors: {
+      default: null
     }
   },
 
