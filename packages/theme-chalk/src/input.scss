@@ -313,6 +313,10 @@
       line-height: $--input-mini-height;
     }
   }
+
+  .el-input__inner.el-input__inner--no-boder {
+    border: none;
+  }
 }
 
 @include b(input-group) {

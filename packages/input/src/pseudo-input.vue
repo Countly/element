@@ -24,7 +24,7 @@
         v-show="!value"
         :tabindex="tabindex"
         v-if="type !== 'textarea'"
-        class="el-input__inner"
+        :class="classes"
         v-bind="$attrs"
         :type="showPassword ? (passwordVisible ? 'text': 'password') : type"
         :disabled="inputDisabled"
@@ -43,7 +43,7 @@
       <span 
         v-show="!!value"
         :tabindex="tabindex"
-        class="el-input__inner"
+        :class="classes"
         v-bind="$attrs"
         :disabled="inputDisabled"
         :readonly="readonly"
@@ -202,7 +202,11 @@
         type: Boolean,
         default: false
       },
-      tabindex: String
+      tabindex: String,
+      borderless: {
+        type: Boolean,
+        default: false
+      }
     },
 
     computed: {
@@ -269,6 +273,14 @@
         // show exceed style if length of initial value greater then maxlength
         return this.isWordLimitVisible &&
           (this.textLength > this.upperLimit);
+      },
+      classes() {
+        let cl = ["el-input__inner"];
+
+        if(this.borderless) {
+          cl.push("el-input__inner--no-boder");
+        }
+        return cl;
       }
     },
 

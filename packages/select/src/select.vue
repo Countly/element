@@ -1,7 +1,7 @@
 <template>
   <div
     class="el-select"
-    :class="[selectSize ? 'el-select--' + selectSize : '']"
+    :class="elSelectClasses"
     @click.stop="toggleMenu"
     v-clickoutside="handleClose">
     <div
@@ -80,6 +80,7 @@
       :disabled="selectDisabled"
       :readonly="readonly"
       :validate-event="false"
+      :borderless="borderless"
       :class="{ 'is-focus': visible }"
       :tabindex="(multiple && filterable) ? '-1' : null"
       @focus="handleFocus"
@@ -250,6 +251,15 @@
         }
 
         return "el-input";
+      },
+      elSelectClasses() {
+
+        let cl = [this.selectSize ? 'el-select--' + this.selectSize : '']
+
+        if(this.borderless) {
+          cl.push("el-select--no-shadow");
+        }
+        return cl;
       }
     },
 
@@ -318,6 +328,10 @@
         default: true
       },
       autoResize:{
+        type: Boolean,
+        default: false
+      },
+      borderless: {
         type: Boolean,
         default: false
       }
