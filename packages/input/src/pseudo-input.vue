@@ -275,10 +275,10 @@
           (this.textLength > this.upperLimit);
       },
       classes() {
-        let cl = ["el-input__inner"];
+        let cl = ['el-input__inner'];
 
-        if(this.borderless) {
-          cl.push("el-input__inner--no-boder");
+        if (this.borderless) {
+          cl.push('el-input__inner--no-boder');
         }
         return cl;
       }

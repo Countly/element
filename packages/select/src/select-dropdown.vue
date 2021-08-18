@@ -42,7 +42,7 @@
         type: Boolean,
         default: true
       },
-      width: {},
+      width: {}
     },
 
     data() {

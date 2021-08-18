@@ -247,17 +247,17 @@
       },
       inputComponent() {
         if (this.autoResize) {
-            return "el-pseudo-input";
+          return 'el-pseudo-input';
         }
 
-        return "el-input";
+        return 'el-input';
       },
       elSelectClasses() {
 
-        let cl = [this.selectSize ? 'el-select--' + this.selectSize : '']
+        let cl = [this.selectSize ? 'el-select--' + this.selectSize : ''];
 
-        if(this.borderless) {
-          cl.push("el-select--no-shadow");
+        if (this.borderless) {
+          cl.push('el-select--no-shadow');
         }
         return cl;
       }
@@ -327,7 +327,7 @@
         type: Boolean,
         default: true
       },
-      autoResize:{
+      autoResize: {
         type: Boolean,
         default: false
       },
@@ -338,7 +338,7 @@
     },
 
     data() {
-      var newUniq = uniqueId("popper-el-select-");
+      var newUniq = uniqueId('popper-el-select-');
       return {
         options: [],
         cachedOptions: [],
