@@ -67,7 +67,8 @@
         :style="{ 'flex-grow': '1', width: inputLength / (inputWidth - 32) + '%', 'max-width': inputWidth - 42 + 'px' }"
         ref="input">
     </div>
-    <el-input
+    <component
+      :is="inputComponent"
       ref="reference"
       v-model="selectedLabel"
       type="text"
@@ -99,7 +100,7 @@
         <i v-show="!showClose" :class="['el-select__caret', 'el-input__icon', 'el-icon-' + iconClass]"></i>
         <i v-if="showClose" class="el-select__caret el-input__icon el-icon-circle-close" @click="handleClearClick"></i>
       </template>
-    </el-input>
+    </component>
     <transition
       name="el-zoom-in-top"
       @before-enter="handleMenuEnter"
@@ -138,6 +139,7 @@
   import Focus from 'element-ui/src/mixins/focus';
   import Locale from 'element-ui/src/mixins/locale';
   import ElInput from 'element-ui/packages/input';
+  import ElPseudoInput from 'element-ui/packages/pseudo-input';
   import ElSelectMenu from './select-dropdown.vue';
   import ElOption from './option.vue';
   import ElTag from 'element-ui/packages/tag';
@@ -241,11 +243,19 @@
       },
       propPlaceholder() {
         return typeof this.placeholder !== 'undefined' ? this.placeholder : this.t('el.select.placeholder');
+      },
+      inputComponent() {
+        if (this.autoResize) {
+            return "el-pseudo-input";
+        }
+
+        return "el-input";
       }
     },
 
     components: {
       ElInput,
+      ElPseudoInput,
       ElSelectMenu,
       ElOption,
       ElTag,
@@ -306,6 +316,10 @@
       popperAppendToBody: {
         type: Boolean,
         default: true
+      },
+      autoResize:{
+        type: Boolean,
+        default: false
       }
     },
 
