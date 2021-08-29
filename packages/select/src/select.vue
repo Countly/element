@@ -246,7 +246,7 @@
         return typeof this.placeholder !== 'undefined' ? this.placeholder : this.t('el.select.placeholder');
       },
       inputComponent() {
-        if (this.autoResize) {
+        if (this.autoResize && !this.multiple) {
           return 'el-pseudo-input';
         }
 

@@ -21,7 +21,7 @@
         <slot name="prepend"></slot>
       </div>
       <input
-        v-show="!value"
+        v-show="false"
         :tabindex="tabindex"
         v-if="type !== 'textarea'"
         :class="classes"
@@ -41,7 +41,6 @@
         :aria-label="label"
       >
       <span 
-        v-show="!!value"
         :tabindex="tabindex"
         :class="classes"
         v-bind="$attrs"
@@ -275,7 +274,7 @@
           (this.textLength > this.upperLimit);
       },
       classes() {
-        let cl = ['el-input__inner'];
+        let cl = ['el-input__inner', 'el-input__inner--auto-resize'];
 
         if (this.borderless) {
           cl.push('el-input__inner--no-boder');
