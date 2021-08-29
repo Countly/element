@@ -65,6 +65,7 @@
     cursor: pointer;
     transition: border-color .3s, background-color .3s;
     vertical-align: middle;
+    box-shadow: inset 0px 1px 3px #9cbce0;
 
     &:after {
       content: "";
@@ -75,7 +76,10 @@
       transition: all .3s;
       width: $--switch-button-size;
       height: $--switch-button-size;
-      background-color: $--color-white;
+      background-color: $--switch-circle-color-disabled;
+      box-shadow: 0px 0px 0px 0px $--switch-circle-color-disabled,
+                    0px 0px 0px 2px rgb(255 255 255),
+                    0px 0px 0px 4px $--switch-circle-color-disabled;
     }
   }
 
@@ -86,6 +90,10 @@
       &::after {
         left: 100%;
         margin-left: -$--switch-button-size - 1px;
+        background-color: $--switch-circle-color;
+        box-shadow: 0px 0px 0px 0px $--switch-circle-color,
+                    0px 0px 0px 2px rgb(255 255 255),
+                    0px 0px 0px 4px $--switch-circle-color;
       }
     }
   }

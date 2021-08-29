@@ -30,6 +30,20 @@
                 <el-option v-for="item in selectItems" :key="item" :value="item" :label="item"></el-option>
             </el-select>
         </section>
+
+        <section>
+            <el-row>
+                <el-button>Default</el-button>
+                <el-button size="medium">Medium</el-button>
+                <el-button size="small">Small</el-button>
+                <el-button size="mini">Mini</el-button>
+                </el-row>
+        </section>
+
+        <section>
+            <el-switch v-model="switchValue">
+            </el-switch>
+        </section>
   </div>
 </template>
 
@@ -40,7 +54,8 @@
         input: 'Hello Element UI!',
         selectValue: "",
         selectItems: [1,2,3,4,5],
-        selectMultiValue: []
+        selectMultiValue: [],
+        switchValue: true
       };
     },
   };

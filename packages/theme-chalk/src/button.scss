@@ -20,6 +20,8 @@
   margin: 0;
   transition: .1s;
   font-weight: $--button-font-weight;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0485635);
+
   @include utils-user-select(none);
   & + & {
     margin-left: 10px;

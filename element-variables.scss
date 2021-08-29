@@ -546,14 +546,14 @@ $--button-medium-padding-horizontal: 20px !default;
 
 /// fontSize||Font|1
 $--button-small-font-size: 12px !default;
-$--button-small-border-radius: #{$--border-radius-base - 1} !default;
+$--button-small-border-radius: #{$--border-radius-base} !default;
 /// padding||Spacing|3
 $--button-small-padding-vertical: 9px !default;
 /// padding||Spacing|3
 $--button-small-padding-horizontal: 15px !default;
 /// fontSize||Font|1
 $--button-mini-font-size: 12px !default;
-$--button-mini-border-radius: #{$--border-radius-base - 1} !default;
+$--button-mini-border-radius: #{$--border-radius-base} !default;
 /// padding||Spacing|3
 $--button-mini-padding-vertical: 7px !default;
 /// padding||Spacing|3
@@ -615,9 +615,11 @@ $--cascader-height: 200px !default;
 /* Switch
 -------------------------- */
 /// color||Color|0
-$--switch-on-color: $--color-primary !default;
+$--switch-on-color: map.get(c.$colors, "sky-blue-10") !default;
 /// color||Color|0
 $--switch-off-color: $--border-color-base !default;
+$--switch-circle-color: map.get(c.$colors, "blue-100") !default;
+$--switch-circle-color-disabled: map.get(c.$colors, "cool-gray-40") !default;
 /// fontSize||Font|1
 $--switch-font-size: $--font-size-base !default;
 $--switch-core-border-radius: 10px !default;
