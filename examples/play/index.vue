@@ -32,12 +32,10 @@
         </section>
 
         <section>
-            <el-row>
-                <el-button>Default</el-button>
-                <el-button size="medium">Medium</el-button>
-                <el-button size="small">Small</el-button>
-                <el-button size="mini">Mini</el-button>
-                </el-row>
+            <el-button>Default</el-button>
+            <el-button size="medium">Medium</el-button>
+            <el-button size="small">Small</el-button>
+            <el-button size="mini">Mini</el-button>
         </section>
 
         <section>

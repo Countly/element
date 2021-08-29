@@ -7,7 +7,7 @@
   position: relative;
   font-size: $--switch-font-size;
   line-height: $--switch-height;
-  height: $--switch-height;
+  height: $--switch-height + 5px;
   vertical-align: middle;
   @include when(disabled) {
     & .el-switch__core,

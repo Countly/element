@@ -607,6 +607,8 @@ $--cascader-height: 200px !default;
 $--switch-on-color: $--color-primary !default;
 /// color||Color|0
 $--switch-off-color: $--border-color-base !default;
+$--switch-circle-color: #0166D6;
+$--switch-circle-color-disabled: #A7AEB8;
 /// fontSize||Font|1
 $--switch-font-size: $--font-size-base !default;
 $--switch-core-border-radius: 10px !default;
