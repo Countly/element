@@ -41,6 +41,8 @@ $--color-danger: #D23F00 !default;
 $--color-danger-fill: #FBECE5 !default;
 /// color|1|Functional Color|1
 $--color-info: #909399 !default;
+$--color-blue-100: #0166D6;
+$--color-sky-blue-100: #3F9AFF;
 
 $--color-success-light: mix($--color-white, $--color-success, 80%) !default;
 $--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;

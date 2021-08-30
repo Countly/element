@@ -53,6 +53,7 @@ $--color-info: map.get(c.$colors, "info");
 /// color|1|Functional Color|1
 $--color-action-blue: map.get(c.$colors, "action-blue");
 $--color-blue-100: map.get(c.$colors, "blue-100");
+$--color-sky-blue-100: map.get(c.$colors, "sky-blue-100");
 
 $--color-success-light: mix($--color-white, $--color-success, 80%) !default;
 $--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;
@@ -224,11 +225,11 @@ $--checkbox-bordered-mini-input-width: 12px !default;
 $--checkbox-bordered-mini-height: 28px !default;
 
 /// color||Color|0
-$--checkbox-button-checked-background-color: $--color-primary !default;
+$--checkbox-button-checked-background-color: $--border-color-light-blue !default;
 /// color||Color|0
-$--checkbox-button-checked-font-color: $--color-white !default;
+$--checkbox-button-checked-font-color: $--color-blue-100 !default;
 /// color||Color|0
-$--checkbox-button-checked-border-color: $--color-primary !default;
+$--checkbox-button-checked-border-color: $--color-blue-100 !default;
 
 
 
@@ -290,11 +291,11 @@ $--radio-bordered-mini-height: 28px !default;
 /// fontSize||Font|1
 $--radio-button-font-size: t.$text-button-size !default;
 /// color||Color|0
-$--radio-button-checked-background-color: $--color-primary !default;
+$--radio-button-checked-background-color: $--border-color-light-blue !default;
 /// color||Color|0
-$--radio-button-checked-font-color: $--color-white !default;
+$--radio-button-checked-font-color: $--color-blue-100 !default;
 /// color||Color|0
-$--radio-button-checked-border-color: $--color-primary !default;
+$--radio-button-checked-border-color: $--color-blue-100 !default;
 $--radio-button-disabled-checked-fill: $--border-color-extra-light !default;
 
 /* Select

@@ -50,6 +50,19 @@
         <section>
             <el-radio v-model="radioValue" label="1">Option A</el-radio>
         </section>
+
+        <section>
+            <el-radio-group v-model="radioGroup">
+                <el-radio-button label="New York"></el-radio-button>
+                <el-radio-button label="Washington"></el-radio-button>
+            </el-radio-group>
+        </section>
+
+        <section>
+            <el-checkbox-group v-model="checkboxGroup">
+                <el-checkbox-button v-for="city in cities" :label="city" :key="city">{{city}}</el-checkbox-button>
+            </el-checkbox-group>
+        </section>
   </div>
 </template>
 
@@ -57,13 +70,16 @@
   export default {
     data() {
       return {
+        cities: ['New York', 'Washington', 'London'],
         input: 'Hello Element UI!',
         selectValue: "",
         selectItems: [1,2,3,4,5],
         selectMultiValue: [],
         switchValue: true,
         checkboxValue: true,
-        radioValue: '1'
+        radioValue: '1',
+        radioGroup: 'New York',
+        checkboxGroup: ['New York']
       };
     },
   };
