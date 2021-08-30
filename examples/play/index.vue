@@ -42,6 +42,10 @@
             <el-switch v-model="switchValue">
             </el-switch>
         </section>
+
+        <section>
+            <el-checkbox :indeterminate="false" v-model="checkboxValue">Option</el-checkbox>
+        </section>
   </div>
 </template>
 
@@ -53,7 +57,8 @@
         selectValue: "",
         selectItems: [1,2,3,4,5],
         selectMultiValue: [],
-        switchValue: true
+        switchValue: true,
+        checkboxValue: true
       };
     },
   };
