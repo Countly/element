@@ -83,15 +83,11 @@
     }
 
     &:hover {
-        background-color: $--switch-color-hover;
-        border-color: $--switch-color-hover;
-
         &::after {
-          background-color: $--switch-color-hover;
-          box-shadow: 0px 0px 0px 0px $--switch-color-hover,
+          background-color: $--switch-off-circle-hover-color;
+          box-shadow: 0px 0px 0px 0px $--switch-off-circle-hover-color,
                   0px 0px 0px 1.5px rgb(255 255 255),
-                  0px 0px 0px 3px $--switch-color-hover,
-                  0px 2px 1px 3px mix($--switch-on-circle-color, transparent, 24%);
+                  0px 0px 0px 3px $--switch-off-circle-hover-color;
         }
     }
   }
@@ -100,7 +96,7 @@
     .el-switch__core {
       border-color: $--switch-on-color;
       background-color: $--switch-on-color;
-      box-shadow: inset 0px 1px 3px #9cbce0;
+      box-shadow: inset 0px 1px 3px $--switch-on-inset-color;
 
       &::after {
         left: 100%;
@@ -112,16 +108,11 @@
       }
 
       &:hover {
-        background-color: $--switch-color-hover;
-        border-color: $--switch-color-hover;
-        box-shadow: none;
-
             &::after {
-            background-color: $--switch-color-hover;
-            box-shadow: 0px 0px 0px 0px $--switch-color-hover,
+            background-color: $--switch-on-circle-hover-color;
+            box-shadow: 0px 0px 0px 0px $--switch-on-circle-hover-color,
                     0px 0px 0px 1.5px rgb(255 255 255),
-                    0px 0px 0px 3px $--switch-color-hover,
-                    0px 2px 1px 3px mix($--switch-on-circle-color, transparent, 24%);
+                    0px 0px 0px 3px $--switch-on-circle-hover-color;
             }
         }
     }

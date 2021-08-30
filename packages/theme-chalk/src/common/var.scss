@@ -605,11 +605,13 @@ $--cascader-height: 200px !default;
 -------------------------- */
 /// color||Color|0
 $--switch-on-color: $--color-primary !default;
+$--switch-on-inset-color: #9cbce0 !default;
 /// color||Color|0
 $--switch-off-color: $--border-color-base !default;
-$--switch-on-circle-color: #0166D6;
-$--switch-off-circle-color: #A7AEB8;
-$--switch-color-hover: #E2E4E8;
+$--switch-on-circle-color: #0166D6 !default;
+$--switch-off-circle-color: #A7AEB8 !default;
+$--switch-on-circle-hover-color: #3F9AFF !default;
+$--switch-off-circle-hover-color: #333C48 !default;
 /// fontSize||Font|1
 $--switch-font-size: $--font-size-base !default;
 $--switch-core-border-radius: 10px !default;

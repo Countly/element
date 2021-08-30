@@ -616,11 +616,13 @@ $--cascader-height: 200px !default;
 -------------------------- */
 /// color||Color|0
 $--switch-on-color: map.get(c.$colors, "sky-blue-10") !default;
+$--switch-on-inset-color: map.get(c.$colors, "sky-blue-50");
 /// color||Color|0
 $--switch-off-color: map.get(c.$colors, "cool-gray-20") !default;
-$--switch-on-circle-color: map.get(c.$colors, "blue-100") !default;
-$--switch-off-circle-color: map.get(c.$colors, "cool-gray-40") !default;
-$--switch-color-hover: map.get(c.$colors, "cool-gray-20") !default;
+$--switch-on-circle-color: map.get(c.$colors, "blue-100");
+$--switch-off-circle-color: map.get(c.$colors, "cool-gray-40");
+$--switch-on-circle-hover-color: map.get(c.$colors, "sky-blue-100");
+$--switch-off-circle-hover-color: map.get(c.$colors, "cool-gray-100");
 /// fontSize||Font|1
 $--switch-font-size: $--font-size-base !default;
 $--switch-core-border-radius: 10px !default;
