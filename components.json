@@ -67,5 +67,7 @@
 
   "date-picker": "./packages/date-picker/index.js",
   "time-select": "./packages/time-select/index.js",
-  "time-picker": "./packages/time-picker/index.js"
+  "time-picker": "./packages/time-picker/index.js",
+
+  "alert": "./packages/alert/index.js"
 }

@@ -65,7 +65,7 @@
     cursor: pointer;
     transition: border-color .3s, background-color .3s;
     vertical-align: middle;
-    box-shadow: inset 0px 1px 3px #9cbce0;
+    box-shadow: none;
 
     &:after {
       content: "";
@@ -76,10 +76,23 @@
       transition: all .3s;
       width: $--switch-button-size;
       height: $--switch-button-size;
-      background-color: $--switch-circle-color-disabled;
-      box-shadow: 0px 0px 0px 0px $--switch-circle-color-disabled,
-                    0px 0px 0px 2px rgb(255 255 255),
-                    0px 0px 0px 4px $--switch-circle-color-disabled;
+      background-color: $--switch-off-circle-color;
+      box-shadow: 0px 0px 0px 0px $--switch-off-circle-color,
+                    0px 0px 0px 1.5px rgb(255 255 255),
+                    0px 0px 0px 3px $--switch-off-circle-color;
+    }
+
+    &:hover {
+        background-color: $--switch-color-hover;
+        border-color: $--switch-color-hover;
+
+        &::after {
+          background-color: $--switch-color-hover;
+          box-shadow: 0px 0px 0px 0px $--switch-color-hover,
+                  0px 0px 0px 1.5px rgb(255 255 255),
+                  0px 0px 0px 3px $--switch-color-hover,
+                  0px 2px 1px 3px mix($--switch-on-circle-color, transparent, 24%);
+        }
     }
   }
 
@@ -87,14 +100,30 @@
     .el-switch__core {
       border-color: $--switch-on-color;
       background-color: $--switch-on-color;
+      box-shadow: inset 0px 1px 3px #9cbce0;
+
       &::after {
         left: 100%;
         margin-left: -$--switch-button-size - 1px;
-        background-color: $--switch-circle-color;
-        box-shadow: 0px 0px 0px 0px $--switch-circle-color,
-                    0px 0px 0px 2px rgb(255 255 255),
-                    0px 0px 0px 4px $--switch-circle-color;
+        background-color: $--switch-on-circle-color;
+        box-shadow: 0px 0px 0px 0px $--switch-on-circle-color,
+                    0px 0px 0px 1.5px rgb(255 255 255),
+                    0px 0px 0px 3px $--switch-on-circle-color;
       }
+
+      &:hover {
+        background-color: $--switch-color-hover;
+        border-color: $--switch-color-hover;
+        box-shadow: none;
+
+            &::after {
+            background-color: $--switch-color-hover;
+            box-shadow: 0px 0px 0px 0px $--switch-color-hover,
+                    0px 0px 0px 1.5px rgb(255 255 255),
+                    0px 0px 0px 3px $--switch-color-hover,
+                    0px 2px 1px 3px mix($--switch-on-circle-color, transparent, 24%);
+            }
+        }
     }
   }
 

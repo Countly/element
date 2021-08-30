@@ -607,8 +607,9 @@ $--cascader-height: 200px !default;
 $--switch-on-color: $--color-primary !default;
 /// color||Color|0
 $--switch-off-color: $--border-color-base !default;
-$--switch-circle-color: #0166D6;
-$--switch-circle-color-disabled: #A7AEB8;
+$--switch-on-circle-color: #0166D6;
+$--switch-off-circle-color: #A7AEB8;
+$--switch-color-hover: #E2E4E8;
 /// fontSize||Font|1
 $--switch-font-size: $--font-size-base !default;
 $--switch-core-border-radius: 10px !default;

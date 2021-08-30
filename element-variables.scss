@@ -461,7 +461,7 @@ $--input-max-width: 314px !default;
 $--input-hover-border: $--border-color-hover !default;
 $--input-clear-hover-color: $--color-text-secondary !default;
 
-$--input-focus-border: $--color-primary !default;
+$--input-focus-border: map.get(c.$colors, "sky-blue-10") !default;
 $--input-focus-fill: $--color-white !default;
 
 $--input-disabled-fill: $--disabled-fill-base !default;
@@ -564,7 +564,7 @@ $--button-default-font-color: $--color-text-regular !default;
 /// color||Color|0
 $--button-default-background-color: $--color-white !default;
 /// color||Color|0
-$--button-default-border-color: $--border-color-base !default;
+$--button-default-border-color: map.get(c.$colors, "cool-gray-20") !default;
 
 /// color||Color|0
 $--button-disabled-font-color: $--color-text-placeholder !default;
@@ -617,9 +617,10 @@ $--cascader-height: 200px !default;
 /// color||Color|0
 $--switch-on-color: map.get(c.$colors, "sky-blue-10") !default;
 /// color||Color|0
-$--switch-off-color: $--border-color-base !default;
-$--switch-circle-color: map.get(c.$colors, "blue-100") !default;
-$--switch-circle-color-disabled: map.get(c.$colors, "cool-gray-40") !default;
+$--switch-off-color: map.get(c.$colors, "cool-gray-20") !default;
+$--switch-on-circle-color: map.get(c.$colors, "blue-100") !default;
+$--switch-off-circle-color: map.get(c.$colors, "cool-gray-40") !default;
+$--switch-color-hover: map.get(c.$colors, "cool-gray-20") !default;
 /// fontSize||Font|1
 $--switch-font-size: $--font-size-base !default;
 $--switch-core-border-radius: 10px !default;
