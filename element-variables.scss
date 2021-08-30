@@ -52,6 +52,7 @@ $--color-danger: map.get(c.$colors, "danger");
 $--color-info: map.get(c.$colors, "info");
 /// color|1|Functional Color|1
 $--color-action-blue: map.get(c.$colors, "action-blue");
+$--color-blue-100: map.get(c.$colors, "blue-100");
 
 $--color-success-light: mix($--color-white, $--color-success, 80%) !default;
 $--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;
@@ -94,7 +95,10 @@ $--link-hover-color: $--color-primary !default;
 
 /* Border
 -------------------------- */
+$--border-width-base: 1px !default;
+$--border-style-base: solid !default;
 $--border-color-hover: $--color-text-placeholder !default;
+$--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
 /// borderRadius|1|Radius|0
 $--border-radius-base: 4px !default;
 /// borderRadius|1|Radius|0
@@ -236,36 +240,37 @@ $--radio-font-size: $--font-size-base !default;
 $--radio-font-weight: t.$font-weight-primary !default;
 /// color||Color|0
 $--radio-font-color: $--color-text-regular !default;
-$--radio-input-height: 14px !default;
-$--radio-input-width: 14px !default;
+$--radio-input-height: 16px !default;
+$--radio-input-width: 16px !default;
 /// borderRadius||Border|2
 $--radio-input-border-radius: $--border-radius-circle !default;
 /// color||Color|0
 $--radio-input-background-color: $--color-white !default;
-$--radio-input-border: v.$border-base !default;
+$--radio-input-border: 1px solid map.get(c.$colors, "cool-gray-40") !default;
 /// color||Color|0
 $--radio-input-border-color: $--border-color-base !default;
 /// color||Color|0
 $--radio-icon-color: $--color-white !default;
 
-$--radio-disabled-input-border-color: $--disabled-border-base !default;
-$--radio-disabled-input-fill: $--disabled-fill-base !default;
+$--radio-disabled-input-border-color: $--border-color-lighter;
+$--radio-disabled-input-fill: $--color-white !default;
 $--radio-disabled-icon-color: $--disabled-fill-base !default;
 
-$--radio-disabled-checked-input-border-color: $--disabled-border-base !default;
-$--radio-disabled-checked-input-fill: $--disabled-fill-base !default;
-$--radio-disabled-checked-icon-color: $--color-text-placeholder !default;
+$--radio-disabled-checked-input-border-color: $--border-color-lighter;
+$--radio-disabled-checked-input-fill: $--color-white !default;
+$--radio-disabled-checked-icon-color: $--border-color-lighter;
 
 /// color||Color|0
-$--radio-checked-font-color: $--color-primary !default;
+$--radio-checked-font-color: map.get(c.$colors, "blue-100") !default;
 /// color||Color|0
-$--radio-checked-input-border-color: $--color-primary !default;
+$--radio-checked-input-border-color: map.get(c.$colors, "blue-100") !default;
 /// color||Color|0
 $--radio-checked-input-background-color: $--color-white !default;
 /// color||Color|0
-$--radio-checked-icon-color: $--color-primary !default;
+$--radio-checked-icon-color: map.get(c.$colors, "blue-100") !default;
+$--radio-checked-color-hover: map.get(c.$colors, "sky-blue-100") !default;
 
-$--radio-input-border-color-hover: $--color-primary !default;
+$--radio-input-border-color-hover: map.get(c.$colors, "blue-100") !default;
 
 $--radio-bordered-height: 40px !default;
 $--radio-bordered-padding: 12px 20px 0 10px !default;

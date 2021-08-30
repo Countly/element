@@ -46,6 +46,10 @@
         <section>
             <el-checkbox :indeterminate="false" v-model="checkboxValue">Option</el-checkbox>
         </section>
+
+        <section>
+            <el-radio v-model="radioValue" label="1">Option A</el-radio>
+        </section>
   </div>
 </template>
 
@@ -58,7 +62,8 @@
         selectItems: [1,2,3,4,5],
         selectMultiValue: [],
         switchValue: true,
-        checkboxValue: true
+        checkboxValue: true,
+        radioValue: '1'
       };
     },
   };

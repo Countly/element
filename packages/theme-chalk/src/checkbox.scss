@@ -160,11 +160,6 @@
         background-color: $--checkbox-checked-background-color;
         border-color: $--checkbox-checked-input-border-color;
 
-        &:hover {
-            background-color: $--checkbox-checked-color-hover;
-            border-color: $--checkbox-checked-color-hover;
-        }
-
         &::after {
           transform: rotate(45deg) scaleY(1);
         }
