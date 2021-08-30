@@ -183,13 +183,13 @@ $--checkbox-background-color: $--color-white !default;
 $--checkbox-input-border: 1px solid map.get(c.$colors, "cool-gray-40") !default;
 
 /// color||Color|0
-$--checkbox-disabled-border-color: map.get(c.$colors, "cool-gray-40") !default;
+$--checkbox-disabled-border-color: $--border-color-lighter;
 $--checkbox-disabled-input-fill: $--color-white !default;
-$--checkbox-disabled-icon-color: $--color-text-placeholder !default;
+$--checkbox-disabled-icon-color: $--border-color-lighter !default;
 
 $--checkbox-disabled-checked-input-fill: $--color-white !default;
-$--checkbox-disabled-checked-input-border-color: map.get(c.$colors, "cool-gray-40") !default;
-$--checkbox-disabled-checked-icon-color: $--color-text-placeholder !default;
+$--checkbox-disabled-checked-input-border-color: $--border-color-lighter;
+$--checkbox-disabled-checked-icon-color: $--border-color-lighter !default;
 
 /// color||Color|0
 $--checkbox-checked-font-color: map.get(c.$colors, "blue-100") !default;

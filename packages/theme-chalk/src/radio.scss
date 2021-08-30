@@ -210,15 +210,15 @@
 
   &:hover:not(.is-disabled) {
     &.is-bordered {
-        border-color: $--radio-input-border-color-hover;
+        border-color: $--radio-checked-color-hover;
     }
     .el-radio__inner {
-        border-color: $--radio-input-border-color-hover;
+        border-color: $--radio-checked-color-hover;
         box-shadow: 0px 0px 0px 1px $--border-color-light-blue;
     }
 
     .el-radio__label {
-        color: $--radio-input-border-color-hover;
+        color: $--radio-checked-color-hover;
     }
   }
 }
