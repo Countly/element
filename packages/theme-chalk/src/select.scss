@@ -29,6 +29,7 @@
   .el-input__inner {
     cursor: pointer;
     padding-right: 35px;
+    background-color: $--color-white;
 
     &:focus {
       border-color: $--select-input-focus-border-color;
@@ -156,16 +157,24 @@
     box-sizing: border-box;
     border-color: transparent;
     margin: 2px 0 2px 6px;
-    background-color: #f0f2f5;
+    background-color: #E2E4E8;
+
+    //Following will overwrite the css of tag
+    &.el-tag.el-tag--info {
+        background-color: #E2E4E8;
+        border-color: #E2E4E8;
+        color: #333C48;
+    }
 
     &__close.el-icon-close {
-      background-color: $--color-text-placeholder;
+      background-color: $--color-white;
       right: -7px;
       top: 0;
-      color: $--color-white;
+      color: $--color-text-placeholder;
 
       &:hover {
         background-color: $--color-text-secondary;
+        color: $--color-white;
       }
 
       &::before {
