@@ -2,7 +2,27 @@
   <div style="margin: 20px;">
         <section>
             <h3>Simple el-input</h3>
-            <el-input v-model="input" placeholder="请输入内容"></el-input>
+            <el-input v-model="input" size="medium" placeholder="Text"></el-input>
+            <el-input v-model="input" size="small" placeholder="Text"></el-input>
+            <el-input v-model="input" size="mini" placeholder="Text"></el-input>
+            <el-input
+                size="medium"
+                placeholder="Pick a date"
+                suffix-icon="el-icon-date"
+                v-model="input">
+            </el-input>
+            <el-input
+                size="small"
+                placeholder="Pick a date"
+                suffix-icon="el-icon-date"
+                v-model="input">
+            </el-input>
+            <el-input
+                size="mini"
+                placeholder="Pick a date"
+                suffix-icon="el-icon-date"
+                v-model="input">
+            </el-input>
         </section>
 
         <section>
@@ -12,7 +32,13 @@
 
         <section>
             <h3>Simple el-select</h3>
-            <el-select v-model="selectValue">
+            <el-select size="medium" v-model="selectValue">
+                <el-option v-for="item in selectItems" :key="item" :value="item" :label="item"></el-option>
+            </el-select>
+            <el-select size="small" v-model="selectValue">
+                <el-option v-for="item in selectItems" :key="item" :value="item" :label="item"></el-option>
+            </el-select>
+            <el-select size="mini" v-model="selectValue">
                 <el-option v-for="item in selectItems" :key="item" :value="item" :label="item"></el-option>
             </el-select>
         </section>
