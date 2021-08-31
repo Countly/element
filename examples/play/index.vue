@@ -39,7 +39,7 @@
         </section>
 
         <section>
-            <el-switch v-model="switchValue">
+            <el-switch v-model="switchValue" active-text="Checked">
             </el-switch>
         </section>
 

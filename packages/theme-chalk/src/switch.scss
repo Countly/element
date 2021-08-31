@@ -27,7 +27,7 @@
     color: $--color-text-primary;
 
     @include when(active) {
-      color: $--color-primary;
+      color: $--color-blue-100;
     }
 
     @include m(left) {
@@ -81,15 +81,6 @@
                     0px 0px 0px 1.5px rgb(255 255 255),
                     0px 0px 0px 3px $--switch-off-circle-color;
     }
-
-    &:hover {
-        &::after {
-          background-color: $--switch-off-circle-hover-color;
-          box-shadow: 0px 0px 0px 0px $--switch-off-circle-hover-color,
-                  0px 0px 0px 1.5px rgb(255 255 255),
-                  0px 0px 0px 3px $--switch-off-circle-hover-color;
-        }
-    }
   }
 
   @include when(checked) {
@@ -106,15 +97,6 @@
                     0px 0px 0px 1.5px rgb(255 255 255),
                     0px 0px 0px 3px $--switch-on-circle-color;
       }
-
-      &:hover {
-            &::after {
-            background-color: $--switch-on-circle-hover-color;
-            box-shadow: 0px 0px 0px 0px $--switch-on-circle-hover-color,
-                    0px 0px 0px 1.5px rgb(255 255 255),
-                    0px 0px 0px 3px $--switch-on-circle-hover-color;
-            }
-        }
     }
   }
 
@@ -141,4 +123,30 @@
   & .label-fade-leave-active {
     opacity: 0;
   }
+
+  &.is-checked:hover {
+        .el-switch__core::after {
+            background-color: $--switch-on-circle-hover-color;
+            box-shadow: 0px 0px 0px 0px $--switch-on-circle-hover-color,
+                    0px 0px 0px 1.5px rgb(255 255 255),
+                    0px 0px 0px 3px $--switch-on-circle-hover-color;
+        }
+
+        .el-switch__label {
+            color: $--switch-on-circle-hover-color;
+        }
+    }
+
+    &:hover {
+        .el-switch__core::after {
+          background-color: $--switch-off-circle-hover-color;
+          box-shadow: 0px 0px 0px 0px $--switch-off-circle-hover-color,
+                  0px 0px 0px 1.5px rgb(255 255 255),
+                  0px 0px 0px 3px $--switch-off-circle-hover-color;
+        }
+
+        .el-switch__label {
+            color: $--switch-off-circle-hover-color;
+        }
+    }
 }
