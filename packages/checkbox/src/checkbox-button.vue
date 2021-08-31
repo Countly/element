@@ -6,6 +6,7 @@
         { 'is-disabled': isDisabled },
         { 'is-checked': isChecked },
         { 'is-focus': focus },
+        { 'is-outline': outline }
       ]"
     role="checkbox"
     :aria-checked="isChecked"
@@ -75,7 +76,11 @@
       checked: Boolean,
       name: String,
       trueLabel: [String, Number],
-      falseLabel: [String, Number]
+      falseLabel: [String, Number],
+      outline: {
+        type: Boolean,
+        default: false
+      }
     },
     computed: {
       model: {
