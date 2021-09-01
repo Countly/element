@@ -69,6 +69,51 @@
         </section>
 
         <section>
+            <el-button type="primary">Primary</el-button>
+            <el-button type="primary" size="medium">Medium</el-button>
+            <el-button type="primary" size="small">Small</el-button>
+            <el-button type="primary" size="mini">Mini</el-button>
+        </section>
+
+        <section>
+            <el-button type="secondary">Secondary</el-button>
+            <el-button type="secondary" size="medium">Medium</el-button>
+            <el-button type="secondary" size="small">Small</el-button>
+            <el-button type="secondary" size="mini">Mini</el-button>
+        </section>
+
+        <section>
+            <el-button type="text">Text</el-button>
+            <el-button type="text" size="medium">Medium</el-button>
+            <el-button type="text" size="small">Small</el-button>
+            <el-button type="text" size="mini">Mini</el-button>
+        </section>
+
+        <section>
+            <el-button type="text-plain">Text plain</el-button>
+            <el-button type="text-plain" size="medium">Medium</el-button>
+            <el-button type="text-plain" size="small">Small</el-button>
+            <el-button type="text-plain" size="mini">Mini</el-button>
+        </section>
+
+        <section>
+            <el-button plain>Plain</el-button>
+            <el-button type="primary" plain>Default</el-button>
+            <el-button type="primary" plain size="medium">Medium</el-button>
+            <el-button type="primary" plain size="small">Small</el-button>
+            <el-button type="primary" plain size="mini">Mini</el-button>
+        </section>
+
+        <section>
+            <el-button icon="el-icon-edit"></el-button>
+            <el-button icon="el-icon-edit" size="medium"></el-button>
+            <el-button icon="el-icon-edit" size="small"></el-button>
+            <el-button icon="el-icon-edit" size="mini"></el-button>
+            <el-button icon="el-icon-download" size="mini"></el-button>
+            <el-button type="primary" icon="el-icon-circle-plus">Search</el-button>
+        </section>
+
+        <section>
             <el-switch v-model="switchValue" active-text="Checked">
             </el-switch>
         </section>

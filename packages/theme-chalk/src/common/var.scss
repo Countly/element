@@ -41,8 +41,9 @@ $--color-danger: #D23F00 !default;
 $--color-danger-fill: #FBECE5 !default;
 /// color|1|Functional Color|1
 $--color-info: #909399 !default;
-$--color-blue-100: #0166D6;
-$--color-sky-blue-100: #3F9AFF;
+$--color-blue-100: #0166D6 !default;;
+$--color-sky-blue-100: #3F9AFF !default;;
+$--color-light-blue-100: #E1EFFF !default;
 
 $--color-success-light: mix($--color-white, $--color-success, 80%) !default;
 $--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;
@@ -119,6 +120,8 @@ $--font-size-large: 18px !default;
 $--font-size-medium: 16px !default;
 /// fontSize|1|Font Size|0
 $--font-size-base: 14px !default;
+/// fontSize|1|Font Size|0
+$--font-size-small-medium: 13px !default;
 /// fontSize|1|Font Size|0
 $--font-size-small: 13px !default;
 /// fontSize|1|Font Size|0
@@ -573,6 +576,18 @@ $--button-primary-border-color: $--color-primary !default;
 $--button-primary-font-color: $--color-white !default;
 /// color||Color|0
 $--button-primary-background-color: $--color-primary !default;
+/// color||Color|0
+$--button-secondary-border-color: $--color-primary !default;
+/// color||Color|0
+$--button-secondary-font-color: $--color-white !default;
+/// color||Color|0
+$--button-secondary-background-color: $--color-primary !default;
+/// color||Color|0
+$--button-text-border-color: transparent !default;;
+/// color||Color|0
+$--button-text-font-color: $--color-black !default;;
+/// color||Color|0
+$--button-text-background-color: transparent !default;;
 /// color||Color|0
 $--button-success-border-color: $--color-success !default;
 /// color||Color|0

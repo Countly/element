@@ -56,6 +56,7 @@ $--color-info: map.get(c.$colors, "info");
 $--color-action-blue: map.get(c.$colors, "action-blue");
 $--color-blue-100: map.get(c.$colors, "blue-100");
 $--color-sky-blue-100: map.get(c.$colors, "sky-blue-100");
+$--color-light-blue-100: map.get(c.$colors, "light-blue-100");
 
 $--color-success-light: mix($--color-white, $--color-success, 80%) !default;
 $--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;
@@ -135,6 +136,8 @@ $--font-size-large: t.$text-xl-size !default;
 $--font-size-medium: t.$text-lg-size !default;
 /// fontSize|1|Font Size|0
 $--font-size-base: t.$text-md-size !default;
+/// fontSize|1|Font Size|0
+$--font-size-small-medium: t.$text-smd-size !default;
 /// fontSize|1|Font Size|0
 $--font-size-small: t.$text-sm-size !default;
 /// fontSize|1|Font Size|0
@@ -535,66 +538,78 @@ $--tab-vertical-header-count-fill: $--color-text-secondary !default;
 /* Button
 -------------------------- */
 /// fontSize||Font|1
-$--button-font-size: $--font-size-base !default;
+$--button-font-size: t.$text-md-size !default;
 /// fontWeight||Font|1
-$--button-font-weight: t.$font-weight-primary !default;
+$--button-font-weight: t.$font-weight-text !default;
 /// borderRadius||Border|2
 $--button-border-radius: $--border-radius-base !default;
 /// padding||Spacing|3
-$--button-padding-vertical: 12px !default;
+$--button-padding-vertical: 8px !default;
 /// padding||Spacing|3
-$--button-padding-horizontal: 20px !default;
+$--button-padding-horizontal: 12px !default;
 
 /// fontSize||Font|1
-$--button-medium-font-size: $--font-size-base !default;
+$--button-medium-font-size: t.$text-md-size !default;
 /// borderRadius||Border|2
 $--button-medium-border-radius: $--border-radius-base !default;
 /// padding||Spacing|3
-$--button-medium-padding-vertical: 10px !default;
+$--button-medium-padding-vertical: 12px !default;
 /// padding||Spacing|3
-$--button-medium-padding-horizontal: 20px !default;
+$--button-medium-padding-horizontal: 12px !default;
 
 /// fontSize||Font|1
-$--button-small-font-size: 12px !default;
+$--button-small-font-size: t.$text-md-size !default;
 $--button-small-border-radius: #{$--border-radius-base} !default;
 /// padding||Spacing|3
-$--button-small-padding-vertical: 9px !default;
+$--button-small-padding-vertical: 8px !default;
 /// padding||Spacing|3
-$--button-small-padding-horizontal: 15px !default;
+$--button-small-padding-horizontal: 12px !default;
 /// fontSize||Font|1
-$--button-mini-font-size: 12px !default;
+$--button-mini-font-size: t.$text-md-size !default;
 $--button-mini-border-radius: #{$--border-radius-base} !default;
 /// padding||Spacing|3
-$--button-mini-padding-vertical: 7px !default;
+$--button-mini-padding-vertical: 6px !default;
 /// padding||Spacing|3
-$--button-mini-padding-horizontal: 15px !default;
+$--button-mini-padding-horizontal: 12px !default;
 
 /// color||Color|0
-$--button-default-font-color: $--color-text-regular !default;
+$--button-default-font-color: map.get(c.$colors, "cool-gray-100") !default;
 /// color||Color|0
 $--button-default-background-color: $--color-white !default;
 /// color||Color|0
 $--button-default-border-color: map.get(c.$colors, "cool-gray-20") !default;
 
 /// color||Color|0
-$--button-disabled-font-color: $--color-text-placeholder !default;
+$--button-disabled-font-color: map.get(c.$colors, "cool-gray-40") !default;
 /// color||Color|0
-$--button-disabled-background-color: $--color-white !default;
+$--button-disabled-background-color: map.get(c.$colors, "warm-gray-20") !default;
 /// color||Color|0
-$--button-disabled-border-color: $--border-color-lighter !default;
+$--button-disabled-border-color: map.get(c.$colors, "cool-gray-20") !default;
 
 /// color||Color|0
-$--button-primary-border-color: $--color-primary !default;
+$--button-primary-border-color: map.get(c.$colors, "green-80") !default;
 /// color||Color|0
 $--button-primary-font-color: $--color-white !default;
 /// color||Color|0
-$--button-primary-background-color: $--color-primary !default;
+$--button-primary-background-color: map.get(c.$colors, "green-80") !default;
 /// color||Color|0
-$--button-success-border-color: $--color-success !default;
+$--button-secondary-border-color: map.get(c.$colors, "warm-gray-20");
+/// color||Color|0
+$--button-secondary-font-color: map.get(c.$colors, "cool-gray-100");
+/// color||Color|0
+$--button-secondary-background-color: map.get(c.$colors, "warm-gray-20");
+/// color||Color|0
+$--button-text-border-color: transparent;
+/// color||Color|0
+$--button-text-font-color: map.get(c.$colors, "cool-gray-100");
+/// color||Color|0
+$--button-text-background-color: transparent;
+/// color||Color|0
+$--button-success-border-color: map.get(c.$colors, "green-80") !default;
 /// color||Color|0
 $--button-success-font-color: $--color-white !default;
 /// color||Color|0
-$--button-success-background-color: $--color-success !default;
+$--button-success-background-color: map.get(c.$colors, "green-80") !default;
 /// color||Color|0
 $--button-warning-border-color: $--color-warning !default;
 /// color||Color|0
@@ -614,7 +629,7 @@ $--button-info-font-color: $--color-white !default;
 /// color||Color|0
 $--button-info-background-color: $--color-info !default;
 
-$--button-hover-tint-percent: 20% !default;
+$--button-hover-tint-percent: 10% !default;
 $--button-active-shade-percent: 10% !default;
 
 
