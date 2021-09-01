@@ -6,7 +6,7 @@
         { 'is-disabled': isDisabled },
         { 'is-checked': isChecked },
         { 'is-focus': focus },
-        { 'is-outline': outline }
+        { 'is-plain': plain }
       ]"
     role="checkbox"
     :aria-checked="isChecked"
@@ -76,11 +76,7 @@
       checked: Boolean,
       name: String,
       trueLabel: [String, Number],
-      falseLabel: [String, Number],
-      outline: {
-        type: Boolean,
-        default: false
-      }
+      falseLabel: [String, Number]
     },
     computed: {
       model: {
@@ -135,6 +131,10 @@
 
       store() {
         return this._checkboxGroup ? this._checkboxGroup.value : this.value;
+      },
+
+      plain() {
+        return this._checkboxGroup ? this._checkboxGroup.plain : false;
       },
 
       activeStyle() {

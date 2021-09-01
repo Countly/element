@@ -52,6 +52,7 @@ import DatePicker from '../packages/date-picker/index.js';
 import TimeSelect from '../packages/time-select/index.js';
 import TimePicker from '../packages/time-picker/index.js';
 import Alert from '../packages/alert/index.js';
+import Slider from '../packages/slider/index.js';
 import locale from 'element-ui/src/locale';
 import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
 import Clickoutside from 'element-ui/src/utils/clickoutside';
@@ -109,6 +110,7 @@ const components = [
   TimeSelect,
   TimePicker,
   Alert,
+  Slider,
   CollapseTransition
 ];
 
@@ -205,5 +207,6 @@ export default {
   DatePicker,
   TimeSelect,
   TimePicker,
-  Alert
+  Alert,
+  Slider
 };

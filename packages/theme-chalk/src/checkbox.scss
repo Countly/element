@@ -328,7 +328,7 @@
       border-left-color: $--checkbox-button-checked-border-color;
     }
 
-    &.is-outline {
+    &.is-plain {
         .el-checkbox-button__inner {
             color: $--color-blue-100;
             background-color: $--border-color-light-blue;

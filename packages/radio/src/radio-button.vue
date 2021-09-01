@@ -26,7 +26,7 @@
       @blur="focus = false"
     >
     <span
-      :class="['el-radio-button__inner', {'el-radio-button__inner--outline': outline}]"
+      :class="['el-radio-button__inner', {'el-radio-button__inner--plain': plain}]"
       :style="value === label ? activeStyle : null"
       @keydown.stop>
       <slot></slot>
@@ -54,11 +54,7 @@
     props: {
       label: {},
       disabled: Boolean,
-      name: String,
-      outline: {
-        type: Boolean,
-        default: false
-      }
+      name: String
     },
     data() {
       return {
@@ -84,6 +80,9 @@
           }
         }
         return false;
+      },
+      plain() {
+        return this._radioGroup ? this._radioGroup.plain : false;
       },
       activeStyle() {
         return {
