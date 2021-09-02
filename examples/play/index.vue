@@ -8,18 +8,21 @@
             <el-input v-model="elInput" size="mini" placeholder="Text"></el-input>
             <el-input
                 size="medium"
+                prefix-icon="el-icon-search"
                 placeholder="Pick a date"
                 suffix-icon="el-icon-date"
                 v-model="elInput">
             </el-input>
             <el-input
                 size="small"
+                prefix-icon="el-icon-search"
                 placeholder="Pick a date"
                 suffix-icon="el-icon-date"
                 v-model="elInput">
             </el-input>
             <el-input
                 size="mini"
+                prefix-icon="el-icon-search"
                 placeholder="Pick a date"
                 suffix-icon="el-icon-date"
                 v-model="elInput">

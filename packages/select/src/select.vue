@@ -98,7 +98,7 @@
         <slot name="prefix"></slot>
       </template>
       <template slot="suffix">
-        <i v-show="!showClose" :class="['el-select__caret', 'el-input__icon', 'el-icon-' + iconClass]"></i>
+        <i v-show="!showClose" :class="['el-select__caret', 'cly-icon-input', iconClass]"></i>
         <i v-if="showClose" class="el-select__caret el-input__icon el-icon-circle-close" @click="handleClearClick"></i>
       </template>
     </component>
@@ -201,7 +201,7 @@
       },
 
       iconClass() {
-        return this.remote && this.filterable ? '' : (this.visible ? 'arrow-up is-reverse' : 'arrow-up');
+        return this.remote && this.filterable ? '' : (this.visible ? 'cly-icon-arrow-up is-reverse' : 'cly-icon-arrow-up');
       },
 
       debounce() {

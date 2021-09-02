@@ -168,10 +168,16 @@
     color: $--input-icon-color;
     transition: all .3s;
     pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   @include e(suffix-inner) {
     pointer-events: all;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   @include e(prefix) {
@@ -182,6 +188,9 @@
     text-align: center;
     color: $--input-icon-color;
     transition: all .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   @include e(icon) {
