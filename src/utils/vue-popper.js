@@ -159,7 +159,7 @@ export default {
 
     appendArrow(element) {
       let hash;
-      if (this.appended) {
+      if (this.appended || this.noPopperArrow) {
         return;
       }
 

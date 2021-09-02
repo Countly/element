@@ -24,6 +24,8 @@
                 suffix-icon="el-icon-date"
                 v-model="elInput">
             </el-input>
+
+            <el-input v-model="elInput" placeholder="Text" type="textarea"></el-input>
         </section>
 
         <section>
@@ -51,6 +53,13 @@
             <h3>Auto resizable and borderless el-select (uses el-pseudo-input)</h3>
             <el-select v-model="elSelectValue" :autoResize="true" :borderless="true">
                 <el-option v-for="item in elSelectItems" :key="item" :value="item" :label="item"></el-option>
+            </el-select>
+        </section>
+
+        <section>
+            <h3>El-select empty</h3>
+            <el-select v-model="elSelectValue">
+                <el-option v-for="item in []" :key="item" :value="item" :label="item"></el-option>
             </el-select>
         </section>
 
@@ -168,7 +177,7 @@
         elCities: ['New York', 'Washington', 'London'],
         elInput: 'Hello Element UI!',
         elSelectValue: "",
-        elSelectItems: [1,2,3,4,5],
+        elSelectItems: ["Hello", "How are", "Ok bye"],
         elSelectMultiValue: [],
         elSwitchValue: true,
         elCheckboxValue: true,

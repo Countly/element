@@ -47,7 +47,8 @@
 
     data() {
       return {
-        minWidth: ''
+        minWidth: '',
+        noPopperArrow: true
       };
     },
 

@@ -325,7 +325,7 @@ $--select-option-disabled-background: $--color-white !default;
 $--select-option-height: 34px !default;
 $--select-option-hover-background: map.get(c.$colors, "warm-gray-20") !default;
 /// color||Color|0
-$--select-option-selected-font-color: $--color-primary !default;
+$--select-option-selected-font-color: $--color-white !default;
 $--select-option-selected-hover: $--background-color-base !default;
 
 $--select-group-color: $--color-info !default;
@@ -337,9 +337,9 @@ $--select-dropdown-shadow: $--box-shadow-light !default;
 $--select-dropdown-empty-color: #999 !default;
 /// height||Other|4
 $--select-dropdown-max-height: 274px !default;
-$--select-dropdown-padding: 6px 0 !default;
+$--select-dropdown-padding: 0px 0 !default;
 $--select-dropdown-empty-padding: 10px 0 !default;
-$--select-dropdown-border: solid 1px $--border-color-light !default;
+$--select-dropdown-border: solid 1px map.get(c.$colors, "cool-gray-40") !default;
 
 /* Alert
 -------------------------- */

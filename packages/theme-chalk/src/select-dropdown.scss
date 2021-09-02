@@ -8,17 +8,17 @@
   border: $--select-dropdown-border;
   border-radius: $--border-radius-base;
   background-color: $--select-dropdown-background;
-  box-shadow: $--select-dropdown-shadow;
+//   box-shadow: $--select-dropdown-shadow;
   box-sizing: border-box;
   margin: 5px 0;
 
   @include when(multiple) {
     & .el-select-dropdown__item.selected {
       color: $--select-option-selected-font-color;
-      background-color: $--select-dropdown-background;
+      background-color: $--color-blue-100;
 
       &.hover {
-        background-color: $--select-option-hover-background;
+        // background-color: $--select-option-hover-background;
       }
 
       &::after {
