@@ -123,15 +123,15 @@
     border-radius: 50%;
     padding: $--button-padding-vertical;
   }
-  @include m(primary) {
-    @include button-variant($--button-primary-font-color, $--button-primary-background-color, $--button-primary-border-color);
-  }
-  @include m(secondary) {
-    @include button-variant($--button-secondary-font-color, $--button-secondary-background-color, $--button-secondary-border-color);
-  }
-  @include m(success) {
-    @include button-variant($--button-success-font-color, $--button-success-background-color, $--button-success-border-color);
-  }
+//   @include m(primary) {
+//     @include button-variant($--button-primary-font-color, $--button-primary-background-color, $--button-primary-border-color);
+//   }
+//   @include m(secondary) {
+//     @include button-variant($--button-secondary-font-color, $--button-secondary-background-color, $--button-secondary-border-color);
+//   }
+//   @include m(success) {
+//     @include button-variant($--button-success-font-color, $--button-success-background-color, $--button-success-border-color);
+//   }
   @include m(warning) {
     @include button-variant($--button-warning-font-color, $--button-warning-background-color, $--button-warning-border-color);
   }
@@ -159,6 +159,130 @@
       padding: $--button-mini-padding-vertical;
     }
   }
+  @include m(primary) {
+    color: $--button-primary-font-color;
+    background-color: $--button-primary-background-color;
+    border-color: $--button-primary-border-color;
+
+    &:hover,
+    &:focus {
+      background: $--button-primary-hover-color;
+      border-color: $--button-primary-hover-color;
+      color: $--button-primary-font-color;
+    }
+
+    &:active {
+      background: $--button-primary-hover-color;
+      border-color: $--button-primary-hover-color;
+      color: $--button-primary-font-color;
+      outline: none;
+    }
+
+    &.is-active {
+      background: $--button-primary-hover-color;
+      border-color: $--button-primary-hover-color;
+      color: $--button-primary-font-color;
+    }
+
+    &.is-disabled {
+      &,
+      &:hover,
+      &:focus,
+      &:active {
+        color: $--color-white;
+        background: $--button-primary-background-color;
+        border-color: $--button-primary-border-color;
+        opacity: .5;
+      }
+    }
+
+    &.is-plain {
+      @include button-plain($--button-primary-background-color);
+    }
+  }
+  @include m(success) {
+    color: $--button-success-font-color;
+    background-color: $--button-success-background-color;
+    border-color: $--button-success-border-color;
+
+    &:hover,
+    &:focus {
+      background: $--button-success-hover-color;
+      border-color: $--button-success-hover-color;
+      color: $--button-success-font-color;
+    }
+
+    &:active {
+      background: $--button-success-hover-color;
+      border-color: $--button-success-hover-color;
+      color: $--button-success-font-color;
+      outline: none;
+    }
+
+    &.is-active {
+      background: $--button-success-hover-color;
+      border-color: $--button-success-hover-color;
+      color: $--button-success-font-color;
+    }
+
+    &.is-disabled {
+      &,
+      &:hover,
+      &:focus,
+      &:active {
+        color: $--color-white;
+        background: $--button-success-background-color;
+        border-color: $--button-success-border-color;
+        opacity: .5;
+      }
+    }
+
+    &.is-plain {
+      @include button-plain($--button-success-background-color);
+    }
+  }
+  @include m(secondary) {
+    color: $--button-secondary-font-color;
+    background-color: $--button-secondary-background-color;
+    border-color: $--button-secondary-border-color;
+
+    &:hover,
+    &:focus {
+      background: $--button-secondary-hover-color;
+      border-color: $--button-secondary-hover-color;
+      color: $--button-secondary-font-color;
+    }
+
+    &:active {
+      background: $--button-secondary-hover-color;
+      border-color: $--button-secondary-hover-color;
+      color: $--button-secondary-font-color;
+      outline: none;
+    }
+
+    &.is-active {
+      background: $--button-secondary-hover-color;
+      border-color: $--button-secondary-hover-color;
+      color: $--button-secondary-font-color;
+    }
+
+    &.is-disabled {
+      &,
+      &:hover,
+      &:focus,
+      &:active {
+        color: $--color-white;
+        background: $--button-secondary-background-color;
+        border-color: $--button-secondary-border-color;
+        opacity: .5;
+      }
+    }
+
+    &.is-plain {
+      @include button-plain($--button-secondary-background-color);
+    }
+  }
+
   @include m(text) {
     border-color: transparent;
     color: $--button-default-font-color;
@@ -197,43 +321,23 @@
     &.el-button--mini {
         font-size: $--font-size-small;
     }
-  }
 
-  @include m(text-plain) {
-    border-color: transparent;
-    color: $--button-default-font-color;
-    background: transparent;
-    box-shadow: none;
-    border: none;
+    @include when(plain) {
+        background: transparent;
+        box-shadow: none;
+        border: none;
 
-    &:hover,
-    &:focus {
-      color: $--color-blue-100;
-      border-color: transparent;
-      background-color: transparent;
-    }
-    &:active {
-      color: $--color-blue-100;
-      border-color: transparent;
-      background-color: transparent;
-    }
-
-    &.is-disabled,
-    &.is-disabled:hover,
-    &.is-disabled:focus {
-      border-color: transparent;
-      background-color: transparent;
-      color: $--color-text-secondary;
-    }
-
-    &.el-button--medium {
-        font-size: $--font-size-base;
-    }
-    &.el-button--small {
-        font-size: $--font-size-small-medium;
-    }
-    &.el-button--mini {
-        font-size: $--font-size-small;
+        &:hover,
+        &:focus {
+            color: $--color-blue-100;
+            border-color: transparent;
+            background-color: transparent;
+        }
+        &:active {
+            color: $--color-blue-100;
+            border-color: transparent;
+            background-color: transparent;
+        }
     }
   }
 }

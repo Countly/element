@@ -593,11 +593,15 @@ $--button-primary-font-color: $--color-white !default;
 /// color||Color|0
 $--button-primary-background-color: map.get(c.$colors, "green-80") !default;
 /// color||Color|0
+$--button-primary-hover-color: map.get(c.$colors, "green-100");
+/// color||Color|0
 $--button-secondary-border-color: map.get(c.$colors, "warm-gray-20");
 /// color||Color|0
 $--button-secondary-font-color: map.get(c.$colors, "cool-gray-100");
 /// color||Color|0
 $--button-secondary-background-color: map.get(c.$colors, "warm-gray-20");
+/// color||Color|0
+$--button-secondary-hover-color: map.get(c.$colors, "warm-gray-30");
 /// color||Color|0
 $--button-text-border-color: transparent;
 /// color||Color|0
@@ -610,6 +614,8 @@ $--button-success-border-color: map.get(c.$colors, "green-80") !default;
 $--button-success-font-color: $--color-white !default;
 /// color||Color|0
 $--button-success-background-color: map.get(c.$colors, "green-80") !default;
+/// color||Color|0
+$--button-success-hover-color: map.get(c.$colors, "green-100");
 /// color||Color|0
 $--button-warning-border-color: $--color-warning !default;
 /// color||Color|0

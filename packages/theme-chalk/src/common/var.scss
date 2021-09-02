@@ -577,11 +577,15 @@ $--button-primary-font-color: $--color-white !default;
 /// color||Color|0
 $--button-primary-background-color: $--color-primary !default;
 /// color||Color|0
+$--button-primary-hover-color: #10A14A !default;
+/// color||Color|0
 $--button-secondary-border-color: $--color-primary !default;
 /// color||Color|0
 $--button-secondary-font-color: $--color-white !default;
 /// color||Color|0
 $--button-secondary-background-color: $--color-primary !default;
+/// color||Color|0
+$--button-secondary-hover-color: #ECECEC !default;
 /// color||Color|0
 $--button-text-border-color: transparent !default;;
 /// color||Color|0
@@ -594,6 +598,8 @@ $--button-success-border-color: $--color-success !default;
 $--button-success-font-color: $--color-white !default;
 /// color||Color|0
 $--button-success-background-color: $--color-success !default;
+/// color||Color|0
+$--button-success-hover-color: #10A14A !default;
 /// color||Color|0
 $--button-warning-border-color: $--color-warning !default;
 /// color||Color|0

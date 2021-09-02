@@ -76,6 +76,13 @@
         </section>
 
         <section>
+            <el-button type="success">Success</el-button>
+            <el-button type="success" size="medium">Medium</el-button>
+            <el-button type="success" size="small">Small</el-button>
+            <el-button type="success" size="mini">Mini</el-button>
+        </section>
+
+        <section>
             <el-button type="secondary">Secondary</el-button>
             <el-button type="secondary" size="medium">Medium</el-button>
             <el-button type="secondary" size="small">Small</el-button>
@@ -90,10 +97,10 @@
         </section>
 
         <section>
-            <el-button type="text-plain">Text plain</el-button>
-            <el-button type="text-plain" size="medium">Medium</el-button>
-            <el-button type="text-plain" size="small">Small</el-button>
-            <el-button type="text-plain" size="mini">Mini</el-button>
+            <el-button type="text" plain>Text plain</el-button>
+            <el-button type="text" size="medium" plain>Medium</el-button>
+            <el-button type="text" size="small" plain>Small</el-button>
+            <el-button type="text" size="mini" plain>Mini</el-button>
         </section>
 
         <section>
