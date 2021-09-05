@@ -74,6 +74,7 @@
         </section>
 
         <section>
+            <h3>Default Buttons</h3>
             <el-button>Default</el-button>
             <el-button size="medium">Medium</el-button>
             <el-button size="small">Small</el-button>
@@ -81,27 +82,23 @@
         </section>
 
         <section>
-            <el-button type="primary">Primary</el-button>
-            <el-button type="primary" size="medium">Medium</el-button>
-            <el-button type="primary" size="small">Small</el-button>
-            <el-button type="primary" size="mini">Mini</el-button>
-        </section>
-
-        <section>
-            <el-button type="success">Success</el-button>
+            <h3>Success Buttons</h3>
+            <el-button type="success">Default</el-button>
             <el-button type="success" size="medium">Medium</el-button>
             <el-button type="success" size="small">Small</el-button>
             <el-button type="success" size="mini">Mini</el-button>
         </section>
 
         <section>
-            <el-button type="secondary">Secondary</el-button>
+            <h3>Secondary Buttons</h3>
+            <el-button type="secondary">Default</el-button>
             <el-button type="secondary" size="medium">Medium</el-button>
             <el-button type="secondary" size="small">Small</el-button>
             <el-button type="secondary" size="mini">Mini</el-button>
         </section>
 
         <section>
+            <h3>Text Buttons type - filled</h3>
             <el-button type="text">Text</el-button>
             <el-button type="text" size="medium">Medium</el-button>
             <el-button type="text" size="small">Small</el-button>
@@ -109,43 +106,58 @@
         </section>
 
         <section>
-            <el-button type="text" plain>Text plain</el-button>
+            <h3>Text Buttons type - plain</h3>
+            <el-button type="text" plain>Default</el-button>
             <el-button type="text" size="medium" plain>Medium</el-button>
             <el-button type="text" size="small" plain>Small</el-button>
             <el-button type="text" size="mini" plain>Mini</el-button>
         </section>
 
-        <section>
+        <!-- <section>
             <el-button plain>Plain</el-button>
-            <el-button type="primary" plain>Default</el-button>
-            <el-button type="primary" plain size="medium">Medium</el-button>
-            <el-button type="primary" plain size="small">Small</el-button>
-            <el-button type="primary" plain size="mini">Mini</el-button>
-        </section>
+            <el-button type="success" plain>Default</el-button>
+            <el-button type="success" plain size="medium">Medium</el-button>
+            <el-button type="success" plain size="small">Small</el-button>
+            <el-button type="success" plain size="mini">Mini</el-button>
+        </section> -->
 
         <section>
+            <h3>Icon buttons</h3>
             <el-button icon="el-icon-edit"></el-button>
             <el-button icon="el-icon-edit" size="medium"></el-button>
             <el-button icon="el-icon-edit" size="small"></el-button>
             <el-button icon="el-icon-edit" size="mini"></el-button>
             <el-button icon="el-icon-download" size="mini"></el-button>
-            <el-button type="primary" icon="el-icon-circle-plus">Search</el-button>
+            <el-button type="success" icon="el-icon-circle-plus">Search</el-button>
         </section>
 
         <section>
+            <el-button-group>
+                <h3>Button groups</h3>
+                <el-button type="primary">Previous Page</el-button>
+                <el-button type="primary">Next Page</el-button>
+            </el-button-group>
+        </section>
+
+        <section>
+            <h3>Switch</h3>
             <el-switch v-model="elSwitchValue" active-text="Checked">
             </el-switch>
         </section>
 
         <section>
-            <el-checkbox :indeterminate="false" v-model="elCheckboxValue">Option</el-checkbox>
+            <h3>Checkbox</h3>
+            <el-checkbox v-model="elCheckboxValue">Option</el-checkbox>
         </section>
 
         <section>
+            <h3>Radio</h3>
             <el-radio v-model="elRadioValue" label="1">Option A</el-radio>
+            <el-radio v-model="elRadioValue" label="2">Option B</el-radio>
         </section>
 
         <section>
+            <h3>Radio group - filled</h3>
             <el-radio-group v-model="elRadioGroup">
                 <el-radio-button label="New York"></el-radio-button>
                 <el-radio-button label="Washington"></el-radio-button>
@@ -153,6 +165,7 @@
         </section>
 
         <section>
+            <h3>Radio group - plain</h3>
             <el-radio-group :plain="true" v-model="elRadioGroup">
                 <el-radio-button label="New York"></el-radio-button>
                 <el-radio-button label="Washington"></el-radio-button>
@@ -160,12 +173,14 @@
         </section>
 
         <section>
+            <h3>Checkbox group - filled</h3>
             <el-checkbox-group v-model="elCheckboxGroup">
                 <el-checkbox-button v-for="city in elCities" :label="city" :key="city">{{city}}</el-checkbox-button>
             </el-checkbox-group>
         </section>
 
         <section>
+            <h3>Checkbox group - plain</h3>
             <el-checkbox-group v-model="elCheckboxGroup" :plain="true">
                 <el-checkbox-button v-for="city in elCities" :label="city" :key="city">{{city}}</el-checkbox-button>
             </el-checkbox-group>
@@ -180,13 +195,13 @@
         elCities: ['New York', 'Washington', 'London'],
         elInput: 'Hello Element UI!',
         elSelectValue: "",
-        elSelectItems: ["Hello", "How are", "Ok bye"],
+        elSelectItems: ["Hello", "How are you?", "Ok bye"],
         elSelectMultiValue: [],
         elSwitchValue: true,
         elCheckboxValue: true,
         elRadioValue: '1',
         elRadioGroup: 'New York',
-        elCheckboxGroup: ['New York']
+        elCheckboxGroup: ['New York', 'London']
       };
     },
   };

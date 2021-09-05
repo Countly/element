@@ -123,9 +123,9 @@
     border-radius: 50%;
     padding: $--button-padding-vertical;
   }
-//   @include m(primary) {
-//     @include button-variant($--button-primary-font-color, $--button-primary-background-color, $--button-primary-border-color);
-//   }
+  @include m(primary) {
+    @include button-variant($--button-primary-font-color, $--button-primary-background-color, $--button-primary-border-color);
+  }
 //   @include m(secondary) {
 //     @include button-variant($--button-secondary-font-color, $--button-secondary-background-color, $--button-secondary-border-color);
 //   }
@@ -157,47 +157,6 @@
     @include button-size($--button-mini-padding-vertical, $--button-mini-padding-horizontal, $--button-mini-font-size, $--button-mini-border-radius);
     @include when(circle) {
       padding: $--button-mini-padding-vertical;
-    }
-  }
-  @include m(primary) {
-    color: $--button-primary-font-color;
-    background-color: $--button-primary-background-color;
-    border-color: $--button-primary-border-color;
-
-    &:hover,
-    &:focus {
-      background: $--button-primary-hover-color;
-      border-color: $--button-primary-hover-color;
-      color: $--button-primary-font-color;
-    }
-
-    &:active {
-      background: $--button-primary-hover-color;
-      border-color: $--button-primary-hover-color;
-      color: $--button-primary-font-color;
-      outline: none;
-    }
-
-    &.is-active {
-      background: $--button-primary-hover-color;
-      border-color: $--button-primary-hover-color;
-      color: $--button-primary-font-color;
-    }
-
-    &.is-disabled {
-      &,
-      &:hover,
-      &:focus,
-      &:active {
-        color: $--color-white;
-        background: $--button-primary-background-color;
-        border-color: $--button-primary-border-color;
-        opacity: .5;
-      }
-    }
-
-    &.is-plain {
-      @include button-plain($--button-primary-background-color);
     }
   }
   @include m(success) {
