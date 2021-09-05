@@ -50,7 +50,7 @@
         @blur="handleBlur"
         @change="handleChange"
         :aria-label="label"
-        >{{value}}</span>
+        >{{textLength ? value : placeholderValue}}</span>
       <!-- 前置内容 -->
       <span class="el-input__prefix" v-if="$slots.prefix || prefixIcon">
         <slot name="prefix"></slot>
@@ -122,6 +122,7 @@
 <script>
   import emitter from 'element-ui/src/mixins/emitter';
   import Migrating from 'element-ui/src/mixins/migrating';
+  import Locale from 'element-ui/src/mixins/locale';
   import calcTextareaHeight from './calcTextareaHeight';
   import merge from 'element-ui/src/utils/merge';
   import {isKorean} from 'element-ui/src/utils/shared';
@@ -131,7 +132,7 @@
 
     componentName: 'ElPseudoInput',
 
-    mixins: [emitter, Migrating],
+    mixins: [emitter, Migrating, Locale],
 
     inheritAttrs: false,
 
@@ -205,6 +206,9 @@
       borderless: {
         type: Boolean,
         default: false
+      },
+      placeholder: {
+        type: String
       }
     },
 
@@ -280,6 +284,9 @@
           cl.push('el-input__inner--no-boder');
         }
         return cl;
+      },
+      placeholderValue: function() {
+        return typeof this.placeholder !== 'undefined' ? this.placeholder : this.t('el.select.placeholder');
       }
     },
 
