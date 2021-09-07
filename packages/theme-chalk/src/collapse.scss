@@ -33,6 +33,23 @@
       @include when(active) {
         transform: rotate(90deg);
       }
+
+      @include m(left) {
+        margin: 0px 8px 0px 0px;
+      }
+
+      &.ion-arrow-down-b,
+      &.ion-arrow-up-b {
+        @include when(active) {
+            transform: rotate(180deg);
+        }
+      }
+
+      &.ion-arrow-left-b {
+        @include when(active) {
+            transform: rotate(-90deg);
+        }
+      }
     }
     &.focusing:focus:not(:hover){
       color: $--color-primary;

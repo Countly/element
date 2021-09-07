@@ -132,8 +132,8 @@
         </section>
 
         <section>
+            <h3>Button groups</h3>
             <el-button-group>
-                <h3>Button groups</h3>
                 <el-button type="primary">Previous Page</el-button>
                 <el-button type="primary">Next Page</el-button>
             </el-button-group>
@@ -185,6 +185,28 @@
                 <el-checkbox-button v-for="city in elCities" :label="city" :key="city">{{city}}</el-checkbox-button>
             </el-checkbox-group>
         </section>
+
+        <section>
+            <el-collapse v-model="elActiveNames">
+                <el-collapse-item title="Consistency" name="1">
+                    <div>Consistent with real life: in line with the process and logic of real life, and comply with languages and habits that the users are used to;</div>
+                    <div>Consistent within interface: all elements should be consistent, such as: design style, icons and texts, position of elements, etc.</div>
+                </el-collapse-item>
+                <el-collapse-item title="Feedback" name="2" :icon="{position: 'right'}">
+                    <div>Operation feedback: enable the users to clearly perceive their operations by style updates and interactive effects;</div>
+                    <div>Visual feedback: reflect current state by updating or rearranging elements of the page.</div>
+                </el-collapse-item>
+                <el-collapse-item title="Efficiency" name="3" :icon="{direction: 'down', position: 'right'}">
+                    <div>Simplify the process: keep operating process simple and intuitive;</div>
+                    <div>Definite and clear: enunciate your intentions clearly so that the users can quickly understand and make decisions;</div>
+                    <div>Easy to identify: the interface should be straightforward, which helps the users to identify and frees them from memorizing and recalling.</div>
+                </el-collapse-item>
+                <el-collapse-item title="Controllability" name="4" :icon="{direction: 'up'}">
+                    <div>Decision making: giving advices about operations is acceptable, but do not make decisions for the users;</div>
+                    <div>Controlled consequences: users should be granted the freedom to operate, including canceling, aborting or terminating current operation.</div>
+                </el-collapse-item>
+            </el-collapse>
+        </section>
   </div>
 </template>
 
@@ -201,7 +223,8 @@
         elCheckboxValue: true,
         elRadioValue: '1',
         elRadioGroup: 'New York',
-        elCheckboxGroup: ['New York', 'London']
+        elCheckboxGroup: ['New York', 'London'],
+        elActiveNames: ['1']
       };
     },
   };
