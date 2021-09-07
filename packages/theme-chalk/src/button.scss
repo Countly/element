@@ -244,7 +244,7 @@
 
   @include m(text) {
     border-color: transparent;
-    color: $--button-default-font-color;
+    color: $--color-blue-100;
     background: transparent;
     padding-left: 12px;
     padding-right: 12px;
@@ -253,12 +253,10 @@
 
     &:hover,
     &:focus {
-      color: $--button-default-font-color;
       border-color: $--color-light-blue-100;
       background-color: $--color-light-blue-100;
     }
     &:active {
-      color: $--button-default-font-color;
       border-color: $--color-light-blue-100;
       background-color: $--color-light-blue-100;
     }
@@ -268,7 +266,8 @@
     &.is-disabled:focus {
       border-color: transparent;
       background-color: transparent;
-      color: $--color-text-secondary;
+      color: $--color-blue-100;
+      opacity: .5;
     }
 
     &.el-button--medium {
@@ -285,6 +284,15 @@
         background: transparent;
         box-shadow: none;
         border: none;
+        color: $--button-default-font-color;
+
+        &.is-disabled,
+        &.is-disabled:hover,
+        &.is-disabled:focus {
+            border-color: transparent;
+            background-color: transparent;
+            opacity: .5;
+        }
 
         &:hover,
         &:focus {
