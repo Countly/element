@@ -98,19 +98,11 @@
         </section>
 
         <section>
-            <h3>Text Buttons type - default (color prop only works with text type buttons)</h3>
-            <el-button type="text" color="red">Default</el-button>
+            <h3>Text Buttons type - filled</h3>
+            <el-button type="text">Text</el-button>
             <el-button type="text" size="medium">Medium</el-button>
             <el-button type="text" size="small">Small</el-button>
             <el-button type="text" size="mini">Mini</el-button>
-        </section>
-
-        <section>
-            <h3>Text Buttons type - filled</h3>
-            <el-button type="text" filled>Default</el-button>
-            <el-button type="text" size="medium" filled>Medium</el-button>
-            <el-button type="text" size="small" filled>Small</el-button>
-            <el-button type="text" size="mini" filled>Mini</el-button>
         </section>
 
         <section>
