@@ -244,7 +244,7 @@
 
   @include m(text) {
     border-color: transparent;
-    color: $--color-blue-100;
+    color: $--button-default-font-color;
     background: transparent;
     padding-left: 12px;
     padding-right: 12px;
@@ -253,12 +253,12 @@
 
     &:hover,
     &:focus {
-      border-color: $--color-light-blue-100;
-      background-color: $--color-light-blue-100;
+      border-color: transparent;
+      background-color: transparent;
     }
     &:active {
-      border-color: $--color-light-blue-100;
-      background-color: $--color-light-blue-100;
+      border-color: transparent;
+      background-color: transparent;
     }
 
     &.is-disabled,
@@ -266,7 +266,6 @@
     &.is-disabled:focus {
       border-color: transparent;
       background-color: transparent;
-      color: $--color-blue-100;
       opacity: .5;
     }
 
@@ -304,6 +303,32 @@
             color: $--color-blue-100;
             border-color: transparent;
             background-color: transparent;
+        }
+    }
+
+    @include when(filled) {
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        color: $--color-blue-100;
+
+        &:hover,
+        &:focus {
+            border-color: $--color-light-blue-100;
+            background-color: $--color-light-blue-100;
+        }
+        &:active {
+            border-color: $--color-light-blue-100;
+            background-color: $--color-light-blue-100;
+        }
+
+        &.is-disabled,
+        &.is-disabled:hover,
+        &.is-disabled:focus {
+            border-color: transparent;
+            background-color: transparent;
+            color: $--color-blue-100;
+            opacity: .5;
         }
     }
   }

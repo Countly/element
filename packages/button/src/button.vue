@@ -5,6 +5,7 @@
     :disabled="buttonDisabled || loading"
     :autofocus="autofocus"
     :type="nativeType"
+    ref="button"
     :class="[
       type ? 'el-button--' + type : '',
       buttonSize ? 'el-button--' + buttonSize : '',
@@ -12,6 +13,7 @@
         'is-disabled': buttonDisabled,
         'is-loading': loading,
         'is-plain': plain,
+        'is-filled': filled,
         'is-round': round,
         'is-circle': circle
       }
@@ -52,9 +54,11 @@
       loading: Boolean,
       disabled: Boolean,
       plain: Boolean,
+      filled: Boolean,
       autofocus: Boolean,
       round: Boolean,
-      circle: Boolean
+      circle: Boolean,
+      color: String
     },
 
     computed: {
@@ -72,7 +76,20 @@
     methods: {
       handleClick(evt) {
         this.$emit('click', evt);
+      },
+      setButtonColor() {
+        if (this.type === 'text' && this.color) {
+          this.$refs.button.style.color = this.color;
+        }
       }
+    },
+    watch: {
+      color: function() {
+        this.setButtonColor();
+      }
+    },
+    mounted: function() {
+      this.setButtonColor();
     }
   };
 </script>
