@@ -86,6 +86,11 @@
           color: $--select-close-hover-color;
         }
       }
+
+      &.ion-arrow-up-b {
+        color: $--color-text-regular;
+        margin-right: 6px;
+      }
     }
 
     &.is-disabled {
