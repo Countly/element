@@ -54,7 +54,7 @@
 
         <section>
             <h3>Auto resizable and borderless el-select (uses el-pseudo-input)</h3>
-            <el-select v-model="elSelectValue" :autoResize="true" :borderless="true">
+            <el-select v-model="elSelectValue" :adaptiveLength="true" :borderless="true">
                 <el-option v-for="item in elSelectItems" :key="item" :value="item" :label="item"></el-option>
             </el-select>
         </section>

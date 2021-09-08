@@ -246,7 +246,7 @@
         return typeof this.placeholder !== 'undefined' ? this.placeholder : this.t('el.select.placeholder');
       },
       inputComponent() {
-        if (this.autoResize && !this.multiple) {
+        if (this.adaptiveLength && !this.multiple) {
           return 'el-pseudo-input';
         }
 
@@ -327,7 +327,7 @@
         type: Boolean,
         default: true
       },
-      autoResize: {
+      adaptiveLength: {
         type: Boolean,
         default: false
       },
