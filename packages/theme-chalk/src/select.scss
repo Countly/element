@@ -26,9 +26,12 @@
     }
   }
 
+  .is-arrow .el-input__inner {
+    padding-right: 35px;
+  }
+
   .el-input__inner {
     cursor: pointer;
-    padding-right: 35px;
     background-color: $--color-white;
 
     &:focus {

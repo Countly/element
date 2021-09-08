@@ -81,7 +81,7 @@
       :readonly="readonly"
       :validate-event="false"
       :borderless="borderless"
-      :class="{ 'is-focus': visible }"
+      :class="{ 'is-focus': visible, 'is-arrow': arrow }"
       :tabindex="(multiple && filterable) ? '-1' : null"
       @focus="handleFocus"
       @blur="handleBlur"
@@ -97,7 +97,7 @@
       <template slot="prefix" v-if="$slots.prefix">
         <slot name="prefix"></slot>
       </template>
-      <template slot="suffix">
+      <template slot="suffix" v-if="arrow">
         <i v-show="!showClose" :class="['el-select__caret', iconClass]"></i>
         <i v-if="showClose" class="el-select__caret el-input__icon el-icon-circle-close" @click="handleClearClick"></i>
       </template>
@@ -334,6 +334,10 @@
       borderless: {
         type: Boolean,
         default: false
+      },
+      arrow: {
+        type: Boolean,
+        default: true
       }
     },
 
