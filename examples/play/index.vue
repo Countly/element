@@ -187,6 +187,7 @@
         </section>
 
         <section>
+            <h3>Collapse</h3>
             <el-collapse v-model="elActiveNames">
                 <el-collapse-item title="Consistency" name="1">
                     <div>Consistent with real life: in line with the process and logic of real life, and comply with languages and habits that the users are used to;</div>
@@ -207,6 +208,42 @@
                 </el-collapse-item>
             </el-collapse>
         </section>
+
+        <section>
+            <h3>Table</h3>
+            <el-table
+            row-key="id"
+            :data="elTableData">
+                <el-table-column
+                    type="expand">
+                </el-table-column>
+                <el-table-column
+                    type="selection"
+                    width="55">
+                </el-table-column>
+                <el-table-column
+                    type="switch">
+                    <template slot-scope="scope">
+                        <el-switch v-model="scope.row.checked"></el-switch>
+                    </template>
+                </el-table-column>
+                <el-table-column
+                    prop="date"
+                    label="Date"
+                    type="clickable"
+                    width="180">
+                </el-table-column>
+                <el-table-column
+                    prop="name"
+                    label="Name"
+                    width="180">
+                </el-table-column>
+                <el-table-column
+                    prop="address"
+                    label="Address">
+                </el-table-column>
+            </el-table>
+        </section>
   </div>
 </template>
 
@@ -224,7 +261,43 @@
         elRadioValue: '1',
         elRadioGroup: 'New York',
         elCheckboxGroup: ['New York', 'London'],
-        elActiveNames: ['1']
+        elActiveNames: ['1'],
+        elTableData: [{
+            id: 1,
+            date: '2016-05-03',
+            name: 'Tom',
+            address: 'No. 189, Grove St, Los Angeles',
+            checked: true
+          }, {
+            id: 2,
+            date: '2016-05-02',
+            name: 'Tom',
+            address: 'No. 189, Grove St, Los Angeles',
+            checked: false
+          }, {
+            id: 3,
+            date: '2016-05-04',
+            name: 'Tom',
+            address: 'No. 189, Grove St, Los Angeles',
+            checked: false
+          }, {
+            id: 4,
+            date: '2016-05-01',
+            name: 'Tom',
+            address: 'No. 189, Grove St, Los Angeles',
+            checked: true,
+            children: [{
+                id: 41,
+                date: '2016-05-01',
+                name: 'wangxiaohu',
+                address: 'No. 189, Grove St, Los Angeles',
+            }, {
+                id: 42,
+                date: '2016-05-01',
+                name: 'wangxiaohu',
+                address: 'No. 189, Grove St, Los Angeles',
+            }]
+          }]
       };
     },
   };

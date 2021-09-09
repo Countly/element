@@ -10,6 +10,12 @@
       padding-right: 14px;
     }
   }
+  @include m(switch) {
+    .cell {
+      padding-left: 14px;
+      padding-right: 14px;
+    }
+  }
 }
 
 @include b(table-filter) {
@@ -94,4 +100,16 @@
       margin-bottom: 0;
     }
   }
+}
+
+td.el-table-column--clickable {
+    .cell {
+        cursor: pointer;
+        color: #32659D;
+        
+        &:hover {
+            color: #1A75DA;
+            text-decoration: underline;
+        }
+    }
 }
