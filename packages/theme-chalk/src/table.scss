@@ -335,10 +335,15 @@
     border-bottom: $--table-border;
   }
 
+  @include e(fixed) {
+    border-right: 1px solid $--table-border-color;
+  }
+
   @include e(fixed-right) {
     top: 0;
     left: auto;
     right: 0;
+    border-left: 1px solid $--table-border-color;
 
     .el-table__fixed-header-wrapper,
     .el-table__fixed-body-wrapper,

@@ -212,34 +212,41 @@
         <section>
             <h3>Table</h3>
             <el-table
+            style="width:100%"
             row-key="id"
             :data="elTableData">
                 <el-table-column
+                    fixed
                     type="expand">
                 </el-table-column>
                 <el-table-column
+                    fixed
                     type="selection"
                     width="55">
                 </el-table-column>
                 <el-table-column
+                    fixed
                     type="switch">
                     <template slot-scope="scope">
                         <el-switch v-model="scope.row.checked"></el-switch>
                     </template>
                 </el-table-column>
                 <el-table-column
-                    prop="date"
-                    label="Date"
-                    type="clickable"
-                    width="180">
-                </el-table-column>
-                <el-table-column
+                    fixed="left"
                     prop="name"
                     label="Name"
-                    width="180">
+                    width="320">
+                </el-table-column>
+                <el-table-column
+                    prop="date"
+                    label="Date"
+                    fixed="right"
+                    type="clickable"
+                    width="540">
                 </el-table-column>
                 <el-table-column
                     prop="address"
+                    width="480"
                     label="Address">
                 </el-table-column>
             </el-table>
