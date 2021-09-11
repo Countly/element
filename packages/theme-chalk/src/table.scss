@@ -64,7 +64,7 @@
   }
 
   @include e(expanded-cell) {
-    background-color: $--color-white;
+    background-color: $--table-expanded-background-color;
     
     &:first-child {
         border-left: 2px solid $--color-blue-100;
@@ -76,7 +76,7 @@
     }
 
     &:hover {
-      background-color: transparent !important;
+      background-color: $--table-expanded-background-color !important;
     }
   }
 
