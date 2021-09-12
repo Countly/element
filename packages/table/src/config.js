@@ -33,7 +33,10 @@ export const cellStarts = {
     className: 'el-table-column--clickable'
   },
   options: {
-    className: 'el-table-column--options'
+    className: 'el-table-column--options',
+    width: 60,
+    minWidth: 60,
+    realWidth: 60
   }
 };
 

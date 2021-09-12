@@ -353,6 +353,11 @@
     }
   }
 
+  @include e(only-options-fixed-right) {
+    box-shadow: none;
+    border-left: none;
+  }
+
   @include e(fixed-header-wrapper) {
     position: absolute;
     left: 0;

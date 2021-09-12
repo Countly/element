@@ -143,6 +143,7 @@
       v-if="rightFixedColumns.length > 0"
       v-mousewheel="handleFixedMousewheel"
       class="el-table__fixed-right"
+      :class="[{'el-table__only-options-fixed-right': onlyOptionsRightFixed}]"
       ref="rightFixedWrapper"
       :style="[{
         width: layout.rightFixedWidth ? layout.rightFixedWidth + 'px' : '',
@@ -582,7 +583,17 @@
         tableData: 'data',
         fixedColumns: 'fixedColumns',
         rightFixedColumns: 'rightFixedColumns'
-      })
+      }),
+
+      onlyOptionsRightFixed() {
+        let optionsColumn = this.rightFixedColumns.find((column) => column.type === 'options');
+
+        if (optionsColumn && (this.rightFixedColumns.length === 1)) {
+          return true;
+        }
+
+        return false;
+      }
     },
 
     watch: {

@@ -240,7 +240,6 @@
                 <el-table-column
                     prop="date"
                     label="Date"
-                    fixed="right"
                     type="clickable"
                     width="540">
                 </el-table-column>
@@ -248,6 +247,13 @@
                     prop="address"
                     width="480"
                     label="Address">
+                </el-table-column>
+                <el-table-column
+                    prop="options"
+                    type="options">
+                    <template slot-scope="scope">
+                        <div>O</div>
+                    </template>
                 </el-table-column>
             </el-table>
         </section>
