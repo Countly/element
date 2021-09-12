@@ -31,6 +31,9 @@ export const cellStarts = {
   },
   clickable: {
     className: 'el-table-column--clickable'
+  },
+  options: {
+    className: 'el-table-column--options'
   }
 };
 

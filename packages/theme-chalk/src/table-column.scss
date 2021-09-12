@@ -10,12 +10,6 @@
     //   padding-right: 14px;
     }
   }
-  @include m(switch) {
-    .cell {
-      padding-left: 14px;
-      padding-right: 14px;
-    }
-  }
 }
 
 @include b(table-filter) {
