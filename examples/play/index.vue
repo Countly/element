@@ -234,6 +234,7 @@
                 <el-table-column
                     fixed="left"
                     prop="name"
+                    align="right"
                     label="Name"
                     width="320">
                 </el-table-column>
@@ -249,8 +250,8 @@
                     label="Address">
                 </el-table-column>
                 <el-table-column
-                    prop="options"
-                    type="options">
+                    type="options"
+                    prop="options">
                     <template slot-scope="scope">
                         <div>O</div>
                     </template>

@@ -356,6 +356,10 @@
   @include e(only-options-fixed-right) {
     box-shadow: none;
     border-left: none;
+
+    tr {
+        background-color: transparent;
+    }
   }
 
   @include e(fixed-header-wrapper) {
@@ -419,6 +423,14 @@
       ~ .el-table__fixed,
       ~ .el-table__fixed-right {
         box-shadow: none;
+      }
+
+      ~ .el-table__fixed {
+        border-right: none;
+      }
+
+      ~ .el-table__fixed-right {
+        border-left: none;
       }
     }
 
@@ -549,6 +561,12 @@
     .el-table__body td {
       transition: background-color .25s ease;
     }
+
+    // .el-table__only-options-fixed-right {
+    //     .el-table__body td.el-table-column--options {
+    //         transition: none;
+    //     }
+    // }
   }
 
   @include m(enable-row-hover) {
