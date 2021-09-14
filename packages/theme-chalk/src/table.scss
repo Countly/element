@@ -559,7 +559,7 @@
 
   @include m(enable-row-transition) {
     .el-table__body td {
-      transition: background-color .25s ease;
+    //   transition: background-color .25s ease;
     }
 
     // .el-table__only-options-fixed-right {
