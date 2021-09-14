@@ -67,22 +67,24 @@
   top: 0;
   left: 0;
   z-index: 10;
-  padding: 10px 0;
+  padding: 0px;
   margin: 5px 0;
-  background-color: $--color-white;
-  border: 1px solid $--border-color-lighter;
+  border: $--select-dropdown-border;
   border-radius: $--border-radius-base;
-  box-shadow: $--dropdown-menu-box-shadow;
+  background-color: $--select-dropdown-background;
 
   @include e(item) {
     list-style: none;
-    line-height: 36px;
-    padding: 0 20px;
-    margin: 0;
-    font-size: $--font-size-base;
-    color: $--color-text-regular;
+    line-height: $--select-option-height;
+    padding: 0 8px;
+    margin: 8px;
+    font-size: 13px;
+    color: $--select-option-color;
     cursor: pointer;
     outline: none;
+    border-radius: $--border-radius-base;
+    font-weight: 500;
+
     &:not(.is-disabled):hover, &:focus {
       background-color: $--dropdown-menuItem-hover-fill;
       color: $--dropdown-menuItem-hover-color;
@@ -103,24 +105,24 @@
         content: '';
         height: $divided-offset;
         display: block;
-        margin: 0 -20px;
+        margin: 0 -16px;
         background-color: $--color-white;
       }
     }
 
     @include when(disabled) {
       cursor: default;
-      color: $--font-color-disabled-base;
+    //   color: $--font-color-disabled-base;
+      opacity: .5;
       pointer-events: none;
     }
   }
 
   @include m(medium) {
-    padding: 6px 0;
-
     @include e(item) {
-      line-height: 30px;
-      padding: 0 17px;
+      line-height: 34px;
+      padding: 0 10px;
+      margin: 10px;
       font-size: 14px;
 
       &.el-dropdown-menu__item--divided {
@@ -136,11 +138,10 @@
   }
 
   @include m(small) {
-    padding: 6px 0;
-
     @include e(item) {
-      line-height: 27px;
-      padding: 0 15px;
+      line-height: $--select-option-height;
+      padding: 0 8px;
+      margin: 8px;
       font-size: 13px;
 
       &.el-dropdown-menu__item--divided {
@@ -149,18 +150,17 @@
 
         &:before {
           height: $divided-offset;
-          margin: 0 -15px;
+          margin: 0 -16px;
         }
       }
     }
   }
 
   @include m(mini) {
-    padding: 3px 0;
-
     @include e(item) {
-      line-height: 24px;
-      padding: 0 10px;
+      line-height: 20px;
+      padding: 0px 6px;
+      margin: 6px;
       font-size: 12px;
 
       &.el-dropdown-menu__item--divided {

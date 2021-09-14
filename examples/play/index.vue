@@ -74,6 +74,61 @@
         </section>
 
         <section>
+            <h3>Dropdown</h3>
+            <el-dropdown trigger="click">
+                <span class="el-dropdown-link">
+                    Default<i class="el-icon-arrow-down el-icon--right"></i>
+                </span>
+                <el-dropdown-menu slot="dropdown">
+                    <el-dropdown-item>Action 1</el-dropdown-item>
+                    <el-dropdown-item>Action 2</el-dropdown-item>
+                    <el-dropdown-item>Action 3</el-dropdown-item>
+                    <el-dropdown-item disabled>Action 4</el-dropdown-item>
+                    <el-dropdown-item divided>Action 5</el-dropdown-item>
+                </el-dropdown-menu>
+            </el-dropdown>
+
+            <el-dropdown size="medium" trigger="click">
+                <span class="el-dropdown-link">
+                    Medium<i class="el-icon-arrow-down el-icon--right"></i>
+                </span>
+                <el-dropdown-menu slot="dropdown">
+                    <el-dropdown-item>Action 1</el-dropdown-item>
+                    <el-dropdown-item>Action 2</el-dropdown-item>
+                    <el-dropdown-item>Action 3</el-dropdown-item>
+                    <el-dropdown-item disabled>Action 4</el-dropdown-item>
+                    <el-dropdown-item divided>Action 5</el-dropdown-item>
+                </el-dropdown-menu>
+            </el-dropdown>
+
+            <el-dropdown size="small" trigger="click">
+                <span class="el-dropdown-link">
+                    Small<i class="el-icon-arrow-down el-icon--right"></i>
+                </span>
+                <el-dropdown-menu slot="dropdown">
+                    <el-dropdown-item>Action 1</el-dropdown-item>
+                    <el-dropdown-item>Action 2</el-dropdown-item>
+                    <el-dropdown-item>Action 3</el-dropdown-item>
+                    <el-dropdown-item disabled>Action 4</el-dropdown-item>
+                    <el-dropdown-item divided>Action 5</el-dropdown-item>
+                </el-dropdown-menu>
+            </el-dropdown>
+
+            <el-dropdown size="mini" trigger="click">
+                <span class="el-dropdown-link">
+                    Mini<i class="el-icon-arrow-down el-icon--right"></i>
+                </span>
+                <el-dropdown-menu slot="dropdown">
+                    <el-dropdown-item>Action 1</el-dropdown-item>
+                    <el-dropdown-item>Action 2</el-dropdown-item>
+                    <el-dropdown-item>Action 3</el-dropdown-item>
+                    <el-dropdown-item disabled>Action 4</el-dropdown-item>
+                    <el-dropdown-item divided>Action 5</el-dropdown-item>
+                </el-dropdown-menu>
+            </el-dropdown>
+        </section>
+
+        <section>
             <h3>Default Buttons</h3>
             <el-button>Default</el-button>
             <el-button size="medium">Medium</el-button>

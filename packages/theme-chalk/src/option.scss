@@ -28,7 +28,7 @@
       }
     }
 
-    &.hover, &:hover {
+    &:not(.is-disabled):not(.selected).hover, &:not(.is-disabled):not(.selected):hover {
       background-color: $--select-option-hover-background;
       color: $--color-blue-100;
     }
