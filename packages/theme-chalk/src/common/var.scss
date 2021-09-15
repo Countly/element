@@ -308,8 +308,10 @@ $--select-option-disabled-background: $--color-white !default;
 /// height||Other|4
 $--select-option-height: 34px !default;
 $--select-option-hover-background: $--background-color-base !default;
+$--select-option-hover-color: $--color-primary !default;
 /// color||Color|0
 $--select-option-selected-font-color: $--color-primary !default;
+$--select-option-selected-bg-color: $--color-primary !default;
 $--select-option-selected-hover: $--background-color-base !default;
 
 $--select-group-color: $--color-info !default;
@@ -325,6 +327,10 @@ $--select-dropdown-padding: 6px 0 !default;
 $--select-dropdown-empty-padding: 10px 0 !default;
 $--select-dropdown-border: solid 1px $--border-color-light !default;
 
+$--select-dropdown-item-default-height: 13px !default;
+$--select-dropdown-item-default-font-size: 13px !default;
+$--select-dropdown-item-default-padding: 8px !default;
+$--select-dropdown-item-default-margin: 8px !default;
 /* Alert
 -------------------------- */
 $--alert-padding: 8px 16px !default;

@@ -3,16 +3,16 @@
 
 @include b(select-dropdown) {
   @include e(item) {
-    font-size: 13px;
-    padding: 0 8px;
-    margin: 8px;
+    font-size: $--select-dropdown-item-default-font-size;
+    padding: $--select-dropdown-item-default-padding;
+    margin: $--select-dropdown-item-default-margin;
     position: relative;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     color: $--select-option-color;
-    height: $--select-option-height;
-    line-height: $--select-option-height;
+    // height: $--select-option-height;
+    line-height: $--select-dropdown-item-default-height;
     box-sizing: border-box;
     cursor: pointer;
     border-radius: $--border-radius-base;
@@ -30,12 +30,12 @@
 
     &:not(.is-disabled):not(.selected).hover, &:not(.is-disabled):not(.selected):hover {
       background-color: $--select-option-hover-background;
-      color: $--color-blue-100;
+      color: $--select-option-hover-color;
     }
 
     &.selected {
       color: $--select-option-selected-font-color;
-      background-color: $--color-blue-100;
+      background-color: $--select-option-selected-bg-color;
     //   font-weight: bold;
     }
   }

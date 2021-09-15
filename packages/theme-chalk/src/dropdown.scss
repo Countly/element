@@ -7,7 +7,7 @@
   display: inline-block;
   position: relative;
   color: $--color-text-regular;
-  font-size: $--font-size-base;
+  font-size: $--select-dropdown-item-default-font-size;
 
   .el-button-group {
     display: block;
@@ -75,10 +75,10 @@
 
   @include e(item) {
     list-style: none;
-    line-height: $--select-option-height;
-    padding: 0 8px;
-    margin: 8px;
-    font-size: 13px;
+    line-height: $--select-dropdown-item-default-height;
+    padding: $--select-dropdown-item-default-padding;
+    margin: $--select-dropdown-item-default-margin;
+    font-size: $--select-dropdown-item-default-font-size;
     color: $--select-option-color;
     cursor: pointer;
     outline: none;
@@ -120,10 +120,10 @@
 
   @include m(medium) {
     @include e(item) {
-      line-height: 34px;
-      padding: 0 10px;
-      margin: 10px;
-      font-size: 14px;
+      line-height: $--select-dropdown-item-default-height + 1px;
+      padding: $--select-dropdown-item-default-padding + 2px;
+      margin: $--select-dropdown-item-default-margin + 2px;
+      font-size: $--select-dropdown-item-default-font-size + 1px;
 
       &.el-dropdown-menu__item--divided {
         $divided-offset: 6px;
@@ -139,10 +139,10 @@
 
   @include m(small) {
     @include e(item) {
-      line-height: $--select-option-height;
-      padding: 0 8px;
-      margin: 8px;
-      font-size: 13px;
+      line-height: $--select-dropdown-item-default-height;
+      padding: $--select-dropdown-item-default-padding;
+      margin: $--select-dropdown-item-default-margin;
+      font-size: $--select-dropdown-item-default-font-size;
 
       &.el-dropdown-menu__item--divided {
         $divided-offset: 4px;
@@ -158,10 +158,10 @@
 
   @include m(mini) {
     @include e(item) {
-      line-height: 20px;
-      padding: 0px 6px;
-      margin: 6px;
-      font-size: 12px;
+      line-height: $--select-dropdown-item-default-height - 1px;
+      padding: $--select-dropdown-item-default-padding - 2px;
+      margin: $--select-dropdown-item-default-margin - 2px;
+      font-size: $--select-dropdown-item-default-font-size - 1px;
 
       &.el-dropdown-menu__item--divided {
         $divided-offset: 3px;
