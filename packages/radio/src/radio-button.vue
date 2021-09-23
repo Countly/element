@@ -26,7 +26,7 @@
       @blur="focus = false"
     >
     <span
-      class="el-radio-button__inner"
+      :class="['el-radio-button__inner', {'el-radio-button__inner--plain': plain}]"
       :style="value === label ? activeStyle : null"
       @keydown.stop>
       <slot></slot>
@@ -80,6 +80,9 @@
           }
         }
         return false;
+      },
+      plain() {
+        return this._radioGroup ? this._radioGroup.plain : false;
       },
       activeStyle() {
         return {

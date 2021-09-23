@@ -21,10 +21,10 @@
         <slot name="prepend"></slot>
       </div>
       <input
-        v-show="!value"
+        v-show="false"
         :tabindex="tabindex"
         v-if="type !== 'textarea'"
-        class="el-input__inner"
+        :class="classes"
         v-bind="$attrs"
         :type="showPassword ? (passwordVisible ? 'text': 'password') : type"
         :disabled="inputDisabled"
@@ -41,9 +41,8 @@
         :aria-label="label"
       >
       <span 
-        v-show="!!value"
         :tabindex="tabindex"
-        class="el-input__inner"
+        :class="classes"
         v-bind="$attrs"
         :disabled="inputDisabled"
         :readonly="readonly"
@@ -51,7 +50,7 @@
         @blur="handleBlur"
         @change="handleChange"
         :aria-label="label"
-        >{{value}}</span>
+        >{{textLength ? value : placeholderValue}}</span>
       <!-- 前置内容 -->
       <span class="el-input__prefix" v-if="$slots.prefix || prefixIcon">
         <slot name="prefix"></slot>
@@ -123,6 +122,7 @@
 <script>
   import emitter from 'element-ui/src/mixins/emitter';
   import Migrating from 'element-ui/src/mixins/migrating';
+  import Locale from 'element-ui/src/mixins/locale';
   import calcTextareaHeight from './calcTextareaHeight';
   import merge from 'element-ui/src/utils/merge';
   import {isKorean} from 'element-ui/src/utils/shared';
@@ -132,7 +132,7 @@
 
     componentName: 'ElPseudoInput',
 
-    mixins: [emitter, Migrating],
+    mixins: [emitter, Migrating, Locale],
 
     inheritAttrs: false,
 
@@ -202,7 +202,14 @@
         type: Boolean,
         default: false
       },
-      tabindex: String
+      tabindex: String,
+      borderless: {
+        type: Boolean,
+        default: false
+      },
+      placeholder: {
+        type: String
+      }
     },
 
     computed: {
@@ -269,6 +276,17 @@
         // show exceed style if length of initial value greater then maxlength
         return this.isWordLimitVisible &&
           (this.textLength > this.upperLimit);
+      },
+      classes() {
+        let cl = ['el-input__inner', 'el-input__inner--auto-resize'];
+
+        if (this.borderless) {
+          cl.push('el-input__inner--no-boder');
+        }
+        return cl;
+      },
+      placeholderValue: function() {
+        return typeof this.placeholder !== 'undefined' ? this.placeholder : this.t('el.select.placeholder');
       }
     },
 

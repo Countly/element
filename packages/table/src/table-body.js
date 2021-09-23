@@ -319,6 +319,11 @@ export default {
       let display = true;
       if (treeRowData) {
         rowClasses.push('el-table__row--level-' + treeRowData.level);
+
+        if (typeof treeRowData.expanded === 'boolean' && treeRowData.expanded) {
+          // This class is only added to the row level zero
+          rowClasses.push('el-table__row--level-expanded');
+        }
         display = treeRowData.display;
       }
       // 指令 v-show 会覆盖 row-style 中 display

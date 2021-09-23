@@ -1,4 +1,5 @@
-@import "../../element-variables.scss";
+@import "./ionicons.min.css";
+@import "../../../element-variables.scss";
 @import "./base.scss";
 @import "./dialog.scss";
 @import "./popover.scss";
@@ -48,3 +49,5 @@
 @import "./date-picker.scss";
 @import "./time-select.scss";
 @import "./time-picker.scss";
+@import "./alert.scss";
+@import "./slider.scss";

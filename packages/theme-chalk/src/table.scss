@@ -44,10 +44,11 @@
   @include e(expand-icon) {
     position: relative;
     cursor: pointer;
-    color: #666;
+    color: #333C48;
     font-size: 12px;
     transition: transform 0.2s ease-in-out;
     height: 20px;
+    display: inline-block;
 
     @include m(expanded) {
       transform: rotate(90deg);
@@ -63,7 +64,11 @@
   }
 
   @include e(expanded-cell) {
-    background-color: $--color-white;
+    background-color: $--table-expanded-background-color;
+    
+    &:first-child {
+        border-left: 2px solid $--color-blue-100;
+    }
 
     // 纯属为了增加权重
     &[class*=cell] {
@@ -71,7 +76,7 @@
     }
 
     &:hover {
-      background-color: transparent !important;
+      background-color: $--table-expanded-background-color !important;
     }
   }
 
@@ -330,16 +335,30 @@
     border-bottom: $--table-border;
   }
 
+  @include e(fixed) {
+    border-right: 1px solid $--table-border-color;
+  }
+
   @include e(fixed-right) {
     top: 0;
     left: auto;
     right: 0;
+    border-left: 1px solid $--table-border-color;
 
     .el-table__fixed-header-wrapper,
     .el-table__fixed-body-wrapper,
     .el-table__fixed-footer-wrapper {
       left: auto;
       right: 0;
+    }
+  }
+
+  @include e(only-options-fixed-right) {
+    box-shadow: none;
+    border-left: none;
+
+    tr {
+        background-color: transparent;
     }
   }
 
@@ -404,6 +423,14 @@
       ~ .el-table__fixed,
       ~ .el-table__fixed-right {
         box-shadow: none;
+      }
+
+      ~ .el-table__fixed {
+        border-right: none;
+      }
+
+      ~ .el-table__fixed-right {
+        border-left: none;
       }
     }
 
@@ -532,8 +559,14 @@
 
   @include m(enable-row-transition) {
     .el-table__body td {
-      transition: background-color .25s ease;
+    //   transition: background-color .25s ease;
     }
+
+    // .el-table__only-options-fixed-right {
+    //     .el-table__body td.el-table-column--options {
+    //         transition: none;
+    //     }
+    // }
   }
 
   @include m(enable-row-hover) {
@@ -558,6 +591,14 @@
       height: 20px;
       text-align: center;
       margin-right: 3px;
+    }
+  }
+
+  [class*=el-table__row--level]:not([class*=el-table__row--level-0]),
+  .el-table__row--level-expanded,
+  .el-table__row.expanded {
+  td:first-child {
+      border-left: 2px solid $--color-blue-100;
     }
   }
 }

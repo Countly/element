@@ -7,7 +7,7 @@
   position: relative;
   font-size: $--switch-font-size;
   line-height: $--switch-height;
-  height: $--switch-height;
+  height: $--switch-height + 5px;
   vertical-align: middle;
   @include when(disabled) {
     & .el-switch__core,
@@ -27,7 +27,7 @@
     color: $--color-text-primary;
 
     @include when(active) {
-      color: $--color-primary;
+      color: $--color-blue-100;
     }
 
     @include m(left) {
@@ -65,6 +65,7 @@
     cursor: pointer;
     transition: border-color .3s, background-color .3s;
     vertical-align: middle;
+    box-shadow: none;
 
     &:after {
       content: "";
@@ -75,7 +76,10 @@
       transition: all .3s;
       width: $--switch-button-size;
       height: $--switch-button-size;
-      background-color: $--color-white;
+      background-color: $--switch-off-circle-color;
+      box-shadow: 0px 0px 0px 0px $--switch-off-circle-color,
+                    0px 0px 0px 1.5px rgb(255 255 255),
+                    0px 0px 0px 3px $--switch-off-circle-color;
     }
   }
 
@@ -83,9 +87,15 @@
     .el-switch__core {
       border-color: $--switch-on-color;
       background-color: $--switch-on-color;
+      box-shadow: inset 0px 1px 3px $--switch-on-inset-color;
+
       &::after {
         left: 100%;
         margin-left: -$--switch-button-size - 1px;
+        background-color: $--switch-on-circle-color;
+        box-shadow: 0px 0px 0px 0px $--switch-on-circle-color,
+                    0px 0px 0px 1.5px rgb(255 255 255),
+                    0px 0px 0px 3px $--switch-on-circle-color;
       }
     }
   }
@@ -113,4 +123,30 @@
   & .label-fade-leave-active {
     opacity: 0;
   }
+
+  &.is-checked:hover {
+        .el-switch__core::after {
+            background-color: $--switch-on-circle-hover-color;
+            box-shadow: 0px 0px 0px 0px $--switch-on-circle-hover-color,
+                    0px 0px 0px 1.5px rgb(255 255 255),
+                    0px 0px 0px 3px $--switch-on-circle-hover-color;
+        }
+
+        .el-switch__label {
+            color: $--switch-on-circle-hover-color;
+        }
+    }
+
+    &:hover {
+        .el-switch__core::after {
+          background-color: $--switch-off-circle-hover-color;
+          box-shadow: 0px 0px 0px 0px $--switch-off-circle-hover-color,
+                  0px 0px 0px 1.5px rgb(255 255 255),
+                  0px 0px 0px 3px $--switch-off-circle-hover-color;
+        }
+
+        .el-switch__label {
+            color: $--switch-off-circle-hover-color;
+        }
+    }
 }

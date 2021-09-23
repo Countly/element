@@ -138,9 +138,9 @@
         });
       },
       setBackgroundColor() {
-        let newColor = this.checked ? this.activeColor : this.inactiveColor;
-        this.$refs.core.style.borderColor = newColor;
-        this.$refs.core.style.backgroundColor = newColor;
+        // let newColor = this.checked ? this.activeColor : this.inactiveColor;
+        // this.$refs.core.style.borderColor = newColor;
+        // this.$refs.core.style.backgroundColor = newColor;
       },
       switchValue() {
         !this.switchDisabled && this.handleChange();

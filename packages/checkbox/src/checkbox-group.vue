@@ -21,7 +21,8 @@
       max: Number,
       size: String,
       fill: String,
-      textColor: String
+      textColor: String,
+      plain: Boolean
     },
 
     computed: {

@@ -13,7 +13,7 @@
     white-space: nowrap;
     vertical-align: middle;
     background: $--button-default-background-color;
-    border: $--border-base;
+    border: 1px solid $--button-default-border-color;
     font-weight: $--button-font-weight;
     border-left: 0;
     color: $--button-default-font-color;
@@ -29,7 +29,7 @@
     @include button-size($--button-padding-vertical, $--button-padding-horizontal, $--button-font-size, 0);
 
     &:hover {
-      color: $--color-primary;
+      color: $--color-sky-blue-100;
     }
 
     & [class*="el-icon-"] {
@@ -61,6 +61,11 @@
         background-color: $--radio-button-checked-background-color;
         border-color: $--radio-button-checked-border-color;
         box-shadow: -1px 0 0 0 $--radio-button-checked-border-color;
+      }
+
+      & + .el-radio-button__inner--plain {
+        color: $--color-blue-100;
+        background-color: $--border-color-light-blue;
       }
     }
 

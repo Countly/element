@@ -21,10 +21,16 @@
         @focus="handleFocus"
         @blur="focusing = false"
       >
+        <i
+          v-if="iconPosition === 'left'"
+          class="el-collapse-item__arrow el-collapse-item__arrow--left"
+          :class="iconClass">
+        </i>
         <slot name="title">{{title}}</slot>
         <i
-          class="el-collapse-item__arrow el-icon-arrow-right"
-          :class="{'is-active': isActive}">
+          v-if="iconPosition === 'right'"
+          class="el-collapse-item__arrow el-collapse-item__arrow--right"
+          :class="iconClass">
         </i>
       </div>
     </div>
@@ -81,12 +87,47 @@
           return this._uid;
         }
       },
-      disabled: Boolean
+      disabled: Boolean,
+      icon: {
+        type: Object,
+        default() {
+          return {
+            position: 'left',
+            direction: 'right'
+          };
+        }
+      }
     },
 
     computed: {
       isActive() {
         return this.collapse.activeNames.indexOf(this.name) > -1;
+      },
+      iconPosition() {
+        if (this.icon.position === 'right') {
+          return 'right';
+        } else {
+          return 'left';
+        }
+      },
+      iconClass() {
+        let iconClass = {
+          'is-active': this.isActive
+        };
+
+        if (this.icon.direction === 'right') {
+          iconClass['ion-arrow-right-b'] = true;
+        } else if (this.icon.direction === 'down') {
+          iconClass['ion-arrow-down-b'] = true;
+        } else if (this.icon.direction === 'left') {
+          iconClass['ion-arrow-left-b'] = true;
+        } else if (this.icon.direction === 'up') {
+          iconClass['ion-arrow-up-b'] = true;
+        } else {
+          iconClass['ion-arrow-right-b'] = true;
+        }
+
+        return iconClass;
       }
     },
 

@@ -42,12 +42,13 @@
         type: Boolean,
         default: true
       },
-      width: {},
+      width: {}
     },
 
     data() {
       return {
-        minWidth: ''
+        minWidth: '',
+        noPopperArrow: true
       };
     },
 

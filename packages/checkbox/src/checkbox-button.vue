@@ -6,6 +6,7 @@
         { 'is-disabled': isDisabled },
         { 'is-checked': isChecked },
         { 'is-focus': focus },
+        { 'is-plain': plain }
       ]"
     role="checkbox"
     :aria-checked="isChecked"
@@ -130,6 +131,10 @@
 
       store() {
         return this._checkboxGroup ? this._checkboxGroup.value : this.value;
+      },
+
+      plain() {
+        return this._checkboxGroup ? this._checkboxGroup.plain : false;
       },
 
       activeStyle() {

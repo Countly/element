@@ -85,6 +85,13 @@ export default Vue.extend({
     updateColumns() {
       const states = this.states;
       const _columns = states._columns || [];
+      const optionColumn = _columns.find((column) => column.type === 'options');
+      if (optionColumn) {
+        // Options column should always be on right
+        if (!optionColumn.fixed) {
+          optionColumn.fixed = 'right';
+        }
+      }
       states.fixedColumns = _columns.filter((column) => column.fixed === true || column.fixed === 'left');
       states.rightFixedColumns = _columns.filter((column) => column.fixed === 'right');
 

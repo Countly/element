@@ -9,6 +9,7 @@
       'el-table--fluid-height': maxHeight,
       'el-table--scrollable-x': layout.scrollX,
       'el-table--scrollable-y': layout.scrollY,
+      'el-table--has-options': hasOptionsColumn,
       'el-table--enable-row-hover': !store.states.isComplex,
       'el-table--enable-row-transition': (store.states.data || []).length !== 0 && (store.states.data || []).length < 100
     }, tableSize ? `el-table--${ tableSize }` : '']"
@@ -143,6 +144,7 @@
       v-if="rightFixedColumns.length > 0"
       v-mousewheel="handleFixedMousewheel"
       class="el-table__fixed-right"
+      :class="[{'el-table__only-options-fixed-right': onlyOptionsRightFixed}]"
       ref="rightFixedWrapper"
       :style="[{
         width: layout.rightFixedWidth ? layout.rightFixedWidth + 'px' : '',
@@ -582,7 +584,27 @@
         tableData: 'data',
         fixedColumns: 'fixedColumns',
         rightFixedColumns: 'rightFixedColumns'
-      })
+      }),
+
+      onlyOptionsRightFixed() {
+        let optionsColumn = this.rightFixedColumns.find((column) => column.type === 'options');
+
+        if (optionsColumn && (this.rightFixedColumns.length === 1)) {
+          return true;
+        }
+
+        return false;
+      },
+      hasOptionsColumn() {
+        let optionsColumn = this.rightFixedColumns.find((column) => column.type === 'options');
+        if (!optionsColumn) {
+          optionsColumn = this.fixedColumns.find((column) => column.type === 'options');
+        }
+        if (optionsColumn) {
+          return true;
+        }
+        return false;
+      }
     },
 
     watch: {

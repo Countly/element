@@ -2,6 +2,7 @@
 
 const { series, src, dest } = require('gulp');
 const sass = require('gulp-sass');
+sass.compiler = require('sass');
 const autoprefixer = require('gulp-autoprefixer');
 const cssmin = require('gulp-cssmin');
 

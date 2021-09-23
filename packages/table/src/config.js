@@ -22,6 +22,21 @@ export const cellStarts = {
     minWidth: 48,
     realWidth: 48,
     order: ''
+  },
+  switch: {
+    width: 70,
+    minWidth: 70,
+    realWidth: 70,
+    className: 'el-table-column--switch'
+  },
+  clickable: {
+    className: 'el-table-column--clickable'
+  },
+  options: {
+    className: 'el-table-column--options',
+    width: 60,
+    minWidth: 60,
+    realWidth: 60
   }
 };
 
@@ -68,7 +83,7 @@ export const cellForced = {
       return column.label || '';
     },
     renderCell: function(h, { row, store }) {
-      const classes = ['el-table__expand-icon'];
+      const classes = ['el-table__expand-icon', 'el-icon', 'ion-arrow-right-b'];
       if (store.states.expandRows.indexOf(row) > -1) {
         classes.push('el-table__expand-icon--expanded');
       }
@@ -76,9 +91,9 @@ export const cellForced = {
         e.stopPropagation();
         store.toggleRowExpansion(row);
       };
-      return (<div class={ classes }
+      return (<div
         on-click={callback}>
-        <i class='el-icon el-icon-arrow-right'></i>
+        <i class={classes}></i>
       </div>);
     },
     sortable: false,
@@ -108,13 +123,13 @@ export function treeCellPrefix(h, { row, treeNode, store }) {
   }
   if (typeof treeNode.expanded === 'boolean' && !treeNode.noLazyChildren) {
     const expandClasses = ['el-table__expand-icon', treeNode.expanded ? 'el-table__expand-icon--expanded' : ''];
-    let iconClasses = ['el-icon-arrow-right'];
+    let iconClasses = ['ion-arrow-right-b'];
     if (treeNode.loading) {
       iconClasses = ['el-icon-loading'];
     }
-    ele.push(<div class={ expandClasses }
+    ele.push(<div
       on-click={ callback }>
-      <i class={ iconClasses }></i>
+      <i class={ expandClasses.concat(iconClasses) }></i>
     </div>);
   } else {
     ele.push(<span class="el-table__placeholder"></span>);

@@ -1,7 +1,7 @@
 <template>
   <div
     class="el-select"
-    :class="[selectSize ? 'el-select--' + selectSize : '']"
+    :class="elSelectClasses"
     @click.stop="toggleMenu"
     v-clickoutside="handleClose">
     <div
@@ -67,7 +67,8 @@
         :style="{ 'flex-grow': '1', width: inputLength / (inputWidth - 32) + '%', 'max-width': inputWidth - 42 + 'px' }"
         ref="input">
     </div>
-    <el-input
+    <component
+      :is="inputComponent"
       ref="reference"
       v-model="selectedLabel"
       type="text"
@@ -79,7 +80,8 @@
       :disabled="selectDisabled"
       :readonly="readonly"
       :validate-event="false"
-      :class="{ 'is-focus': visible }"
+      :borderless="borderless"
+      :class="{ 'is-focus': visible, 'is-arrow': arrow }"
       :tabindex="(multiple && filterable) ? '-1' : null"
       @focus="handleFocus"
       @blur="handleBlur"
@@ -95,11 +97,11 @@
       <template slot="prefix" v-if="$slots.prefix">
         <slot name="prefix"></slot>
       </template>
-      <template slot="suffix">
-        <i v-show="!showClose" :class="['el-select__caret', 'el-input__icon', 'el-icon-' + iconClass]"></i>
+      <template slot="suffix" v-if="arrow">
+        <i v-show="!showClose" :class="['el-select__caret', iconClass]"></i>
         <i v-if="showClose" class="el-select__caret el-input__icon el-icon-circle-close" @click="handleClearClick"></i>
       </template>
-    </el-input>
+    </component>
     <transition
       name="el-zoom-in-top"
       @before-enter="handleMenuEnter"
@@ -138,6 +140,7 @@
   import Focus from 'element-ui/src/mixins/focus';
   import Locale from 'element-ui/src/mixins/locale';
   import ElInput from 'element-ui/packages/input';
+  import ElPseudoInput from 'element-ui/packages/pseudo-input';
   import ElSelectMenu from './select-dropdown.vue';
   import ElOption from './option.vue';
   import ElTag from 'element-ui/packages/tag';
@@ -198,7 +201,7 @@
       },
 
       iconClass() {
-        return this.remote && this.filterable ? '' : (this.visible ? 'arrow-up is-reverse' : 'arrow-up');
+        return this.remote && this.filterable ? '' : (this.visible ? 'ion-arrow-up-b is-reverse' : 'ion-arrow-up-b');
       },
 
       debounce() {
@@ -241,11 +244,28 @@
       },
       propPlaceholder() {
         return typeof this.placeholder !== 'undefined' ? this.placeholder : this.t('el.select.placeholder');
+      },
+      inputComponent() {
+        if (this.adaptiveLength && !this.multiple) {
+          return 'el-pseudo-input';
+        }
+
+        return 'el-input';
+      },
+      elSelectClasses() {
+
+        let cl = [this.selectSize ? 'el-select--' + this.selectSize : ''];
+
+        if (this.borderless) {
+          cl.push('el-select--no-shadow');
+        }
+        return cl;
       }
     },
 
     components: {
       ElInput,
+      ElPseudoInput,
       ElSelectMenu,
       ElOption,
       ElTag,
@@ -306,11 +326,23 @@
       popperAppendToBody: {
         type: Boolean,
         default: true
+      },
+      adaptiveLength: {
+        type: Boolean,
+        default: false
+      },
+      borderless: {
+        type: Boolean,
+        default: false
+      },
+      arrow: {
+        type: Boolean,
+        default: true
       }
     },
 
     data() {
-      var newUniq = uniqueId("popper-el-select-");
+      var newUniq = uniqueId('popper-el-select-');
       return {
         options: [],
         cachedOptions: [],
