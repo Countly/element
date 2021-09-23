@@ -50,6 +50,7 @@
         @blur="handleBlur"
         @change="handleChange"
         :aria-label="label"
+        :style="spanStyles"
         >{{textLength ? value : placeholderValue}}</span>
       <!-- 前置内容 -->
       <span class="el-input__prefix" v-if="$slots.prefix || prefixIcon">
@@ -209,6 +210,16 @@
       },
       placeholder: {
         type: String
+      },
+      minWidth: {
+        type: Number,
+        default: -1,
+        required: false
+      },
+      maxWidth: {
+        type: Number,
+        default: -1,
+        required: false
       }
     },
 
@@ -284,6 +295,16 @@
           cl.push('el-input__inner--no-boder');
         }
         return cl;
+      },
+      spanStyles() {
+        var styles = {};
+        if (this.minWidth > 0) {
+          styles['min-width'] = this.minWidth + 'px';
+        }
+        if (this.maxWidth > 0) {
+          styles['max-width'] = this.maxWidth + 'px';
+        }
+        return styles;
       },
       placeholderValue: function() {
         return typeof this.placeholder !== 'undefined' ? this.placeholder : this.t('el.select.placeholder');

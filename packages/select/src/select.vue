@@ -83,6 +83,8 @@
       :borderless="borderless"
       :class="{ 'is-focus': visible, 'is-arrow': arrow }"
       :tabindex="(multiple && filterable) ? '-1' : null"
+      :min-width="minWidth"
+      :max-width="maxWidth"
       @focus="handleFocus"
       @blur="handleBlur"
       @keyup.native="debouncedOnInputChange"
@@ -330,6 +332,16 @@
       adaptiveLength: {
         type: Boolean,
         default: false
+      },
+      minWidth: {
+        type: Number,
+        default: -1,
+        required: false
+      },
+      maxWidth: {
+        type: Number,
+        default: -1,
+        required: false
       },
       borderless: {
         type: Boolean,

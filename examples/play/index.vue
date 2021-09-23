@@ -33,7 +33,7 @@
 
         <section>
             <h3>Pseudo el-input (auto adjusts width)</h3>
-            <el-pseudo-input v-model="elInput"></el-pseudo-input>
+            <el-pseudo-input v-model="elInput" :min-width="50" :max-width="100"></el-pseudo-input>
         </section>
 
         <section>
