@@ -697,7 +697,7 @@
           let inputChildNodes = this.$refs.reference.$el.childNodes;
           let input = [].filter.call(inputChildNodes, item => item.tagName === 'INPUT')[0];
           const tags = this.$refs.tags;
-          const sizeInMap = this.initialInputHeight || 40;
+          const sizeInMap = this.initialInputHeight || 32;
           input.style.height = this.selected.length === 0
             ? sizeInMap + 'px'
             : Math.max(
