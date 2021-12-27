@@ -47,7 +47,9 @@
         if (this.$refs.nav) {
           this.$nextTick(() => {
             this.$refs.nav.$nextTick(_ => {
-              this.$refs.nav.scrollToActiveTab();
+              if (this.$refs.nav) {
+                this.$refs.nav.scrollToActiveTab();
+              }
             });
           });
         }
