@@ -194,11 +194,15 @@
 
     &--is-compact-single,
     &--is-compact-multi {
-      word-break: normal;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      vertical-align: middle;
+      .el-select__tags-text {
+        word-break: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        vertical-align: middle;
+        display: inline-block;
+        width: calc(100% - 16px);
+      }
     }
 
     &--is-compact-single {
