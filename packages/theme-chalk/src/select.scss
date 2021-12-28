@@ -206,7 +206,7 @@
     }
 
     &--is-compact-single {
-      max-width: 90%;
+      max-width: calc(90% - 2px);
     }
     &--is-compact-multi {
       max-width: calc(90% - 50px);
