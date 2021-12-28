@@ -206,10 +206,10 @@
     }
 
     &--is-compact-single {
-      max-width: 100%;
+      max-width: 90%;
     }
     &--is-compact-multi {
-      max-width: 70%;
+      max-width: calc(90% - 50px);
     }
   }
 
