@@ -191,6 +191,22 @@
         transform: translate(0, .5px);
       }
     }
+
+    &--is-compact-single,
+    &--is-compact-multi {
+      word-break: normal;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      vertical-align: middle;
+    }
+
+    &--is-compact-single {
+      max-width: 100%;
+    }
+    &--is-compact-multi {
+      max-width: 70%;
+    }
   }
 
   &.el-select--no-shadow {

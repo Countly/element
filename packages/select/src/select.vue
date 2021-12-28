@@ -11,6 +11,7 @@
       :style="{ 'max-width': inputWidth - 32 + 'px', width: '100%' }">
       <span v-if="collapseTags && selected.length">
         <el-tag
+          :class="elTagClasses"
           :closable="!selectDisabled"
           :size="collapseTagSize"
           :hit="selected[0].hitState"
@@ -262,6 +263,17 @@
           cl.push('el-select--no-shadow');
         }
         return cl;
+      },
+      elTagClasses() {
+        if (!this.collapseTags) {
+          return;
+        }
+        if (this.selected.length === 1) {
+          return 'el-tag--is-compact-single';
+        }
+        if (this.selected.length > 1) {
+          return 'el-tag--is-compact-multi';
+        }
       }
     },
 
@@ -324,7 +336,10 @@
         type: String,
         default: 'value'
       },
-      collapseTags: Boolean,
+      collapseTags: {
+        type: Boolean,
+        default: true
+      },
       popperAppendToBody: {
         type: Boolean,
         default: true
@@ -696,14 +711,20 @@
           if (!this.$refs.reference) return;
           let inputChildNodes = this.$refs.reference.$el.childNodes;
           let input = [].filter.call(inputChildNodes, item => item.tagName === 'INPUT')[0];
-          const tags = this.$refs.tags;
+          //  const tags = this.$refs.tags;
           const sizeInMap = this.initialInputHeight || 32;
+          input.style.height = sizeInMap;
+          /*
+
+          --Collapsed tags will be default--
+
           input.style.height = this.selected.length === 0
             ? sizeInMap + 'px'
             : Math.max(
               tags ? (tags.clientHeight + (tags.clientHeight > sizeInMap ? 6 : 0)) : 0,
               sizeInMap
             ) + 'px';
+          */
           if (this.visible && this.emptyText !== false) {
             this.broadcast('ElSelectDropdown', 'updatePopper');
           }

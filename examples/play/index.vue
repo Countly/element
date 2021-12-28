@@ -323,7 +323,7 @@
         elCities: ['New York', 'Washington', 'London'],
         elInput: 'Hello Element UI!',
         elSelectValue: "",
-        elSelectItems: ["Hello", "How are you?", "Ok bye"],
+        elSelectItems: ["Loooooooong, very loooooooooooooooong thing", "Hello", "How are you?", "Ok bye"],
         elSelectMultiValue: [],
         elSwitchValue: true,
         elCheckboxValue: true,
