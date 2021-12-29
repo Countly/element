@@ -13,7 +13,9 @@ export default {
 
   watch: {
     hoverIndex(val) {
-      if (typeof val === 'number' && val > -1) {
+      // if (typeof val === 'number' && val > -1) {
+      // Reset hover state on mouseleave
+      if (typeof val === 'number') {
         this.hoverOption = this.options[val] || {};
       }
       this.options.forEach(option => {

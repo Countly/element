@@ -1,6 +1,7 @@
 <template>
   <li
     @mouseenter="hoverItem"
+    @mouseleave="leaveItem"
     @click.stop="selectOptionClick"
     class="el-select-dropdown__item"
     v-show="visible"
@@ -126,6 +127,10 @@
         if (!this.disabled && !this.groupDisabled) {
           this.select.hoverIndex = this.select.options.indexOf(this);
         }
+      },
+
+      leaveItem() {
+        this.select.resetHoverIndex(); // Reset hover state on mouseleave
       },
 
       selectOptionClick() {
