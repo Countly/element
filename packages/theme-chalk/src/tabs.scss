@@ -72,10 +72,12 @@
     color: $--color-text-secondary;
     z-index: 100;
     width: 20px;
-    height: 40px;
+    height: 38px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-right: 16px;
+    padding-left: 16px;
     i {
       background-color: black;
       border-radius: 9px;
@@ -89,11 +91,11 @@
   }
   @include e(nav-next) {
     right: 0;
-    background: linear-gradient(-90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 94.74%);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
   }
   @include e(nav-prev) {
     left: 0;
-    background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 94.74%);
+    background: linear-gradient(-90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
   }
   @include e(nav) {
     white-space: nowrap;
@@ -324,14 +326,17 @@
     }
 
 
-    .el-tabs__header .is-scrollable {
+    .el-tabs__header .is-scrollable-left {
       .el-tabs__item.is-top:nth-child(2),
       .el-tabs__item.is-bottom:nth-child(2) {
         padding-left: 40px;
       }
+    }
+
+    .el-tabs__header .is-scrollable-right {
       .el-tabs__item.is-top:last-child,
       .el-tabs__item.is-bottom:last-child {
-        padding-right: 40px;
+        padding-right: 60px;
       }
     }
 

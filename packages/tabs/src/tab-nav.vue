@@ -65,6 +65,7 @@
           : 0;
 
         this.navOffset = newOffset;
+        this.$nextTick(() => this.$forceUpdate());
       },
       scrollNext() {
         const navSize = this.$refs.nav[`offset${firstUpperCase(this.sizeName)}`];
@@ -78,6 +79,7 @@
           : (navSize - containerSize);
 
         this.navOffset = newOffset;
+        this.$nextTick(() => this.$forceUpdate());
       },
       scrollToActiveTab() {
         if (!this.scrollable) return;
@@ -256,7 +258,7 @@
         );
       });
       return (
-        <div class={['el-tabs__nav-wrap', scrollable ? 'is-scrollable' : '', `is-${ this.rootTabs.tabPosition }`]}>
+        <div class={['el-tabs__nav-wrap', scrollable ? 'is-scrollable' : '', `is-${ this.rootTabs.tabPosition }`, scrollable.prev ? 'is-scrollable-left' : '', scrollable.next ? 'is-scrollable-right' : '']}>
           {scrollBtn}
           <div class={['el-tabs__nav-scroll']} ref="navScroll">
             <div
