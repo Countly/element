@@ -265,6 +265,29 @@
         </section>
 
         <section>
+            <el-tabs style="width:200px">
+                <el-tab-pane label="Tab 1 A">
+                    Tab 1
+                </el-tab-pane>
+                <el-tab-pane label="Tab 2 AB">
+                    Tab 2
+                </el-tab-pane>
+                <el-tab-pane label="Tab 3 ABC">
+                    Tab 3
+                </el-tab-pane>
+                <el-tab-pane label="Tab 4 ABCD">
+                    Tab 4
+                </el-tab-pane>
+                <el-tab-pane label="Tab 5 ABCDE">
+                    Tab 5
+                </el-tab-pane>
+                <el-tab-pane label="Tab 6 ABCDEF">
+                    Tab 6
+                </el-tab-pane>
+            </el-tabs>
+        </section>
+
+        <section>
             <h3>Table</h3>
             <el-table
             style="width:100%"
