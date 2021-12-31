@@ -265,7 +265,7 @@
         </section>
 
         <section>
-            <el-tabs style="width:200px">
+            <el-tabs style="width:250px">
                 <el-tab-pane label="Tab 1 A">
                     Tab 1
                 </el-tab-pane>
