@@ -24,7 +24,7 @@
 
   @include utils-user-select(none);
   & + & {
-    margin-left: 10px;
+    margin-left: 4px;
   }
 
   @include button-size($--button-padding-vertical, $--button-padding-horizontal, $--button-font-size, $--button-border-radius);
