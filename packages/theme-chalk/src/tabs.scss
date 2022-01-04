@@ -82,7 +82,7 @@
       display: none;
     }
     i {
-      background-color: black;
+      background-color: #333c47;
       border-radius: 9px;
       color: white;
       height: 18px;
@@ -90,6 +90,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      font-size: 14px
     }
   }
   @include e(nav-next) {
