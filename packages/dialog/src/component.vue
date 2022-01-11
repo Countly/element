@@ -121,6 +121,7 @@
     watch: {
       visible(val) {
         if (val) {
+          this.visibleWithDestroy = true;
           this.closed = false;
           this.$emit('open');
           this.$el.addEventListener('scroll', this.updatePopper);
