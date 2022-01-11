@@ -8,8 +8,8 @@
       class="el-dialog__wrapper"
       @click.self="handleWrapperClick">
       <div
+        v-if="visibleWithDestroy"
         role="dialog"
-        :key="key"
         aria-modal="true"
         :aria-label="title || 'dialog'"
         :class="['el-dialog', { 'is-fullscreen': fullscreen, 'el-dialog--center': center }, customClass]"
@@ -113,7 +113,8 @@
     data() {
       return {
         closed: false,
-        key: 0
+        //key: 0,
+        visibleWithDestroy: true // https://github.com/ElemeFE/element/issues/18957
       };
     },
 
@@ -134,7 +135,8 @@
           if (!this.closed) this.$emit('close');
           if (this.destroyOnClose) {
             this.$nextTick(() => {
-              this.key++;
+              // this.key++
+              this.visibleWithDestroy = false;
             });
           }
         }
