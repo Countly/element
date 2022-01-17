@@ -113,7 +113,7 @@
     data() {
       return {
         closed: false,
-        //key: 0,
+        // key: 0,
         visibleWithDestroy: true // https://github.com/ElemeFE/element/issues/18957
       };
     },

@@ -5,6 +5,7 @@
     @click.stop="selectOptionClick"
     class="el-select-dropdown__item"
     v-show="visible"
+    v-tooltip="tooltip"
     :class="{
       'selected': itemSelected,
       'is-disabled': disabled || groupDisabled || limitReached,
@@ -62,6 +63,14 @@
 
       currentValue() {
         return this.value || this.label || '';
+      },
+
+      tooltip() {
+        return {
+          content: this.currentLabel,
+          delay: {show: 400},
+          placement: 'auto-start'
+        };
       },
 
       itemSelected() {
