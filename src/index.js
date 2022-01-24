@@ -19,6 +19,7 @@ import CheckboxButton from '../packages/checkbox-button/index.js';
 import CheckboxGroup from '../packages/checkbox-group/index.js';
 import Switch from '../packages/switch/index.js';
 import Select from '../packages/select/index.js';
+import SelectHead from '../packages/select-head/index.js';
 import Option from '../packages/option/index.js';
 import OptionGroup from '../packages/option-group/index.js';
 import Button from '../packages/button/index.js';
@@ -83,6 +84,7 @@ const components = [
   CheckboxGroup,
   Switch,
   Select,
+  SelectHead,
   Option,
   OptionGroup,
   Button,
@@ -178,6 +180,7 @@ export default {
   CheckboxGroup,
   Switch,
   Select,
+  SelectHead,
   Option,
   OptionGroup,
   Button,

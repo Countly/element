@@ -24,6 +24,7 @@
   "switch": "./packages/switch/index.js",
 
   "select": "./packages/select/index.js",
+    "select-head": "./packages/select-head/index.js",
     "option": "./packages/option/index.js",
     "option-group": "./packages/option-group/index.js",
 

@@ -53,6 +53,11 @@
         </section>
 
         <section>
+            <h3>el-select-head</h3>
+            <el-select-head v-model="elSelectValue"></el-select-head>
+        </section>
+
+        <section>
             <h3>Auto resizable and borderless el-select (uses el-pseudo-input)</h3>
             <el-select v-model="elSelectValue" :adaptiveLength="true" :borderless="true">
                 <el-option v-for="item in elSelectItems" :key="item" :value="item" :label="item"></el-option>
@@ -72,6 +77,12 @@
                 <el-option v-for="item in elSelectItems" :key="item" :value="item" :label="item"></el-option>
             </el-select>
         </section>
+
+        <section>
+            <h3>Multiple el-select-head</h3>
+            <el-select-head :multiple="true" v-model="elSelectMultiValue"></el-select-head>
+        </section>
+
 
         <section>
             <h3>Dropdown</h3>
