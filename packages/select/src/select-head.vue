@@ -114,9 +114,7 @@
   import Locale from 'element-ui/src/mixins/locale';
   import ElInput from 'element-ui/packages/input';
   import ElPseudoInput from 'element-ui/packages/pseudo-input';
-  import ElOption from './option.vue';
   import ElTag from 'element-ui/packages/tag';
-  import ElScrollbar from 'element-ui/packages/scrollbar';
   import debounce from 'throttle-debounce/debounce';
   import Clickoutside from 'element-ui/src/utils/clickoutside';
   import { addResizeListener, removeResizeListener } from 'element-ui/src/utils/resize-event';
@@ -249,9 +247,7 @@
     components: {
       ElInput,
       ElPseudoInput,
-      ElOption,
-      ElTag,
-      ElScrollbar
+      ElTag
     },
 
     directives: { Clickoutside },
@@ -400,7 +396,7 @@
 
       visible(val) {
         if (!val) {
-          this.broadcast('ElSelectDropdown', 'destroyPopper');
+          // this.broadcast('ElSelectDropdown', 'destroyPopper');
           if (this.$refs.input) {
             this.$refs.input.blur();
           }
@@ -433,17 +429,19 @@
             }
           }
         } else {
-          this.broadcast('ElSelectDropdown', 'updatePopper');
+          // select-head doesn't need
+          // this.broadcast('ElSelectDropdown', 'updatePopper');
           if (this.filterable) {
             this.query = this.remote ? '' : this.selectedLabel;
             this.handleQueryChange(this.query);
             if (this.multiple) {
               this.$refs.input.focus();
             } else {
-              if (!this.remote) {
-                this.broadcast('ElOption', 'queryChange', '');
-                this.broadcast('ElOptionGroup', 'queryChange');
-              }
+              // select-head doesn't need
+              // if (!this.remote) {
+              //   this.broadcast('ElOption', 'queryChange', '');
+              //   this.broadcast('ElOptionGroup', 'queryChange');
+              // }
 
               if (this.selectedLabel) {
                 this.currentPlaceholder = this.selectedLabel;
@@ -457,9 +455,10 @@
 
       options() {
         if (this.$isServer) return;
-        this.$nextTick(() => {
-          this.broadcast('ElSelectDropdown', 'updatePopper');
-        });
+        // select-head doesn't need
+        // this.$nextTick(() => {
+        //   this.broadcast('ElSelectDropdown', 'updatePopper');
+        // });
         if (this.multiple) {
           this.resetInputHeight();
         }
@@ -494,9 +493,10 @@
           return;
         }
         this.previousQuery = val;
-        this.$nextTick(() => {
-          if (this.visible) this.broadcast('ElSelectDropdown', 'updatePopper');
-        });
+        // select-head doesn't need
+        // this.$nextTick(() => {
+        //   if (this.visible) this.broadcast('ElSelectDropdown', 'updatePopper');
+        // });
         this.hoverIndex = -1;
         if (this.multiple && this.filterable) {
           this.$nextTick(() => {
@@ -511,11 +511,13 @@
           this.remoteMethod(val);
         } else if (typeof this.filterMethod === 'function') {
           this.filterMethod(val);
-          this.broadcast('ElOptionGroup', 'queryChange');
+          // select-head doesn't need
+          // this.broadcast('ElOptionGroup', 'queryChange');
         } else {
           this.filteredOptionsCount = this.optionsCount;
-          this.broadcast('ElOption', 'queryChange', val);
-          this.broadcast('ElOptionGroup', 'queryChange');
+          // select-head doesn't need
+          // this.broadcast('ElOption', 'queryChange', val);
+          // this.broadcast('ElOptionGroup', 'queryChange');
         }
         if (this.defaultFirstOption && (this.filterable || this.remote) && this.filteredOptionsCount) {
           this.checkDefaultFirstOption();
@@ -693,9 +695,10 @@
               sizeInMap
             ) + 'px';
           */
-          if (this.visible && this.emptyText !== false) {
-            this.broadcast('ElSelectDropdown', 'updatePopper');
-          }
+          // select-head doesn't need
+          // if (this.visible && this.emptyText !== false) {
+          //   this.broadcast('ElSelectDropdown', 'updatePopper');
+          // }
         });
       },
 
