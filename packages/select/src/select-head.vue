@@ -118,7 +118,6 @@
   import debounce from 'throttle-debounce/debounce';
   import Clickoutside from 'element-ui/src/utils/clickoutside';
   import { addResizeListener, removeResizeListener } from 'element-ui/src/utils/resize-event';
-  import scrollIntoView from 'element-ui/src/utils/scroll-into-view';
   import { getValueByPath, valueEquals, isIE, isEdge } from 'element-ui/src/utils/util';
   import NavigationMixin from './navigation-mixin';
   import { isKorean } from 'element-ui/src/utils/shared';
@@ -524,18 +523,20 @@
         }
       },
 
-      scrollToOption(option) {
-        const target = Array.isArray(option) && option[0] ? option[0].$el : option.$el;
-        if (this.$refs.popper && target) {
-          const menu = this.$refs.popper.$el.querySelector('.el-select-dropdown__wrap');
-          scrollIntoView(menu, target);
-        }
-        this.$refs.scrollbar && this.$refs.scrollbar.handleScroll();
-      },
+      // select-head doesn't need
+      // scrollToOption(option) {
+      //   const target = Array.isArray(option) && option[0] ? option[0].$el : option.$el;
+      //   if (this.$refs.popper && target) {
+      //     const menu = this.$refs.popper.$el.querySelector('.el-select-dropdown__wrap');
+      //     scrollIntoView(menu, target);
+      //   }
+      //   this.$refs.scrollbar && this.$refs.scrollbar.handleScroll();
+      // },
 
-      handleMenuEnter() {
-        this.$nextTick(() => this.scrollToOption(this.selected));
-      },
+      // select-head doesn't need
+      // handleMenuEnter() {
+      //   this.$nextTick(() => this.scrollToOption(this.selected));
+      // },
 
       emitChange(val) {
         if (!valueEquals(this.value, val)) {
@@ -741,9 +742,11 @@
         this.isSilentBlur = byClick;
         this.setSoftFocus();
         if (this.visible) return;
-        this.$nextTick(() => {
-          this.scrollToOption(option);
-        });
+
+        // select-head doesn't need
+        // this.$nextTick(() => {
+        //   this.scrollToOption(option);
+        // });
       },
 
       setSoftFocus() {
