@@ -54,7 +54,7 @@
 
         <section>
             <h3>el-select-head</h3>
-            <el-select-head v-model="elSelectValue"></el-select-head>
+            <el-select-head :options-lookup="elSelectItems" v-model="elSelectValue"></el-select-head>
         </section>
 
         <section>

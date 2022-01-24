@@ -163,7 +163,14 @@
         return this.optionsLookup.map((item) => {
           return {
             ...item,
-            currentLabel: item.label
+            isObject: Object.prototype.toString.call(item.value).toLowerCase() === '[object object]',
+            currentLabel: item.label,
+            currentValue: item.value,
+            index: -1,
+            groupDisabled: false,
+            visible: true,
+            hitState: false,
+            hover: false
           };
         });
       },
