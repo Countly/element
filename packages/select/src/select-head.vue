@@ -159,6 +159,17 @@
           }
         }
       },
+      options() {
+        return this.optionsLookup.map((item) => {
+          return {
+            ...item,
+            currentLabel: item.label
+          };
+        });
+      },
+      cachedOptions() {
+        return this.options;
+      },
       _elFormItemSize() {
         return (this.elFormItem || {}).elFormItemSize;
       },
@@ -279,6 +290,7 @@
           return true;
         }
       },
+      optionsLookup: {type: Array, default: function() { return []; }},
       opened: {type: Boolean, default: false},
       automaticDropdown: Boolean,
       size: String,
@@ -344,8 +356,6 @@
     data() {
       var newUniq = uniqueId('popper-el-select-');
       return {
-        options: [],
-        cachedOptions: [],
         createdLabel: null,
         createdSelected: false,
         selected: this.multiple ? [] : {},

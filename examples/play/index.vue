@@ -39,16 +39,16 @@
         <section>
             <h3>Simple el-select</h3>
             <el-select v-model="elSelectValue">
-                <el-option v-for="item in elSelectItems" :key="item" :value="item" :label="item"></el-option>
+                <el-option v-for="item in elSelectItems" :key="item.value" :value="item.value" :label="item.label"></el-option>
             </el-select>
             <el-select size="medium" v-model="elSelectValue">
-                <el-option v-for="item in elSelectItems" :key="item" :value="item" :label="item"></el-option>
+                <el-option v-for="item in elSelectItems" :key="item.value" :value="item.value" :label="item.label"></el-option>
             </el-select>
             <el-select size="small" v-model="elSelectValue">
-                <el-option v-for="item in elSelectItems" :key="item" :value="item" :label="item"></el-option>
+                <el-option v-for="item in elSelectItems" :key="item.value" :value="item.value" :label="item.label"></el-option>
             </el-select>
             <el-select size="mini" v-model="elSelectValue">
-                <el-option v-for="item in elSelectItems" :key="item" :value="item" :label="item"></el-option>
+                <el-option v-for="item in elSelectItems" :key="item.value" :value="item.value" :label="item.label"></el-option>
             </el-select>
         </section>
 
@@ -60,7 +60,7 @@
         <section>
             <h3>Auto resizable and borderless el-select (uses el-pseudo-input)</h3>
             <el-select v-model="elSelectValue" :adaptiveLength="true" :borderless="true">
-                <el-option v-for="item in elSelectItems" :key="item" :value="item" :label="item"></el-option>
+                <el-option v-for="item in elSelectItems" :key="item.value" :value="item.value" :label="item.label"></el-option>
             </el-select>
         </section>
 
@@ -74,13 +74,13 @@
         <section>
             <h3>Multiple el-select</h3>
             <el-select :multiple="true" v-model="elSelectMultiValue">
-                <el-option v-for="item in elSelectItems" :key="item" :value="item" :label="item"></el-option>
+                <el-option v-for="item in elSelectItems" :key="item.value" :value="item.value" :label="item.label"></el-option>
             </el-select>
         </section>
 
         <section>
             <h3>Multiple el-select-head</h3>
-            <el-select-head :multiple="true" :opened="true" v-model="elSelectMultiValue"></el-select-head>
+            <el-select-head :multiple="true" :options-lookup="elSelectItems" v-model="elSelectMultiValue"></el-select-head>
         </section>
 
 
@@ -361,7 +361,12 @@
         elCities: ['New York', 'Washington', 'London'],
         elInput: 'Hello Element UI!',
         elSelectValue: "",
-        elSelectItems: ["Loooooooong, very loooooooooooooooong thing", "Hello", "How are you?", "Ok bye"],
+        elSelectItems: [
+            {groupDisabled: false, visible: true, hitState: false, disabled: false, "value": "long", "label": "Loooooooong, very loooooooooooooooong thing"},
+            {groupDisabled: false, visible: true, hitState: false, disabled: false, "value":"hello", "label": "Hello"},
+            {groupDisabled: false, visible: true, hitState: false, disabled: false, "value":"how_are_you", "label": "How are you?"},
+            {groupDisabled: false, visible: true, hitState: false, disabled: false, "value":"bye", "label": "Ok bye"}
+        ],
         elSelectMultiValue: [],
         elSwitchValue: true,
         elCheckboxValue: true,
