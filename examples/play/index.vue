@@ -80,7 +80,7 @@
 
         <section>
             <h3>Multiple el-select-head</h3>
-            <el-select-head :multiple="true" v-model="elSelectMultiValue"></el-select-head>
+            <el-select-head :multiple="true" :opened="true" v-model="elSelectMultiValue"></el-select-head>
         </section>
 
 

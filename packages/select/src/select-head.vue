@@ -147,6 +147,18 @@
     },
 
     computed: {
+      visible: {
+        get() {
+          return this.opened;
+        },
+        set(val) {
+          if (val) {
+            this.$emit('opened');
+          } else {
+            this.$emit('closed');
+          }
+        }
+      },
       _elFormItemSize() {
         return (this.elFormItem || {}).elFormItemSize;
       },
@@ -267,6 +279,7 @@
           return true;
         }
       },
+      opened: {type: Boolean, default: false},
       automaticDropdown: Boolean,
       size: String,
       disabled: Boolean,
@@ -342,7 +355,6 @@
         cachedPlaceHolder: '',
         optionsCount: 0,
         filteredOptionsCount: 0,
-        visible: false,
         softFocus: false,
         selectedLabel: '',
         hoverIndex: -1,
