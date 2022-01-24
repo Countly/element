@@ -2,7 +2,6 @@
   <div
     class="el-select"
     :class="elSelectClasses"
-    @click.stop="toggleMenu"
     v-clickoutside="handleClose">
     <div
       class="el-select__tags"
@@ -55,7 +54,6 @@
         @keydown="resetInputState"
         @keydown.down.prevent="navigateOptions('next')"
         @keydown.up.prevent="navigateOptions('prev')"
-        @keydown.enter.prevent="selectOption"
         @keydown.esc.stop.prevent="visible = false"
         @keydown.delete="deletePrevTag"
         @keydown.tab="visible = false"
@@ -91,7 +89,6 @@
       @keyup.native="debouncedOnInputChange"
       @keydown.native.down.stop.prevent="navigateOptions('next')"
       @keydown.native.up.stop.prevent="navigateOptions('prev')"
-      @keydown.native.enter.prevent="selectOption"
       @keydown.native.esc.stop.prevent="visible = false"
       @keydown.native.tab="visible = false"
       @paste.native="debouncedOnInputChange"
@@ -775,28 +772,30 @@
         }
       },
 
-      toggleMenu() {
-        if (!this.selectDisabled) {
-          if (this.menuVisibleOnFocus) {
-            this.menuVisibleOnFocus = false;
-          } else {
-            this.visible = !this.visible;
-          }
-          if (this.visible) {
-            (this.$refs.input || this.$refs.reference).focus();
-          }
-        }
-      },
+      // select-head doesn't need
+      // toggleMenu() {
+      //   if (!this.selectDisabled) {
+      //     if (this.menuVisibleOnFocus) {
+      //       this.menuVisibleOnFocus = false;
+      //     } else {
+      //       this.visible = !this.visible;
+      //     }
+      //     if (this.visible) {
+      //       (this.$refs.input || this.$refs.reference).focus();
+      //     }
+      //   }
+      // },
 
-      selectOption() {
-        if (!this.visible) {
-          this.toggleMenu();
-        } else {
-          if (this.options[this.hoverIndex]) {
-            this.handleOptionSelect(this.options[this.hoverIndex]);
-          }
-        }
-      },
+      // select-head doesn't need
+      // selectOption() {
+      //   if (!this.visible) {
+      //     this.toggleMenu();
+      //   } else {
+      //     if (this.options[this.hoverIndex]) {
+      //       this.handleOptionSelect(this.options[this.hoverIndex]);
+      //     }
+      //   }
+      // },
 
       deleteSelected(event) {
         event.stopPropagation();
