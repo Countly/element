@@ -105,6 +105,21 @@
     }
   }
 
+  @include m(has-options) {
+      /* Lets not show scrollbar-y if there is an options column*/
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    &.el-table--scrollable-y .el-table__body-wrapper {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    &.el-table--scrollable-y .el-table__body-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+  }
+
   @include m(scrollable-y) {
     .el-table__body-wrapper {
       overflow-y: auto;
@@ -359,6 +374,10 @@
 
     tr {
         background-color: transparent;
+    }
+
+    .el-table__body td.el-table-column--options {
+        border-bottom: none;
     }
   }
 
