@@ -1,5 +1,5 @@
-.el-select-dropdown__item {
-    max-width: 300px;
+.el-select-dropdown:not(.is-full) .el-select-dropdown__item {
+    max-width: 300px
     // &.selected {
     //     padding-right: 30px;
     // }

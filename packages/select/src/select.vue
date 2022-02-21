@@ -111,6 +111,7 @@
       @after-leave="doDestroy">
       <el-select-menu
         ref="popper"
+        :class="dropdownClasses"
         :append-to-body="popperAppendToBody"
         v-show="visible && emptyText !== false">
         <el-scrollbar
@@ -274,6 +275,11 @@
         if (this.selected.length > 1) {
           return 'el-tag--is-compact-multi';
         }
+      },
+      dropdownClasses() {
+        return {
+          'is-full': this.isFullWidth
+        };
       }
     },
 
@@ -365,6 +371,10 @@
       arrow: {
         type: Boolean,
         default: true
+      },
+      isFullWidth: {
+        type: Boolean,
+        default: false
       }
     },
 

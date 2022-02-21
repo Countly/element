@@ -38,16 +38,16 @@
 
         <section>
             <h3>Simple el-select</h3>
-            <el-select v-model="elSelectValue">
+            <el-select isFullWidth v-model="elSelectValue">
                 <el-option v-for="item in elSelectItems" :key="item.value" :value="item.value" :label="item.label"></el-option>
             </el-select>
-            <el-select size="medium" v-model="elSelectValue">
+            <el-select isFullWidth size="medium" v-model="elSelectValue">
                 <el-option v-for="item in elSelectItems" :key="item.value" :value="item.value" :label="item.label"></el-option>
             </el-select>
             <el-select size="small" v-model="elSelectValue">
                 <el-option v-for="item in elSelectItems" :key="item.value" :value="item.value" :label="item.label"></el-option>
             </el-select>
-            <el-select size="mini" v-model="elSelectValue">
+            <el-select isFullWidth size="mini" v-model="elSelectValue">
                 <el-option v-for="item in elSelectItems" :key="item.value" :value="item.value" :label="item.label"></el-option>
             </el-select>
         </section>
@@ -362,7 +362,7 @@
         elInput: 'Hello Element UI!',
         elSelectValue: "",
         elSelectItems: [
-            {groupDisabled: false, visible: true, hitState: false, disabled: false, "value": "long", "label": "Loooooooong, very loooooooooooooooong thing"},
+            {groupDisabled: false, visible: true, hitState: false, disabled: false, "value": "long", "label": "Loooooooong, very loooooooooooooooong thing dfadsfasdfasdfasdfdasfasfasf"},
             {groupDisabled: false, visible: true, hitState: false, disabled: false, "value":"hello", "label": "Hello"},
             {groupDisabled: false, visible: true, hitState: false, disabled: false, "value":"how_are_you", "label": "How are you?"},
             {groupDisabled: false, visible: true, hitState: false, disabled: false, "value":"bye", "label": "Ok bye"}
