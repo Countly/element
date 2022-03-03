@@ -25,6 +25,7 @@
           :closable="false"
           :size="collapseTagSize"
           type="info"
+          v-tooltip="tooltipCollapsed"
           disable-transitions>
           <span class="el-select__tags-text">+ {{ selected.length - 1 }}</span>
         </el-tag>
@@ -280,6 +281,15 @@
         return {
           'is-full': this.isFullWidth
         };
+      },
+      tooltipCollapsed() {
+        if (this.showTooltipForCollapsed && this.selected.length > 1) {
+          return this.selected.slice(1).map(item => {
+            var optionIdx = this.options.indexOf(item);
+            return this.options[optionIdx].label || '';
+          }).join(', ');
+        }
+        return '';
       }
     },
 
@@ -375,6 +385,10 @@
       isFullWidth: {
         type: Boolean,
         default: false
+      },
+      showTooltipForCollapsed: {
+        type: Boolean,
+        default: true
       }
     },
 
