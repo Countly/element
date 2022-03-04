@@ -24,6 +24,7 @@
           :closable="false"
           :size="collapseTagSize"
           type="info"
+          v-tooltip="tooltipCollapsed"
           disable-transitions>
           <span class="el-select__tags-text">+ {{ selected.length - 1 }}</span>
         </el-tag>
@@ -267,6 +268,15 @@
         if (this.selected.length > 1) {
           return 'el-tag--is-compact-multi';
         }
+      },
+      tooltipCollapsed() {
+        if (this.showTooltipForCollapsed && this.selected.length > 1) {
+          return this.selected.slice(1).map(item => {
+            var optionIdx = this.options.indexOf(item);
+            return this.options[optionIdx].label || '';
+          }).join(', ');
+        }
+        return '';
       }
     },
 
@@ -355,6 +365,10 @@
         default: false
       },
       arrow: {
+        type: Boolean,
+        default: true
+      },
+      showTooltipForCollapsed: {
         type: Boolean,
         default: true
       }
