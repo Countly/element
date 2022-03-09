@@ -32,6 +32,7 @@
       </span>
       <transition-group @after-leave="resetInputHeight" v-if="!collapseTags">
         <el-tag
+          :class="elTagClasses"
           v-for="item in selected"
           :key="getValueKey(item)"
           :closable="!selectDisabled"
@@ -267,6 +268,9 @@
         return cl;
       },
       elTagClasses() {
+        if (this.multiple) {
+          return 'el-tag--is-full-multi';
+        }
         if (!this.collapseTags) {
           return;
         }
@@ -735,12 +739,9 @@
           if (!this.$refs.reference) return;
           let inputChildNodes = this.$refs.reference.$el.childNodes;
           let input = [].filter.call(inputChildNodes, item => item.tagName === 'INPUT')[0];
-          //  const tags = this.$refs.tags;
+          const tags = this.$refs.tags;
           const sizeInMap = this.initialInputHeight || 32;
           input.style.height = sizeInMap;
-          /*
-
-          --Collapsed tags will be default--
 
           input.style.height = this.selected.length === 0
             ? sizeInMap + 'px'
@@ -748,7 +749,7 @@
               tags ? (tags.clientHeight + (tags.clientHeight > sizeInMap ? 6 : 0)) : 0,
               sizeInMap
             ) + 'px';
-          */
+
           if (this.visible && this.emptyText !== false) {
             this.broadcast('ElSelectDropdown', 'updatePopper');
           }

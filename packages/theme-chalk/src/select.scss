@@ -193,7 +193,8 @@
     }
 
     &--is-compact-single,
-    &--is-compact-multi {
+    &--is-compact-multi,
+    &--is-full-multi {
       .el-select__tags-text {
         word-break: normal;
         overflow: hidden;
@@ -210,6 +211,9 @@
     }
     &--is-compact-multi {
       max-width: calc(90% - 50px);
+    }
+    &--is-full-multi  {
+      max-width: 100%;
     }
   }
 

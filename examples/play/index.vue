@@ -73,7 +73,7 @@
 
         <section>
             <h3>Multiple el-select</h3>
-            <el-select :multiple="true" v-model="elSelectMultiValue">
+            <el-select :multiple="true" v-model="elSelectMultiValue" :collapse-tags="false">
                 <el-option v-for="item in elSelectItems" :key="item.value" :value="item.value" :label="item.label"></el-option>
             </el-select>
         </section>
