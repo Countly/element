@@ -501,7 +501,7 @@
 
       bodyWidth() {
         const { bodyWidth, scrollY, gutterWidth } = this.layout;
-        return bodyWidth ? bodyWidth - (scrollY ? gutterWidth : 0) + 'px' : '';
+        return bodyWidth ? bodyWidth - (scrollY ? 0 : 0) + 'px' : '';
       },
 
       bodyHeight() {
