@@ -307,6 +307,9 @@
                 <el-table-column
                     fixed
                     type="expand">
+                    <div>
+                        A very long text.A very long text.A very long text.A very long text.A very long text.A very long text.A very long text.A very long text.A very long text.A very long text.A very long text.A very long text.
+                    </div>
                 </el-table-column>
                 <el-table-column
                     fixed
@@ -378,7 +381,7 @@
             id: 1,
             date: '2016-05-03',
             name: 'Tom',
-            address: 'No. 189, Grove St, Los Angeles',
+            address: 'No. 189, Grove St, Los Angeles No. 189, Grove St, Los Angeles',
             checked: true
           }, {
             id: 2,
@@ -409,6 +412,34 @@
                 name: 'wangxiaohu',
                 address: 'No. 189, Grove St, Los Angeles',
             }]
+          },
+          {
+            id: 5,
+            date: '2016-05-04',
+            name: 'Tom',
+            address: 'No. 189, Grove St, Los Angeles',
+            checked: false
+          },
+          {
+            id: 6,
+            date: '2016-05-04',
+            name: 'Tom',
+            address: 'No. 189, Grove St, Los Angeles',
+            checked: false
+          },
+          {
+            id: 7,
+            date: '2016-05-04',
+            name: 'Tom',
+            address: 'No. 189, Grove St, Los Angeles',
+            checked: false
+          },
+          {
+            id: 8,
+            date: '2016-05-04',
+            name: 'Tom',
+            address: 'No. 189, Grove St, Los Angeles',
+            checked: false
           }]
       };
     },
