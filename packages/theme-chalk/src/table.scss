@@ -364,7 +364,7 @@
     right: 0;
 
     table {
-        td.is-fixed-right-first-visible-td {
+        td.is-fixed-right-first-visible-td:not(.el-table-column--options) {
             border-left: 1px solid $--table-border-color;
         }
     }
@@ -454,11 +454,19 @@
       }
 
       ~ .el-table__fixed {
-        border-right: none;
+        table {
+            td.is-fixed-left-last-visible-td {
+              border-right: none;
+            }
+        }
       }
 
       ~ .el-table__fixed-right {
-        border-left: none;
+        table {
+            td.is-fixed-right-first-visible-td {
+                border-left: none;
+            }
+        }
       }
     }
 
