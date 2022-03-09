@@ -147,8 +147,7 @@
       :class="[{'el-table__only-options-fixed-right': onlyOptionsRightFixed}]"
       ref="rightFixedWrapper"
       :style="[{
-        width: layout.rightFixedWidth ? layout.rightFixedWidth + 'px' : '',
-        right: layout.scrollY ? (border ? layout.gutterWidth : (layout.gutterWidth || 0)) + 'px' : ''
+        width: layout.rightFixedWidth ? layout.rightFixedWidth + 'px' : ''
       },
       fixedHeight]">
       <div v-if="showHeader"
@@ -207,7 +206,6 @@
       class="el-table__fixed-right-patch"
       ref="rightFixedPatch"
       :style="{
-        width: layout.scrollY ? layout.gutterWidth + 'px' : '0',
         height: layout.headerHeight + 'px'
       }"></div>
     <div class="el-table__column-resize-proxy" ref="resizeProxy" v-show="resizeProxyVisible"></div>
