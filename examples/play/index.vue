@@ -301,7 +301,6 @@
         <section>
             <h3>Table</h3>
             <el-table
-            max-height="400"
             style="width:100%"
             row-key="id"
             :data="elTableData">
