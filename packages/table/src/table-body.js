@@ -128,6 +128,30 @@ export default {
       }
     },
 
+    isFixedLeftLastVisibleTd(index) {
+      if (this.fixed === true || this.fixed === 'left') {
+        if (index === (this.leftFixedLeafCount - 1)) {
+          return true;
+        }
+
+        return false;
+      }
+
+      return false;
+    },
+
+    isFixedRightFirstVisibleTd(index) {
+      if (this.fixed === 'right') {
+        if (index === (this.columnsCount - this.rightFixedLeafCount)) {
+          return true;
+        }
+
+        return false;
+      }
+
+      return false;
+    },
+
     getSpan(row, column, rowIndex, columnIndex) {
       let rowspan = 1;
       let colspan = 1;
@@ -205,6 +229,14 @@ export default {
 
       if (this.isColumnHidden(columnIndex)) {
         classes.push('is-hidden');
+      }
+
+      if (this.isFixedLeftLastVisibleTd(columnIndex)) {
+        classes.push('is-fixed-left-last-visible-td');
+      }
+
+      if (this.isFixedRightFirstVisibleTd(columnIndex)) {
+        classes.push('is-fixed-right-first-visible-td');
       }
 
       const cellClassName = this.table.cellClassName;

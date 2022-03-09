@@ -308,6 +308,9 @@
                 <el-table-column
                     fixed
                     type="expand">
+                    <div>
+                        A very long text.A very long text.A very long text.A very long text.A very long text.A very long text.A very long text.A very long text.A very long text.A very long text.A very long text.A very long text.
+                    </div>
                 </el-table-column>
                 <el-table-column
                     fixed
