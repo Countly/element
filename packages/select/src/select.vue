@@ -290,6 +290,9 @@
         if (this.showTooltipForCollapsed && this.selected.length > 1) {
           return this.selected.slice(1).map(item => {
             var optionIdx = this.options.indexOf(item);
+            if (optionIdx === -1) {
+              return item.value;
+            }
             return this.options[optionIdx].label || '';
           }).join(', ');
         }
