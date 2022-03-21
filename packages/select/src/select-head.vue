@@ -260,7 +260,7 @@
         return cl;
       },
       elTagClasses() {
-        if (this.multiple) {
+        if (!this.collapseTags && this.multiple) {
           return 'el-tag--is-full-multi';
         }
         if (!this.collapseTags) {
