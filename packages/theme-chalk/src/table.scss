@@ -16,6 +16,7 @@
   color: $--table-font-color;
   
   table {
+      //this fixes safari table overflow issue - https://github.com/ElemeFE/element/issues/10308#issuecomment-1056394811
       width: 0px;
   }
 
