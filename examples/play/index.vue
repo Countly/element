@@ -320,14 +320,14 @@
                     </template>
                 </el-table-column>
                 <el-table-column
-                    fixed="left"
                     prop="name"
                     label="Name"
-                    width="320">
+                    fixed
+                    width="250">
                     <template slot-scope="scope">
-                        <a>
+                        <div style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap">
                             <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{scope.row.name}}</span>
-                        </a>
+                        </div>
                     </template>
                 </el-table-column>
                 <el-table-column
@@ -375,7 +375,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="padding: 12px">John Brown</td>
+                        <td colspan="2" style="padding: 12px">John Brown</td>
                         <td style="padding: 12px">2018-05-01</td>
                         <td style="padding: 12px">
                             <div style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap">
