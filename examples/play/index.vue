@@ -301,8 +301,6 @@
         <section>
             <h3>Table</h3>
             <el-table
-            max-height="400"
-            style="width:100%"
             row-key="id"
             :data="elTableData">
                 <el-table-column
@@ -324,9 +322,13 @@
                 <el-table-column
                     fixed="left"
                     prop="name"
-                    align="right"
                     label="Name"
                     width="320">
+                    <template slot-scope="scope">
+                        <a>
+                            <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{scope.row.name}}</span>
+                        </a>
+                    </template>
                 </el-table-column>
                 <el-table-column
                     prop="date"
@@ -347,6 +349,69 @@
                     </template>
                 </el-table-column>
             </el-table>
+        </section>
+
+        <section>
+            <table style="table-layout: fixed; border-collapse: collapse; width: 500px" border="1">
+                <colgroup>
+                    <col>
+                    <col>
+                    <col width="80">
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th style="padding: 12px">Name</th>
+                        <th style="padding: 12px">Date</th>
+                        <th style="padding: 12px">
+                            <div style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap">
+                                <a>
+                                    Address
+                                </a>
+                            </div>
+                        </th>
+                        <th style="padding: 12px">Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: 12px">John Brown</td>
+                        <td style="padding: 12px">2018-05-01</td>
+                        <td style="padding: 12px">
+                            <div style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap">
+                                <a>
+                                    New York No. 1 Lake Park
+                                </a>
+                            </div>
+                        </td>
+                        <td style="padding: 12px">O</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px">John Brown</td>
+                        <td style="padding: 12px">2018-05-01</td>
+                        <td style="padding: 12px">
+                            <div style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap">
+                                <a>
+                                    New York No. 1 Lake Park
+                                </a>
+                            </div>
+                        </td>
+                        <td style="padding: 12px">O</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 12px">John Brown</td>
+                        <td style="padding: 12px">2018-05-01</td>
+                        <td style="padding: 12px; visibility: hidden">
+                            <div style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap">
+                                <a>
+                                    New York No. 1 Lake Park
+                                </a>
+                            </div>
+                        </td>
+                        <td style="padding: 12px">O</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
   </div>
 </template>
@@ -379,12 +444,12 @@
             id: 1,
             date: '2016-05-03',
             name: 'Tom',
-            address: 'No. 189, Grove St, Los Angeles No. 189, Grove St, Los Angeles',
+            address: 'No. 189, Grove St, Los Angeles No. 189',
             checked: true
           }, {
             id: 2,
             date: '2016-05-02',
-            name: 'Tom',
+            name: 'TomTomTomTomTomTomTomTomTomTomTomTomTomTomTomTomTomTomTomTomTomTomTomTomTomTomTom',
             address: 'No. 189, Grove St, Los Angeles',
             checked: false
           }, {
