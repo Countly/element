@@ -90,6 +90,9 @@ export interface InstallationOptions {
 /** The version of element-ui */
 export const version: string
 
+/** The version of element-ui */
+export const utils: Any
+
 /**
  * Install all element-ui components into Vue.
  * Please do not invoke this method directly.
