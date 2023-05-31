@@ -16,6 +16,7 @@ import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
 import Clickoutside from 'element-ui/src/utils/clickoutside';
 import DateTable from 'element-ui/packages/date-picker/src/basic/date-table';
 import MonthTable from 'element-ui/packages/date-picker/src/basic/month-table';
+import YearTable from 'element-ui/packages/date-picker/src/basic/year-table';
 import SelectDropdown from 'element-ui/packages/select/src/select-dropdown';
 import Emitter from 'element-ui/src/mixins/emitter';
 import * as DateUtil from 'element-ui/src/utils/date-util';
@@ -66,6 +67,7 @@ export default {
   utils: { Clickoutside, Emitter },
   DateTable,
   MonthTable,
+  YearTable,
   DateUtil,
   SelectDropdown,
 {{list}}
