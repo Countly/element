@@ -71,6 +71,7 @@
         ref="input">
     </div>
     <component
+      :test-id="testId + '-select-label'"
       :is="inputComponent"
       ref="reference"
       v-model="selectedLabel"
@@ -103,7 +104,7 @@
         <slot name="prefix"></slot>
       </template>
       <template slot="suffix" v-if="arrow">
-        <i v-show="!showClose" :class="['el-select__caret', iconClass]"></i>
+        <i :data-test-id="testId + '-select-icon'" v-show="!showClose" :class="['el-select__caret', iconClass]"></i>
         <i v-if="showClose" class="el-select__caret el-input__icon el-icon-circle-close" @click="handleClearClick"></i>
       </template>
     </component>
@@ -396,6 +397,10 @@
       showTooltipForCollapsed: {
         type: Boolean,
         default: true
+      },
+      testId: {
+        type: String,
+        default: 'select-test-id'
       }
     },
 

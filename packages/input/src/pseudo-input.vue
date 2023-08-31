@@ -40,7 +40,8 @@
         @change="handleChange"
         :aria-label="label"
       >
-      <span 
+      <span
+        :data-test-id="testId"
         :tabindex="tabindex"
         :class="classes"
         v-bind="$attrs"
@@ -220,6 +221,10 @@
         type: Number,
         default: -1,
         required: false
+      },
+      testId: {
+        type: String,
+        default: ''
       }
     },
 

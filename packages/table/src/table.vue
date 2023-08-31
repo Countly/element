@@ -21,6 +21,7 @@
       class="el-table__header-wrapper"
       ref="headerWrapper">
       <table-header
+        :test-id="testId"
         ref="tableHeader"
         :store="store"
         :border="border"
@@ -331,7 +332,12 @@
 
       lazy: Boolean,
 
-      load: Function
+      load: Function,
+
+      testId: {
+        type: String,
+        default: ''
+      }
     },
 
     components: {
