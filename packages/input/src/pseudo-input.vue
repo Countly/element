@@ -22,6 +22,7 @@
       </div>
       <input
         v-show="false"
+        :data-test-id="testId + '-pseudo-input'"
         :tabindex="tabindex"
         v-if="type !== 'textarea'"
         :class="classes"
@@ -40,7 +41,8 @@
         @change="handleChange"
         :aria-label="label"
       >
-      <span 
+      <span
+        :data-test-id="testId + '-pseudo-input-label'"
         :tabindex="tabindex"
         :class="classes"
         v-bind="$attrs"
@@ -220,6 +222,10 @@
         type: Number,
         default: -1,
         required: false
+      },
+      testId: {
+        type: String,
+        default: ''
       }
     },
 

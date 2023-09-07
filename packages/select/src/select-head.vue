@@ -69,6 +69,7 @@
         ref="input">
     </div>
     <component
+      :test-id="testId"
       :is="inputComponent"
       ref="reference"
       v-model="selectedLabel"
@@ -378,6 +379,10 @@
       showTooltipForCollapsed: {
         type: Boolean,
         default: true
+      },
+      testId: {
+        type: String,
+        default: 'el-select-head-test-id'
       }
     },
 

@@ -21,6 +21,7 @@
         <slot name="prepend"></slot>
       </div>
       <input
+        :data-test-id="testId"
         :tabindex="tabindex"
         v-if="type !== 'textarea'"
         class="el-input__inner"
@@ -189,7 +190,11 @@
         type: Boolean,
         default: false
       },
-      tabindex: String
+      tabindex: String,
+      testId: {
+        type: String,
+        default: "input-test-id"
+      }
     },
 
     computed: {

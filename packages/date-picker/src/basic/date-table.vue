@@ -21,7 +21,7 @@
         :class="getCellClasses(cell)"
         :key="key">
         <div>
-          <span>
+          <span :data-test-id="`select-date-range-date-${cell.text}`">
             {{ cell.text }}
           </span>
         </div>

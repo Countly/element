@@ -15,6 +15,7 @@
     @keydown.space.stop.prevent="model = isDisabled ? model : label"
   >
     <span class="el-radio__input"
+      :data-test-id="testId + '-el-radio'"
       :class="{
         'is-disabled': isDisabled,
         'is-checked': model === label
@@ -22,6 +23,7 @@
     >
       <span class="el-radio__inner"></span>
       <input
+        :data-test-id="testId + '-el-radio-button'"
         ref="radio"
         class="el-radio__original"
         :value="label"
@@ -36,7 +38,7 @@
         tabindex="-1"
       >
     </span>
-    <span class="el-radio__label" @keydown.stop>
+    <span :data-test-id="testId + '-el-radio-label'" class="el-radio__label" @keydown.stop>
       <slot></slot>
       <template v-if="!$slots.default">{{label}}</template>
     </span>
@@ -68,7 +70,11 @@
       disabled: Boolean,
       name: String,
       border: Boolean,
-      size: String
+      size: String,
+      testId: {
+        type: String,
+        default: 'el-radio-test-id'
+      }
     },
 
     data() {

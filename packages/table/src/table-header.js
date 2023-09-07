@@ -69,6 +69,7 @@ export default {
   mixins: [LayoutObserver],
 
   render(h) {
+    const props = this.$props;
     const originColumns = this.store.states.originColumns;
     const columnRows = convertToRows(originColumns, this.columns);
     // 是否拥有多级表头
@@ -109,12 +110,17 @@ export default {
                     key={ column.id }>
                     <div class={ ['cell', column.filteredValue && column.filteredValue.length > 0 ? 'highlight' : '', column.labelClassName] }>
                       {
-                        column.renderHeader
-                          ? column.renderHeader.call(this._renderProxy, h, { column, $index: cellIndex, store: this.store, _self: this.$parent.$vnode.context })
-                          : column.label
+                        <span data-test-id= {props.testId && `${props.testId}-label-${column.label ? column.label.toLowerCase().replaceAll(' ', '-') : column.id.toLowerCase()}`}>
+                          {
+                            column.renderHeader
+                              ? column.renderHeader.call(this._renderProxy, h, { column, $index: cellIndex, store: this.store, _self: this.$parent.$vnode.context })
+                              : column.label
+                          }
+                        </span>
                       }
                       {
                         column.sortable ? (<span
+                          data-test-id= {props.testId && `${props.testId}-sortable-icon-${column.label ? column.label.toLowerCase().replaceAll(' ', '-') : column.id.toLowerCase()}`}
                           class="caret-wrapper"
                           on-click={ ($event) => this.handleSortClick($event, column) }>
                           <i class="sort-caret ascending"
@@ -160,6 +166,10 @@ export default {
           order: ''
         };
       }
+    },
+    testId: {
+      type: String,
+      default: ''
     }
   },
 
