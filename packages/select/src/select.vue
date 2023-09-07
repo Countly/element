@@ -71,7 +71,7 @@
         ref="input">
     </div>
     <component
-      :test-id="testId + '-select-label'"
+      :test-id="testId + '-select-input'"
       :is="inputComponent"
       ref="reference"
       v-model="selectedLabel"

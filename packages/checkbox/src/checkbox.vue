@@ -25,6 +25,7 @@
         v-if="trueLabel || falseLabel"
         class="el-checkbox__original"
         type="checkbox"
+        :data-test-id="testId + '-el-checkbox-button'"
         :aria-hidden="indeterminate ? 'true' : 'false'"
         :name="name"
         :disabled="isDisabled"
@@ -38,6 +39,7 @@
         v-else
         class="el-checkbox__original"
         type="checkbox"
+        :data-test-id="testId + '-el-checkbox-button'"
         :aria-hidden="indeterminate ? 'true' : 'false'"
         :disabled="isDisabled"
         :value="label"
@@ -47,7 +49,7 @@
         @focus="focus = true"
         @blur="focus = false">
     </span>
-    <span class="el-checkbox__label" v-if="$slots.default || label">
+    <span :data-test-id="testId + '-el-checkbox-label'" class="el-checkbox__label" v-if="$slots.default || label">
       <slot></slot>
       <template v-if="!$slots.default">{{label}}</template>
     </span>
@@ -173,7 +175,11 @@
       id: String, /* 当indeterminate为真时，为controls提供相关连的checkbox的id，表明元素间的控制关系*/
       controls: String, /* 当indeterminate为真时，为controls提供相关连的checkbox的id，表明元素间的控制关系*/
       border: Boolean,
-      size: String
+      size: String,
+      testId: {
+        type: String,
+        default: 'el-checkbox-test-id'
+      }
     },
 
     methods: {

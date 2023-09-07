@@ -20,7 +20,11 @@
         default: 'top'
       },
       beforeLeave: Function,
-      stretch: Boolean
+      stretch: Boolean,
+      testId: {
+        type: String,
+        default: 'el-tabs-test-id'
+      }
     },
 
     provide() {
@@ -146,7 +150,8 @@
           editable,
           type,
           panes,
-          stretch
+          stretch,
+          testId: this.testId
         },
         ref: 'nav'
       };

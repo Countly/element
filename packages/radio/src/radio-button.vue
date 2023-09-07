@@ -7,6 +7,7 @@
       { 'is-disabled': isDisabled },
       { 'is-focus': focus }
     ]"
+    :data-test-id="testId"
     role="radio"
     :aria-checked="value === label"
     :aria-disabled="isDisabled"
@@ -54,7 +55,11 @@
     props: {
       label: {},
       disabled: Boolean,
-      name: String
+      name: String,
+      testId: {
+        type: String,
+        default: 'el-radio-button-test-id'
+      }
     },
     data() {
       return {

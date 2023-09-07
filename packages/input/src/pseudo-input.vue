@@ -22,6 +22,7 @@
       </div>
       <input
         v-show="false"
+        :data-test-id="testId + '-pseudo-input'"
         :tabindex="tabindex"
         v-if="type !== 'textarea'"
         :class="classes"
@@ -41,7 +42,7 @@
         :aria-label="label"
       >
       <span
-        :data-test-id="testId"
+        :data-test-id="testId + '-pseudo-input-label'"
         :tabindex="tabindex"
         :class="classes"
         v-bind="$attrs"

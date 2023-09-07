@@ -29,7 +29,11 @@
         default: noop
       },
       type: String,
-      stretch: Boolean
+      stretch: Boolean,
+      testId: {
+        type: String,
+        default: 'el-tabs-test-id'
+      }
     },
 
     data() {
@@ -213,8 +217,8 @@
       } = this;
       const scrollBtn = scrollable
         ? [
-          <span class={['el-tabs__nav-prev', scrollable.prev ? '' : 'is-disabled']} on-click={scrollPrev}><i class="ion-android-arrow-back"></i></span>,
-          <span class={['el-tabs__nav-next', scrollable.next ? '' : 'is-disabled']} on-click={scrollNext}><i class="ion-android-arrow-forward"></i></span>
+          <span class={['el-tabs__nav-prev', scrollable.prev ? '' : 'is-disabled']} on-click={scrollPrev}><i data-test-id={this.testId + '-tab-arrow-back'} class="ion-android-arrow-back"></i></span>,
+          <span class={['el-tabs__nav-next', scrollable.next ? '' : 'is-disabled']} on-click={scrollNext}><i data-test-id={this.testId + '-tab-arrow-forward'} class="ion-android-arrow-forward"></i></span>
         ] : null;
 
       const tabs = this._l(panes, (pane, index) => {

@@ -12,7 +12,7 @@
       'hover': hover
     }">
     <slot>
-      <span>{{ currentLabel }}</span>
+      <span :data-test-id="testId + '-el-options'">{{ currentLabel }}</span>
     </slot>
   </li>
 </template>
@@ -39,6 +39,10 @@
       disabled: {
         type: Boolean,
         default: false
+      },
+      testId: {
+        type: String,
+        default: 'el-option-test-id'
       }
     },
 

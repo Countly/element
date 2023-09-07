@@ -27,6 +27,7 @@
       <i :class="`el-icon-${controlsAtRight ? 'arrow-up' : 'plus'}`"></i>
     </span>
     <el-input
+      :test-id="testId"
       ref="input"
       :value="displayValue"
       :placeholder="placeholder"
@@ -103,6 +104,10 @@
         validator(val) {
           return val >= 0 && val === parseInt(val, 10);
         }
+      },
+      testId: {
+        type: String,
+        default: 'el-input-number-test-id'
       }
     },
     data() {
