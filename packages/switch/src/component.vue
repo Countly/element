@@ -14,6 +14,7 @@
       ref="input"
       :id="id"
       :name="name"
+      :test-id="testId + '-el-switch-input'"
       :true-value="activeValue"
       :false-value="inactiveValue"
       :disabled="switchDisabled"
@@ -95,7 +96,11 @@
         type: Boolean,
         default: true
       },
-      id: String
+      id: String,
+      testId: {
+        type: String,
+        default: 'el-switch-test-id'
+      }
     },
     data() {
       return {
