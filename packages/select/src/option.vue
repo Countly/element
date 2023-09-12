@@ -12,7 +12,7 @@
       'hover': hover
     }">
     <slot>
-      <span :data-test-id="testId + '-el-options'">{{ currentLabel }}</span>
+      <span :data-test-id="testId + '-' + (currentLabel && typeof currentLabel === 'string' ? currentLabel.replace(/[^a-zA-Z0-9\s]+/g, '').replace(/\s+/g, '-').toLowerCase() : '') + '-el-options'">{{ currentLabel }}</span>
     </slot>
   </li>
 </template>
