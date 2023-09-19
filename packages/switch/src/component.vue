@@ -14,7 +14,7 @@
       ref="input"
       :id="id"
       :name="name"
-      :test-id="testId + '-el-switch-input'"
+      :data-test-id="testId + '-el-switch-input'"
       :true-value="activeValue"
       :false-value="inactiveValue"
       :disabled="switchDisabled"
@@ -26,7 +26,7 @@
       <i :class="[inactiveIconClass]" v-if="inactiveIconClass"></i>
       <span v-if="!inactiveIconClass && inactiveText" :aria-hidden="checked">{{ inactiveText }}</span>
     </span>
-    <span class="el-switch__core" ref="core" :style="{ 'width': coreWidth + 'px' }">
+    <span class="el-switch__core" :data-test-id="testId + '-el-switch-core'" ref="core" :style="{ 'width': coreWidth + 'px' }">
     </span>
     <span
       :class="['el-switch__label', 'el-switch__label--right', checked ? 'is-active' : '']"

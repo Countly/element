@@ -1,5 +1,6 @@
 <template>
   <label
+    :data-test-id="testId + '-el-radio-wrapper'"
     class="el-radio"
     :class="[
       border && radioSize ? 'el-radio--' + radioSize : '',

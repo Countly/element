@@ -19,6 +19,7 @@
       :tabindex="indeterminate ? 0 : false"
       :role="indeterminate ? 'checkbox' : false"
       :aria-checked="indeterminate ? 'mixed' : false"
+      :data-test-id="testId + '-el-checkbox-input'"
     >
       <span class="el-checkbox__inner"></span>
       <input
