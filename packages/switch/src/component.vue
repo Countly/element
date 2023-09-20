@@ -5,6 +5,7 @@
     role="switch"
     :aria-checked="checked"
     :aria-disabled="switchDisabled"
+    :data-test-id="testId + '-el-switch-wrapper'"
     @click.prevent="switchValue"
   >
     <input
