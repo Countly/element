@@ -5,6 +5,7 @@
     role="switch"
     :aria-checked="checked"
     :aria-disabled="switchDisabled"
+    :data-test-id="testId + '-el-switch-wrapper'"
     @click.prevent="switchValue"
   >
     <input
@@ -14,6 +15,7 @@
       ref="input"
       :id="id"
       :name="name"
+      :data-test-id="testId + '-el-switch-input'"
       :true-value="activeValue"
       :false-value="inactiveValue"
       :disabled="switchDisabled"
@@ -25,7 +27,7 @@
       <i :class="[inactiveIconClass]" v-if="inactiveIconClass"></i>
       <span v-if="!inactiveIconClass && inactiveText" :aria-hidden="checked">{{ inactiveText }}</span>
     </span>
-    <span class="el-switch__core" ref="core" :style="{ 'width': coreWidth + 'px' }">
+    <span class="el-switch__core" :data-test-id="testId + '-el-switch-core'" ref="core" :style="{ 'width': coreWidth + 'px' }">
     </span>
     <span
       :class="['el-switch__label', 'el-switch__label--right', checked ? 'is-active' : '']"
@@ -95,7 +97,11 @@
         type: Boolean,
         default: true
       },
-      id: String
+      id: String,
+      testId: {
+        type: String,
+        default: 'el-switch-test-id'
+      }
     },
     data() {
       return {

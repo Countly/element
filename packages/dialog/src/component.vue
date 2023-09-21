@@ -17,9 +17,10 @@
         :style="style">
         <div class="el-dialog__header">
           <slot name="title">
-            <span class="el-dialog__title">{{ title }}</span>
+            <span :data-test-id="testId + '-el-dialog-title-label'" class="el-dialog__title">{{ title }}</span>
           </slot>
           <button
+            :data-test-id="testId + '-el-dialog-close-button'"
             type="button"
             class="el-dialog__headerbtn"
             aria-label="Close"
@@ -28,7 +29,7 @@
             <i class="el-dialog__close el-icon el-icon-close"></i>
           </button>
         </div>
-        <div class="el-dialog__body" v-if="rendered"><slot></slot></div>
+        <div class="el-dialog__body" :data-test-id="testId + '-el-dialog-content-label'" v-if="rendered"><slot></slot></div>
         <div class="el-dialog__footer" v-if="$slots.footer">
           <slot name="footer"></slot>
         </div>
@@ -107,7 +108,10 @@
         default: false
       },
 
-      destroyOnClose: Boolean
+      destroyOnClose: Boolean,
+      testId: {
+        type: String,
+        default: 'el-dialog-test-id'}
     },
 
     data() {

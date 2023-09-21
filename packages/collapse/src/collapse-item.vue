@@ -14,6 +14,7 @@
         :id="`el-collapse-head-${id}`"
         :tabindex="disabled ? undefined : 0"
         @keyup.space.enter.stop="handleEnterClick"
+        :data-test-id="testId + '-el-collapse-item-header'"
         :class="{
           'focusing': focusing,
           'is-active': isActive
@@ -24,13 +25,15 @@
         <i
           v-if="iconPosition === 'left'"
           class="el-collapse-item__arrow el-collapse-item__arrow--left"
-          :class="iconClass">
+          :class="iconClass"
+          :data-test-id="testId + '-el-collapse-item-icon-left'">
         </i>
-        <slot name="title">{{title}}</slot>
+        <slot name="title"><span :data-test-id="testId + '-el-collapse-item-label'">{{title}}</span></slot>
         <i
           v-if="iconPosition === 'right'"
           class="el-collapse-item__arrow el-collapse-item__arrow--right"
-          :class="iconClass">
+          :class="iconClass"
+          :data-test-id="testId + '-el-collapse-item-icon-right'">
         </i>
       </div>
     </div>
@@ -96,6 +99,10 @@
             direction: 'right'
           };
         }
+      },
+      testId: {
+        type: String,
+        default: 'el-collapse-item-test-id'
       }
     },
 
