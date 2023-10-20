@@ -127,6 +127,7 @@
   }
 
   thead {
+    position: relative;
     color: $--table-header-font-color;
     font-weight: 500;
 
@@ -637,4 +638,27 @@
       border-left: 2px solid $--color-blue-100;
     }
   }
+}
+
+.custom-move-indicator-left {
+  height: 22px;
+  position: absolute;
+  left: 0px;
+  top: 6px;
+  display:none;
+  border-radius: 3px;
+  z-index: 10;
+  border-left: 3px solid #333C48;
+}
+
+.custom-move-indicator-right {
+  height: 22px;
+  position: absolute;
+  width: 0px;
+  left: 0px;
+  top: 6px;
+  display:none;
+  border-radius: 3px;
+  z-index: 10;
+  border-right: 3px solid #333C48;
 }
