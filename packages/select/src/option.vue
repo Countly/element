@@ -44,7 +44,7 @@
         type: String,
         default: 'el-option-test-id'
       },
-      tooltip: {
+      tooltipContent: {
         type: String,
         default: ''
       }
@@ -75,7 +75,7 @@
 
       tooltip() {
         return {
-          content: this.tooltip !== '' ? this.tooltip : this.currentLabel,
+          content: this.tooltipContent !== '' ? this.tooltipContent : this.currentLabel,
           delay: {show: 400},
           placement: 'auto-start'
         };
