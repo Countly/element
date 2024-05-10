@@ -56,6 +56,10 @@ export default {
       validator(val) {
         return val.every(order => ['ascending', 'descending', null].indexOf(order) > -1);
       }
+    },
+    testId: {
+      type: String,
+      default: 'test-id'
     }
   },
 
@@ -138,6 +142,7 @@ export default {
         let value = source[prop];
         if (value !== undefined) {
           column[prop] = prop === 'className' ? `${column[prop]} ${value}` : value;
+          column[prop] = prop === 'testId' ? `${column[prop]} ${value}` : value;
         }
       });
       return column;
@@ -282,8 +287,9 @@ export default {
     const sortProps = ['sortMethod', 'sortBy', 'sortOrders'];
     const selectProps = ['selectable', 'reserveSelection'];
     const filterProps = ['filterMethod', 'filters', 'filterMultiple', 'filterOpened', 'filteredValue', 'filterPlacement'];
+    const externalProps = ['testId'];
 
-    let column = this.getPropsData(basicProps, sortProps, selectProps, filterProps);
+    let column = this.getPropsData(basicProps, sortProps, selectProps, filterProps, externalProps);
     column = mergeOptions(defaults, column);
 
     // 注意 compose 中函数执行的顺序是从右到左
