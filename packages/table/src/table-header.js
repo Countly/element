@@ -104,9 +104,9 @@ export default {
                   columns.map((column, cellIndex) => (<th
                     colspan={ column.colSpan }
                     rowspan={ column.rowSpan }
-                    on-mousemove={ ($event) => this.handleMouseMove($event, column, columns[cellIndex - 1]) }
+                    on-mousemove={ ($event) => this.handleMouseMove($event, column) }
                     on-mouseout={ this.handleMouseOut }
-                    on-mousedown={ ($event) => this.handleMouseDown($event, column, columns[cellIndex - 1]) }
+                    on-mousedown={ ($event) => this.handleMouseDown($event, column) }
                     on-click={ ($event) => this.handleHeaderClick($event, column) }
                     on-contextmenu={ ($event) => this.handleHeaderContextMenu($event, column) }
                     style={ this.getHeaderCellStyle(rowIndex, cellIndex, columns, column) }
@@ -354,7 +354,7 @@ export default {
       this.$parent.$emit('header-contextmenu', column, event);
     },
 
-    handleMouseDown(event, column, previousColumn) {
+    handleMouseDown(event, column) {
       if (this.$isServer) return;
       if (column.children && column.children.length > 0) return;
       /* istanbul ignore if */
@@ -362,10 +362,7 @@ export default {
         this.dragging = true;
 
         this.$parent.resizeProxyVisible = true;
-        const rect = event.target.getBoundingClientRect();
-        if (rect.width > 12 && event.pageX - rect.left < 8 && previousColumn) {
-          column = previousColumn;
-        }
+
         const table = this.$parent;
         const tableEl = table.$el;
         const tableLeft = tableEl.getBoundingClientRect().left;
@@ -431,16 +428,16 @@ export default {
       }
     },
 
-    handleMouseMove(event, column, previousColumn) {
+    handleMouseMove(event, column) {
       if (column.children && column.children.length > 0) return;
       let target = event.target;
       while (target && target.tagName !== 'TH') {
         target = target.parentNode;
       }
 
-      let tableHeader = target.parentNode;
-      let tableHeaderStartPosition = tableHeader.getBoundingClientRect().x;
-      let rect = target.getBoundingClientRect();
+      const tableHeader = target.parentNode;
+      const tableHeaderStartPosition = tableHeader.getBoundingClientRect().x;
+      const rect = target.getBoundingClientRect();
 
       if (!column || !column.resizable) return;
       if (this.dragging) {
@@ -455,16 +452,11 @@ export default {
 
       if (!this.dragging && this.border) {
         const bodyStyle = document.body.style;
-        if (rect.width > 12 && (rect.right - event.pageX < 8 || event.pageX - rect.left < 8)) {
+
+        if (rect.width > 12 && (rect.right - event.pageX < 8)) {
           bodyStyle.cursor = 'col-resize';
           document.getElementById('custom-move-indicator-left').style.display = 'block';
           document.getElementById('custom-move-indicator-right').style.display = 'block';
-          if (event.pageX - rect.left < 8 && event.target.parentNode && event.target.parentNode.previousElementSibling && previousColumn) { // indicates next column
-            rect = event.target.parentNode.previousElementSibling.getBoundingClientRect();
-            tableHeader = event.target.parentNode.previousElementSibling.parentNode;
-            tableHeaderStartPosition = tableHeader.getBoundingClientRect().x;
-            column = previousColumn;
-          }
           document.getElementById('custom-move-indicator-left').style.left = (rect.right - tableHeaderStartPosition - 8) + 'px';
           document.getElementById('custom-move-indicator-right').style.left = (rect.right - tableHeaderStartPosition + 5) + 'px';
           if (hasClass(target, 'is-sortable')) {
@@ -480,23 +472,13 @@ export default {
           this.draggingColumn = null;
         }
       }
-
-      const diffRight = Math.abs(rect.right - event.pageX);
-      const diffLeft = Math.abs(rect.left - event.pageX);
-      if (this.border && ((diffRight >= 0 && diffRight < 5) || (diffLeft >= 0 && diffLeft < 5))) {
-        target.style.cursor = 'col-resize';
-      } else if (this.border) {
-        target.style.cursor = '';
-        document.getElementById('custom-move-indicator-left').style.display = 'none';
-        document.getElementById('custom-move-indicator-right').style.display = 'none';
-      }
     },
 
     handleMouseOut() {
       if (this.$isServer) return;
-      if (!this.border) {
-        document.body.style.cursor = '';
-      }
+      document.body.style.cursor = '';
+      document.getElementById('custom-move-indicator-left').style.display = 'none';
+      document.getElementById('custom-move-indicator-right').style.display = 'none';
     },
 
     toggleOrder({ order, sortOrders }) {
