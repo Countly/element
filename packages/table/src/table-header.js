@@ -372,7 +372,6 @@ export default {
         const columnEl = this.$el.querySelector(`th.${column.id}`);
         const columnRect = columnEl.getBoundingClientRect();
         const minLeft = columnRect.left - tableLeft + 30;
-
         addClass(columnEl, 'noclick');
 
         this.dragState = {
@@ -402,7 +401,11 @@ export default {
               startLeft
             } = this.dragState;
             const finalLeft = parseInt(resizeProxy.style.left, 10);
-            const columnWidth = finalLeft - startColumnLeft;
+            var columnWidth = finalLeft - startColumnLeft;
+            if (column && column.minWidth && column.minWidth > columnWidth) {
+              columnWidth = column.minWidth;
+            }
+
             column.width = column.realWidth = columnWidth;
             table.$emit('header-dragend', column.width, startLeft - startColumnLeft, column, event);
 
@@ -456,7 +459,7 @@ export default {
       if (!this.dragging && this.border) {
         const bodyStyle = document.body.style;
         if (rect.width > 12 && (rect.right - event.pageX < 8 || event.pageX - rect.left < 8)) {
-          bodyStyle.cursor = 'col-resize';
+          target.style.cursor = 'col-resize';
           document.getElementById('custom-move-indicator-left').style.display = 'block';
           document.getElementById('custom-move-indicator-right').style.display = 'block';
           if (event.pageX - rect.left < 8 && event.target.parentNode && event.target.parentNode.previousElementSibling && previousColumn) { // indicates next column
@@ -484,9 +487,11 @@ export default {
       const diffRight = Math.abs(rect.right - event.pageX);
       const diffLeft = Math.abs(rect.left - event.pageX);
       if (this.border && ((diffRight >= 0 && diffRight < 5) || (diffLeft >= 0 && diffLeft < 5))) {
-        target.style.cursor = 'col-resize';
+        // target.style.cursor = 'col-resize';
       } else if (this.border) {
-        target.style.cursor = '';
+        if (!this.dragging) {
+          target.style.cursor = '';
+        }
         document.getElementById('custom-move-indicator-left').style.display = 'none';
         document.getElementById('custom-move-indicator-right').style.display = 'none';
       }
