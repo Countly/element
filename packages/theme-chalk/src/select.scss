@@ -158,8 +158,9 @@
     flex-wrap: wrap;
   }
 
-  .el-tag__close {
-    margin-top: -2px;
+  @include e(tags-text) {
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .el-tag {
@@ -167,19 +168,22 @@
     border-color: transparent;
     margin: 3px 0 3px 4px;
     background-color: #E2E4E8;
+    display: flex;
+    max-width: 100%;
+    align-items: center;
 
     //Following will overwrite the css of tag
     &.el-tag.el-tag--info {
-        background-color: #E2E4E8;
-        border-color: #E2E4E8;
-        color: #333C48;
+      background-color: #E2E4E8;
+      border-color: #E2E4E8;
+      color: #333C48;
     }
 
     &__close.el-icon-close {
       background-color: $--color-white;
-      right: -7px;
       top: 0;
       color: $--color-text-placeholder;
+      flex-shrink: 0;
 
       &:hover {
         background-color: $--color-text-secondary;
