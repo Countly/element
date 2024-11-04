@@ -80,6 +80,7 @@ export default {
                 class={this.getCellClass($index, cellIndex, row, column)}
                 rowspan={rowspan}
                 colspan={colspan}
+                data-test-id={ 'datatable-' + column.testId }
                 on-mouseenter={($event) => this.handleCellMouseEnter($event, row)}
                 on-mouseleave={this.handleCellMouseLeave}
               >
