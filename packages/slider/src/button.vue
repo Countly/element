@@ -24,7 +24,7 @@
       :popper-class="tooltipClass"
       :disabled="!showTooltip">
       <span slot="content">{{ formatValue }}</span>
-      <div class="el-slider__button" :class="{ 'hover': hovering, 'dragging': dragging }" :data-test-id="testId + '-el-slider-button-button'"></div>
+      <div class="el-slider__button" :class="{ 'hover': hovering, 'dragging': dragging }" :data-test-id="testId + '-el-slider-button'"></div>
     </el-tooltip>
   </div>
 </template>

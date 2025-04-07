@@ -27,7 +27,7 @@
     <div
       class="el-slider__runway"
       :class="{ 'show-input': showInput, 'disabled': sliderDisabled }"
-      :data-test-id="testId + '-el-slider-runaway'"
+      :data-test-id="testId + '-el-slider-runway'"
       :style="runwayStyle"
       @click="onSliderClick"
       ref="slider">
