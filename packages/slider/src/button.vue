@@ -1,6 +1,7 @@
 <template>
   <div
     class="el-slider__button-wrapper"
+    :data-test-id="testId + '-el-slider-button-wrapper'"
     @mouseenter="handleMouseEnter"
     @mouseleave="handleMouseLeave"
     @mousedown="onButtonDown"
@@ -17,12 +18,13 @@
     @keydown.up.prevent="onRightKeyDown"
   >
     <el-tooltip
+      :data-test-id="testId + '-el-slider-tooltip'"
       placement="top"
       ref="tooltip"
       :popper-class="tooltipClass"
       :disabled="!showTooltip">
       <span slot="content">{{ formatValue }}</span>
-      <div class="el-slider__button" :class="{ 'hover': hovering, 'dragging': dragging }"></div>
+      <div class="el-slider__button" :class="{ 'hover': hovering, 'dragging': dragging }" :data-test-id="testId + '-el-slider-button-button'"></div>
     </el-tooltip>
   </div>
 </template>
@@ -45,6 +47,10 @@
       vertical: {
         type: Boolean,
         default: false
+      },
+      testId: {
+        type: String,
+        default: 'el-slider-test-id'
       },
       tooltipClass: String
     },

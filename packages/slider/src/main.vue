@@ -1,6 +1,7 @@
 <template>
   <div
     class="el-slider"
+    :data-test-id="testId + '-el-slider'"
     :class="{ 'is-vertical': vertical, 'el-slider--with-input': showInput }"
     role="slider"
     :aria-valuemin="min"
@@ -12,6 +13,7 @@
       v-model="firstValue"
       v-if="showInput && !range"
       class="el-slider__input"
+      :test-id="testId"
       ref="input"
       @change="emitChange"
       :step="step"
@@ -25,11 +27,13 @@
     <div
       class="el-slider__runway"
       :class="{ 'show-input': showInput, 'disabled': sliderDisabled }"
+      :data-test-id="testId + '-el-slider-runaway'"
       :style="runwayStyle"
       @click="onSliderClick"
       ref="slider">
       <div
         class="el-slider__bar"
+        :data-test-id="testId + '-el-slider-bar'"
         :style="barStyle">
       </div>
       <slider-button
@@ -149,6 +153,10 @@
       },
       label: {
         type: String
+      },
+      testId: {
+        type: String,
+        default: 'el-slider-test-id'
       },
       tooltipClass: String,
       marks: Object
