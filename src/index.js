@@ -55,6 +55,17 @@ import TimeSelect from '../packages/time-select/index.js';
 import TimePicker from '../packages/time-picker/index.js';
 import Alert from '../packages/alert/index.js';
 import Slider from '../packages/slider/index.js';
+import PageHeader from '../packages/page-header/index.js';
+import CascaderPanel from '../packages/cascader-panel/index.js';
+import Avatar from '../packages/avatar/index.js';
+import Drawer from '../packages/drawer/index.js';
+import Statistic from '../packages/statistic/index.js';
+import Skeleton from '../packages/skeleton/index.js';
+import SkeletonItem from '../packages/skeleton-item/index.js';
+import Empty from '../packages/empty/index.js';
+import Descriptions from '../packages/descriptions/index.js';
+import DescriptionsItem from '../packages/descriptions-item/index.js';
+import Result from '../packages/result/index.js';
 import locale from 'element-ui/src/locale';
 import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
 import Clickoutside from 'element-ui/src/utils/clickoutside';
@@ -116,6 +127,17 @@ const components = [
   TimePicker,
   Alert,
   Slider,
+  PageHeader,
+  CascaderPanel,
+  Avatar,
+  Drawer,
+  Statistic,
+  Skeleton,
+  SkeletonItem,
+  Empty,
+  Descriptions,
+  DescriptionsItem,
+  Result,
   CollapseTransition
 ];
 
@@ -151,7 +173,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export default {
-  version: '2.14.1',
+  version: '2.15.14',
   locale: locale.use,
   i18n: locale.i18n,
   install,
@@ -216,5 +238,16 @@ export default {
   TimeSelect,
   TimePicker,
   Alert,
-  Slider
+  Slider,
+  PageHeader,
+  CascaderPanel,
+  Avatar,
+  Drawer,
+  Statistic,
+  Skeleton,
+  SkeletonItem,
+  Empty,
+  Descriptions,
+  DescriptionsItem,
+  Result
 };
