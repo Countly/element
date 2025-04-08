@@ -18,12 +18,11 @@
     @keydown.up.prevent="onRightKeyDown"
   >
     <el-tooltip
-      :data-test-id="testId + '-el-slider-tooltip'"
       placement="top"
       ref="tooltip"
       :popper-class="tooltipClass"
       :disabled="!showTooltip">
-      <span slot="content">{{ formatValue }}</span>
+      <span slot="content" :data-test-id="testId + '-el-slider-tooltip'">{{ formatValue }}</span>
       <div class="el-slider__button" :class="{ 'hover': hovering, 'dragging': dragging }" :data-test-id="testId + '-el-slider-button'"></div>
     </el-tooltip>
   </div>
